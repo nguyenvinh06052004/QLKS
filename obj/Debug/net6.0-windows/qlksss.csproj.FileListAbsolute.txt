@@ -95,3 +95,6 @@ D:\c#\qlksss\qlksss\bin\Debug\net6.0-windows\zh-CHT\Microsoft.ReportViewer.WebFo
 D:\c#\qlksss\qlksss\bin\Debug\net6.0-windows\zh-CHT\Microsoft.ReportViewer.WinForms.resources.dll
 D:\c#\qlksss\qlksss\obj\Debug\net6.0-windows\qlksss.frmKhachHang.resources
 D:\c#\qlksss\qlksss\obj\Debug\net6.0-windows\qlksss.sourcelink.json
+D:\c#\qlksss\qlksss\obj\Debug\net6.0-windows\qlksss.frmDV.resources
+D:\c#\qlksss\qlksss\obj\Debug\net6.0-windows\qlksss.frmLoaiPhong.resources
+D:\c#\qlksss\qlksss\obj\Debug\net6.0-windows\qlksss.frmPhong.resources

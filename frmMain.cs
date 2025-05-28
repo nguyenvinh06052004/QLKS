@@ -44,5 +44,12 @@ namespace qlksss
             this.Hide();
             frmKhachHang.ShowDialog();
         }
+
+        private void mnuPhong_Click(object sender, EventArgs e)
+        {
+            frmPhong frmPhong = new frmPhong();
+            this.Hide();
+            frmPhong.ShowDialog();
+        }
     }
 }

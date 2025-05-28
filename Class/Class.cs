@@ -72,5 +72,27 @@ namespace qlksss.Class
             cmd.Dispose();
            
         }
+        public static void FillCombo( string sql, ComboBox cbo, string ma, string ten )
+        {
+            SqlDataAdapter dap = new SqlDataAdapter(sql, con);
+            DataTable dt = new DataTable();
+            dap.Fill(dt);
+            cbo.DataSource = dt;
+            cbo.ValueMember = ma;
+            cbo.DisplayMember = ma;
+        }
+        public static string GetFieldValues(string sql)
+        {
+            string ma = "";
+            SqlCommand cmd = new SqlCommand(sql, con);
+            SqlDataReader reader;
+            reader = cmd.ExecuteReader();
+            while (reader.Read())
+            {
+                ma = reader.GetValue(0).ToString();
+            }
+            reader.Close();
+            return ma;
+        }
     }
 }
