@@ -76,6 +76,7 @@
             txtDiaChi.Name = "txtDiaChi";
             txtDiaChi.Size = new Size(238, 27);
             txtDiaChi.TabIndex = 4;
+            txtDiaChi.KeyUp += txtDiaChi_KeyUp;
             // 
             // BtnXoa
             // 
@@ -189,6 +190,7 @@
             txtSDT.Name = "txtSDT";
             txtSDT.Size = new Size(125, 27);
             txtSDT.TabIndex = 3;
+            txtSDT.KeyUp += txtSDT_KeyUp;
             // 
             // label2
             // 
@@ -209,6 +211,7 @@
             txtTenKH.Name = "txtTenKH";
             txtTenKH.Size = new Size(125, 27);
             txtTenKH.TabIndex = 1;
+            txtTenKH.KeyUp += txtTenKH_KeyUp;
             // 
             // txtMaKH
             // 
@@ -218,6 +221,7 @@
             txtMaKH.Name = "txtMaKH";
             txtMaKH.Size = new Size(125, 27);
             txtMaKH.TabIndex = 0;
+            txtMaKH.KeyUp += txtMaKH_KeyUp;
             // 
             // label3
             // 

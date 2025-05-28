@@ -178,6 +178,7 @@
             txtDiaChi.Name = "txtDiaChi";
             txtDiaChi.Size = new Size(125, 27);
             txtDiaChi.TabIndex = 4;
+            txtDiaChi.KeyUp += txtDiaChi_KeyUp;
             // 
             // label6
             // 
@@ -197,6 +198,7 @@
             txtSDT.Name = "txtSDT";
             txtSDT.Size = new Size(125, 27);
             txtSDT.TabIndex = 3;
+            txtSDT.KeyUp += txtSDT_KeyUp;
             // 
             // txtChucVu
             // 
@@ -206,6 +208,7 @@
             txtChucVu.Name = "txtChucVu";
             txtChucVu.Size = new Size(125, 27);
             txtChucVu.TabIndex = 2;
+            txtChucVu.KeyUp += txtChucVu_KeyUp;
             // 
             // label2
             // 
@@ -235,6 +238,8 @@
             txtTenNhanVien.Name = "txtTenNhanVien";
             txtTenNhanVien.Size = new Size(125, 27);
             txtTenNhanVien.TabIndex = 1;
+            txtTenNhanVien.TextChanged += txtTenNhanVien_TextChanged;
+            txtTenNhanVien.KeyUp += txtTenNhanVien_KeyUp;
             // 
             // txtMaNhanVien
             // 
@@ -244,6 +249,7 @@
             txtMaNhanVien.Name = "txtMaNhanVien";
             txtMaNhanVien.Size = new Size(125, 27);
             txtMaNhanVien.TabIndex = 0;
+            txtMaNhanVien.KeyUp += txtMaNhanVien_KeyUp;
             // 
             // label3
             // 

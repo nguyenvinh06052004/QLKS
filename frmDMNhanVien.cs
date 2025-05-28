@@ -35,7 +35,7 @@ namespace qlksss
             dgvNhanVien.Columns[4].HeaderText = "Địa chỉ"; //Tên cột
             dgvNhanVien.AllowUserToAddRows = false; // cho phép thêm dòng mới
             dgvNhanVien.AllowUserToDeleteRows = false;
-            dgvNhanVien.ReadOnly = true; 
+            dgvNhanVien.ReadOnly = true;
 
             if (!string.IsNullOrEmpty(manv_td))
             {
@@ -81,7 +81,7 @@ namespace qlksss
             txtChucVu.Text = dgvNhanVien.CurrentRow.Cells["Chuc_vu"].Value.ToString();
             txtSDT.Text = dgvNhanVien.CurrentRow.Cells["SDT_NV"].Value.ToString();
             txtDiaChi.Text = dgvNhanVien.CurrentRow.Cells["DiaChi_NV"].Value.ToString();
-            
+
         }
 
         private void BtnThem_Click(object sender, EventArgs e)
@@ -322,7 +322,7 @@ namespace qlksss
 
         private void dgvNhanVien_SelectionChanged(object sender, EventArgs e)
         {
-           
+
             if (tblNV.Rows.Count == 0) //Nếu không có dữ liệu trong DataGridView
             {
                 MessageBox.Show("Không có dữ liệu", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
@@ -333,7 +333,7 @@ namespace qlksss
             txtChucVu.Text = dgvNhanVien.CurrentRow.Cells["Chuc_vu"].Value.ToString();
             txtSDT.Text = dgvNhanVien.CurrentRow.Cells["SDT_NV"].Value.ToString();
             txtDiaChi.Text = dgvNhanVien.CurrentRow.Cells["DiaChi_NV"].Value.ToString();
-           
+
         }
 
         private void BtnSua_Click(object sender, EventArgs e)
@@ -584,6 +584,41 @@ namespace qlksss
         private void panel2_Paint(object sender, PaintEventArgs e)
         {
 
+        }
+
+        private void txtMaNhanVien_KeyUp(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+                SendKeys.Send("{TAB}");
+        }
+
+        private void txtTenNhanVien_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void txtTenNhanVien_KeyUp(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+                SendKeys.Send("{TAB}");
+        }
+
+        private void txtChucVu_KeyUp(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+                SendKeys.Send("{TAB}");
+        }
+
+        private void txtSDT_KeyUp(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+                SendKeys.Send("{TAB}");
+        }
+
+        private void txtDiaChi_KeyUp(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+                SendKeys.Send("{TAB}");
         }
     }
 

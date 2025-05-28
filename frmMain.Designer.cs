@@ -45,12 +45,12 @@ namespace qlksss
             mnuHoaDonChiTiet = new ToolStripMenuItem();
             mnuPhieu = new ToolStripMenuItem();
             mnuPhieuDatPhong = new ToolStripMenuItem();
-            mnuChiTietPhong = new ToolStripMenuItem();
             mnuPhieuDichVu = new ToolStripMenuItem();
-            mnuChiTietSuDung = new ToolStripMenuItem();
-            mnuTimKiem = new ToolStripMenuItem();
+            mnuChiTiet = new ToolStripMenuItem();
             mnuHuongDan = new ToolStripMenuItem();
             panel1 = new Panel();
+            chiTiếtPhòngToolStripMenuItem = new ToolStripMenuItem();
+            chiTiếtDịchVụToolStripMenuItem = new ToolStripMenuItem();
             menuStrip1.SuspendLayout();
             panel1.SuspendLayout();
             SuspendLayout();
@@ -60,10 +60,10 @@ namespace qlksss
             menuStrip1.Anchor = AnchorStyles.Top;
             menuStrip1.Dock = DockStyle.None;
             menuStrip1.ImageScalingSize = new Size(20, 20);
-            menuStrip1.Items.AddRange(new ToolStripItem[] { mnuFile, mnuDanhMuc, mnuHoaDon, mnuPhieu, mnuTimKiem, mnuHuongDan });
+            menuStrip1.Items.AddRange(new ToolStripItem[] { mnuFile, mnuDanhMuc, mnuHoaDon, mnuPhieu, mnuChiTiet, mnuHuongDan });
             menuStrip1.Location = new Point(148, 9);
             menuStrip1.Name = "menuStrip1";
-            menuStrip1.Size = new Size(639, 28);
+            menuStrip1.Size = new Size(625, 28);
             menuStrip1.TabIndex = 0;
             menuStrip1.Text = "menuStrip1";
             // 
@@ -130,13 +130,13 @@ namespace qlksss
             // mnuHoaDonTong
             // 
             mnuHoaDonTong.Name = "mnuHoaDonTong";
-            mnuHoaDonTong.Size = new Size(199, 26);
+            mnuHoaDonTong.Size = new Size(224, 26);
             mnuHoaDonTong.Text = "Hóa đơn tổng";
             // 
             // mnuHoaDonChiTiet
             // 
             mnuHoaDonChiTiet.Name = "mnuHoaDonChiTiet";
-            mnuHoaDonChiTiet.Size = new Size(199, 26);
+            mnuHoaDonChiTiet.Size = new Size(224, 26);
             mnuHoaDonChiTiet.Text = "Hóa đơn chi tiết";
             // 
             // mnuPhieu
@@ -149,35 +149,22 @@ namespace qlksss
             // 
             // mnuPhieuDatPhong
             // 
-            mnuPhieuDatPhong.DropDownItems.AddRange(new ToolStripItem[] { mnuChiTietPhong });
             mnuPhieuDatPhong.Name = "mnuPhieuDatPhong";
-            mnuPhieuDatPhong.Size = new Size(201, 26);
+            mnuPhieuDatPhong.Size = new Size(224, 26);
             mnuPhieuDatPhong.Text = "Phiếu đặt phòng";
-            // 
-            // mnuChiTietPhong
-            // 
-            mnuChiTietPhong.Name = "mnuChiTietPhong";
-            mnuChiTietPhong.Size = new Size(186, 26);
-            mnuChiTietPhong.Text = "Chi tiết phòng";
             // 
             // mnuPhieuDichVu
             // 
-            mnuPhieuDichVu.DropDownItems.AddRange(new ToolStripItem[] { mnuChiTietSuDung });
             mnuPhieuDichVu.Name = "mnuPhieuDichVu";
-            mnuPhieuDichVu.Size = new Size(201, 26);
+            mnuPhieuDichVu.Size = new Size(224, 26);
             mnuPhieuDichVu.Text = "Phiếu dịch vụ";
             // 
-            // mnuChiTietSuDung
+            // mnuChiTiet
             // 
-            mnuChiTietSuDung.Name = "mnuChiTietSuDung";
-            mnuChiTietSuDung.Size = new Size(196, 26);
-            mnuChiTietSuDung.Text = "Chi tiết sử dụng";
-            // 
-            // mnuTimKiem
-            // 
-            mnuTimKiem.Name = "mnuTimKiem";
-            mnuTimKiem.Size = new Size(84, 24);
-            mnuTimKiem.Text = "Tìm kiếm";
+            mnuChiTiet.DropDownItems.AddRange(new ToolStripItem[] { chiTiếtPhòngToolStripMenuItem, chiTiếtDịchVụToolStripMenuItem });
+            mnuChiTiet.Name = "mnuChiTiet";
+            mnuChiTiet.Size = new Size(70, 24);
+            mnuChiTiet.Text = "Chi tiết";
             // 
             // mnuHuongDan
             // 
@@ -193,6 +180,18 @@ namespace qlksss
             panel1.Name = "panel1";
             panel1.Size = new Size(800, 125);
             panel1.TabIndex = 2;
+            // 
+            // chiTiếtPhòngToolStripMenuItem
+            // 
+            chiTiếtPhòngToolStripMenuItem.Name = "chiTiếtPhòngToolStripMenuItem";
+            chiTiếtPhòngToolStripMenuItem.Size = new Size(224, 26);
+            chiTiếtPhòngToolStripMenuItem.Text = "Chi tiết phòng";
+            // 
+            // chiTiếtDịchVụToolStripMenuItem
+            // 
+            chiTiếtDịchVụToolStripMenuItem.Name = "chiTiếtDịchVụToolStripMenuItem";
+            chiTiếtDịchVụToolStripMenuItem.Size = new Size(224, 26);
+            chiTiếtDịchVụToolStripMenuItem.Text = "Chi tiết dịch vụ";
             // 
             // frmMain
             // 
@@ -230,11 +229,11 @@ namespace qlksss
         private ToolStripMenuItem mnuHoaDonChiTiet;
         private ToolStripMenuItem mnuPhieu;
         private ToolStripMenuItem mnuPhieuDatPhong;
-        private ToolStripMenuItem mnuChiTietPhong;
         private ToolStripMenuItem mnuPhieuDichVu;
-        private ToolStripMenuItem mnuChiTietSuDung;
-        private ToolStripMenuItem mnuTimKiem;
+        private ToolStripMenuItem mnuChiTiet;
         private ToolStripMenuItem mnuHuongDan;
         private Panel panel1;
+        private ToolStripMenuItem chiTiếtPhòngToolStripMenuItem;
+        private ToolStripMenuItem chiTiếtDịchVụToolStripMenuItem;
     }
 }
