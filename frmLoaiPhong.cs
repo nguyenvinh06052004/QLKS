@@ -50,6 +50,9 @@ namespace qlksss
             dgvLoaiPhong.Columns[3].HeaderText = "Đơn giá"; //Tên cột
             dgvLoaiPhong.AllowUserToAddRows = false; // cho phép thêm dòng mới
             dgvLoaiPhong.AllowUserToDeleteRows = false;
+            dgvLoaiPhong.EditMode = DataGridViewEditMode.EditProgrammatically; //Không cho phép chỉnh sửa trực tiếp trên DataGridView
+            dgvLoaiPhong.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill; //Tự động điều chỉnh kích thước cột
+            //dgvLoaiPhong.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.AllCells; //Tự động điều chỉnh kích thước cột
             dgvLoaiPhong.ReadOnly = true;
             if (!string.IsNullOrEmpty(malp_td))
             {
@@ -483,6 +486,11 @@ namespace qlksss
             this.Hide(); // Đóng form loại phòng và quay lại form trước đó
             frmMain frmMain = new frmMain();
             frmMain.ShowDialog();
+        }
+
+        private void BtnHienThi_Click(object sender, EventArgs e)
+        {
+            LoadDataGridView(); // Hiển thị lại toàn bộ dữ liệu loại phòng
         }
     }
 }

@@ -1,6 +1,6 @@
 ﻿namespace qlksss
 {
-    partial class frmLoaiPhong
+    partial class frmDV
     {
         /// <summary>
         /// Required designer variable.
@@ -29,19 +29,25 @@
         private void InitializeComponent()
         {
             panel2 = new Panel();
-            txtChatLuong = new TextBox();
+            cboMaNhanVien = new ComboBox();
+            label7 = new Label();
+            txtDonViTinh = new TextBox();
+            label5 = new Label();
+            txtSoLuong = new TextBox();
             label6 = new Label();
             txtDonGia = new TextBox();
+            label4 = new Label();
+            txtTrangThai = new TextBox();
             label2 = new Label();
-            txtSoLuongPhong = new TextBox();
-            txtMaLoaiPhong = new TextBox();
+            txtTenDichVu = new TextBox();
+            txtMaDichVu = new TextBox();
             label3 = new Label();
             lable = new Label();
             label1 = new Label();
-            dgvLoaiPhong = new DataGridView();
+            dgvDV = new DataGridView();
             panel1 = new Panel();
-            BtnHienThi = new Button();
             BtnQuayLai = new Button();
+            BtnHienThi = new Button();
             BtnTimKiem = new Button();
             BtnLuu = new Button();
             BtnBo = new Button();
@@ -49,7 +55,7 @@
             BtnSua = new Button();
             BtnThem = new Button();
             panel2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)dgvLoaiPhong).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)dgvDV).BeginInit();
             panel1.SuspendLayout();
             SuspendLayout();
             // 
@@ -57,136 +63,214 @@
             // 
             panel2.AutoSizeMode = AutoSizeMode.GrowAndShrink;
             panel2.BackColor = Color.Linen;
-            panel2.Controls.Add(txtChatLuong);
+            panel2.Controls.Add(cboMaNhanVien);
+            panel2.Controls.Add(label7);
+            panel2.Controls.Add(txtDonViTinh);
+            panel2.Controls.Add(label5);
+            panel2.Controls.Add(txtSoLuong);
             panel2.Controls.Add(label6);
             panel2.Controls.Add(txtDonGia);
+            panel2.Controls.Add(label4);
+            panel2.Controls.Add(txtTrangThai);
             panel2.Controls.Add(label2);
-            panel2.Controls.Add(txtSoLuongPhong);
-            panel2.Controls.Add(txtMaLoaiPhong);
+            panel2.Controls.Add(txtTenDichVu);
+            panel2.Controls.Add(txtMaDichVu);
             panel2.Controls.Add(label3);
             panel2.Controls.Add(lable);
             panel2.Controls.Add(label1);
-            panel2.Location = new Point(3, 0);
+            panel2.Location = new Point(1, 0);
             panel2.Name = "panel2";
-            panel2.Size = new Size(1160, 125);
-            panel2.TabIndex = 4;
+            panel2.Size = new Size(1071, 125);
+            panel2.TabIndex = 5;
             // 
-            // txtChatLuong
+            // cboMaNhanVien
             // 
-            txtChatLuong.Anchor = AnchorStyles.Top;
-            txtChatLuong.BackColor = SystemColors.GradientInactiveCaption;
-            txtChatLuong.Location = new Point(784, 90);
-            txtChatLuong.Name = "txtChatLuong";
-            txtChatLuong.Size = new Size(238, 27);
-            txtChatLuong.TabIndex = 4;
+            cboMaNhanVien.Anchor = AnchorStyles.Top;
+            cboMaNhanVien.BackColor = SystemColors.GradientInactiveCaption;
+            cboMaNhanVien.FormattingEnabled = true;
+            cboMaNhanVien.Location = new Point(910, 46);
+            cboMaNhanVien.Name = "cboMaNhanVien";
+            cboMaNhanVien.Size = new Size(125, 28);
+            cboMaNhanVien.TabIndex = 17;
+            // 
+            // label7
+            // 
+            label7.Anchor = AnchorStyles.Top;
+            label7.AutoSize = true;
+            label7.Location = new Point(807, 54);
+            label7.Name = "label7";
+            label7.Size = new Size(97, 20);
+            label7.TabIndex = 16;
+            label7.Text = "Mã nhân viên";
+            // 
+            // txtDonViTinh
+            // 
+            txtDonViTinh.Anchor = AnchorStyles.Top;
+            txtDonViTinh.BackColor = SystemColors.GradientInactiveCaption;
+            txtDonViTinh.Location = new Point(655, 91);
+            txtDonViTinh.Name = "txtDonViTinh";
+            txtDonViTinh.Size = new Size(125, 27);
+            txtDonViTinh.TabIndex = 14;
+            // 
+            // label5
+            // 
+            label5.Anchor = AnchorStyles.Top;
+            label5.AutoSize = true;
+            label5.Location = new Point(568, 98);
+            label5.Name = "label5";
+            label5.Size = new Size(81, 20);
+            label5.TabIndex = 15;
+            label5.Text = "Đơn vị tính";
+            // 
+            // txtSoLuong
+            // 
+            txtSoLuong.Anchor = AnchorStyles.Top;
+            txtSoLuong.BackColor = SystemColors.GradientInactiveCaption;
+            txtSoLuong.Location = new Point(655, 47);
+            txtSoLuong.Name = "txtSoLuong";
+            txtSoLuong.Size = new Size(125, 27);
+            txtSoLuong.TabIndex = 12;
             // 
             // label6
             // 
             label6.Anchor = AnchorStyles.Top;
             label6.AutoSize = true;
-            label6.Location = new Point(696, 97);
+            label6.Location = new Point(583, 54);
             label6.Name = "label6";
-            label6.Size = new Size(82, 20);
-            label6.TabIndex = 9;
-            label6.Text = "Chất lượng";
+            label6.Size = new Size(69, 20);
+            label6.TabIndex = 13;
+            label6.Text = "Số lượng";
             // 
             // txtDonGia
             // 
             txtDonGia.Anchor = AnchorStyles.Top;
             txtDonGia.BackColor = SystemColors.GradientInactiveCaption;
-            txtDonGia.Location = new Point(784, 46);
+            txtDonGia.Location = new Point(383, 91);
             txtDonGia.Name = "txtDonGia";
             txtDonGia.Size = new Size(125, 27);
-            txtDonGia.TabIndex = 3;
+            txtDonGia.TabIndex = 10;
+            // 
+            // label4
+            // 
+            label4.Anchor = AnchorStyles.Top;
+            label4.AutoSize = true;
+            label4.Location = new Point(315, 98);
+            label4.Name = "label4";
+            label4.Size = new Size(62, 20);
+            label4.TabIndex = 11;
+            label4.Text = "Đơn giá";
+            // 
+            // txtTrangThai
+            // 
+            txtTrangThai.Anchor = AnchorStyles.Top;
+            txtTrangThai.BackColor = SystemColors.GradientInactiveCaption;
+            txtTrangThai.Location = new Point(383, 47);
+            txtTrangThai.Name = "txtTrangThai";
+            txtTrangThai.Size = new Size(125, 27);
+            txtTrangThai.TabIndex = 3;
             // 
             // label2
             // 
             label2.Anchor = AnchorStyles.Top;
             label2.AutoSize = true;
-            label2.Location = new Point(716, 53);
+            label2.Location = new Point(302, 54);
             label2.Name = "label2";
-            label2.Size = new Size(62, 20);
+            label2.Size = new Size(75, 20);
             label2.TabIndex = 6;
-            label2.Text = "Đơn giá";
+            label2.Text = "Trạng thái";
             // 
-            // txtSoLuongPhong
+            // txtTenDichVu
             // 
-            txtSoLuongPhong.Anchor = AnchorStyles.Top;
-            txtSoLuongPhong.BackColor = SystemColors.GradientInactiveCaption;
-            txtSoLuongPhong.Location = new Point(320, 90);
-            txtSoLuongPhong.Name = "txtSoLuongPhong";
-            txtSoLuongPhong.Size = new Size(125, 27);
-            txtSoLuongPhong.TabIndex = 1;
+            txtTenDichVu.Anchor = AnchorStyles.Top;
+            txtTenDichVu.BackColor = SystemColors.GradientInactiveCaption;
+            txtTenDichVu.Location = new Point(128, 91);
+            txtTenDichVu.Name = "txtTenDichVu";
+            txtTenDichVu.Size = new Size(125, 27);
+            txtTenDichVu.TabIndex = 1;
             // 
-            // txtMaLoaiPhong
+            // txtMaDichVu
             // 
-            txtMaLoaiPhong.Anchor = AnchorStyles.Top;
-            txtMaLoaiPhong.BackColor = SystemColors.GradientInactiveCaption;
-            txtMaLoaiPhong.Location = new Point(320, 46);
-            txtMaLoaiPhong.Name = "txtMaLoaiPhong";
-            txtMaLoaiPhong.Size = new Size(125, 27);
-            txtMaLoaiPhong.TabIndex = 0;
+            txtMaDichVu.Anchor = AnchorStyles.Top;
+            txtMaDichVu.BackColor = SystemColors.GradientInactiveCaption;
+            txtMaDichVu.Location = new Point(128, 47);
+            txtMaDichVu.Name = "txtMaDichVu";
+            txtMaDichVu.Size = new Size(125, 27);
+            txtMaDichVu.TabIndex = 0;
             // 
             // label3
             // 
             label3.Anchor = AnchorStyles.Top;
             label3.AutoSize = true;
-            label3.Location = new Point(198, 97);
+            label3.Location = new Point(39, 98);
             label3.Name = "label3";
-            label3.Size = new Size(116, 20);
+            label3.Size = new Size(83, 20);
             label3.TabIndex = 2;
-            label3.Text = "Số lượng phòng";
+            label3.Text = "Tên dịch vụ";
             // 
             // lable
             // 
             lable.Anchor = AnchorStyles.Top;
             lable.AutoSize = true;
-            lable.Location = new Point(205, 53);
+            lable.Location = new Point(41, 54);
             lable.Name = "lable";
-            lable.Size = new Size(106, 20);
+            lable.Size = new Size(81, 20);
             lable.TabIndex = 1;
-            lable.Text = "Mã loại phòng";
+            lable.Text = "Mã dịch vụ";
             // 
             // label1
             // 
             label1.Anchor = AnchorStyles.Top;
             label1.AutoSize = true;
-            label1.Location = new Point(485, 9);
+            label1.Location = new Point(448, 9);
             label1.Name = "label1";
-            label1.Size = new Size(178, 20);
+            label1.Size = new Size(150, 20);
             label1.TabIndex = 0;
-            label1.Text = "DANH MỤC LOẠI PHÒNG";
+            label1.Text = "DANH MỤC DỊCH VỤ";
             label1.TextAlign = ContentAlignment.TopCenter;
             // 
-            // dgvLoaiPhong
+            // dgvDV
             // 
-            dgvLoaiPhong.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
-            dgvLoaiPhong.AutoSizeRowsMode = DataGridViewAutoSizeRowsMode.AllCells;
-            dgvLoaiPhong.BackgroundColor = SystemColors.GradientInactiveCaption;
-            dgvLoaiPhong.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dgvLoaiPhong.Location = new Point(3, 123);
-            dgvLoaiPhong.Name = "dgvLoaiPhong";
-            dgvLoaiPhong.RowHeadersWidth = 51;
-            dgvLoaiPhong.RowTemplate.Height = 29;
-            dgvLoaiPhong.Size = new Size(1160, 196);
-            dgvLoaiPhong.TabIndex = 5;
-            dgvLoaiPhong.SelectionChanged += dgvLoaiPhong_SelectionChanged;
+            dgvDV.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+            dgvDV.AutoSizeRowsMode = DataGridViewAutoSizeRowsMode.AllCells;
+            dgvDV.BackgroundColor = SystemColors.GradientInactiveCaption;
+            dgvDV.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dgvDV.Location = new Point(0, 124);
+            dgvDV.Name = "dgvDV";
+            dgvDV.RowHeadersWidth = 51;
+            dgvDV.RowTemplate.Height = 29;
+            dgvDV.Size = new Size(1072, 230);
+            dgvDV.TabIndex = 6;
+            dgvDV.SelectionChanged += dgvDV_SelectionChanged;
             // 
             // panel1
             // 
             panel1.BackColor = Color.Linen;
-            panel1.Controls.Add(BtnHienThi);
             panel1.Controls.Add(BtnQuayLai);
+            panel1.Controls.Add(BtnHienThi);
             panel1.Controls.Add(BtnTimKiem);
             panel1.Controls.Add(BtnLuu);
             panel1.Controls.Add(BtnBo);
             panel1.Controls.Add(BtnXoa);
             panel1.Controls.Add(BtnSua);
             panel1.Controls.Add(BtnThem);
-            panel1.Location = new Point(0, 317);
+            panel1.Dock = DockStyle.Bottom;
+            panel1.Location = new Point(0, 353);
             panel1.Name = "panel1";
-            panel1.Size = new Size(1164, 133);
-            panel1.TabIndex = 6;
+            panel1.Size = new Size(1074, 97);
+            panel1.TabIndex = 12;
+            // 
+            // BtnQuayLai
+            // 
+            BtnQuayLai.Anchor = AnchorStyles.Bottom;
+            BtnQuayLai.BackColor = Color.SteelBlue;
+            BtnQuayLai.ForeColor = SystemColors.ControlLightLight;
+            BtnQuayLai.Location = new Point(893, 29);
+            BtnQuayLai.Name = "BtnQuayLai";
+            BtnQuayLai.Size = new Size(94, 29);
+            BtnQuayLai.TabIndex = 7;
+            BtnQuayLai.Text = "Quay Lại";
+            BtnQuayLai.UseVisualStyleBackColor = false;
+            BtnQuayLai.Click += BtnQuayLai_Click;
             // 
             // BtnHienThi
             // 
@@ -194,33 +278,20 @@
             BtnHienThi.BackColor = Color.SteelBlue;
             BtnHienThi.ForeColor = SystemColors.ControlLightLight;
             BtnHienThi.ImageAlign = ContentAlignment.MiddleLeft;
-            BtnHienThi.Location = new Point(84, 63);
+            BtnHienThi.Location = new Point(111, 29);
             BtnHienThi.Name = "BtnHienThi";
             BtnHienThi.Size = new Size(94, 29);
-            BtnHienThi.TabIndex = 7;
-            BtnHienThi.Text = "Hiển thị";
+            BtnHienThi.TabIndex = 6;
+            BtnHienThi.Text = "Hiển Thị DS";
             BtnHienThi.UseVisualStyleBackColor = false;
             BtnHienThi.Click += BtnHienThi_Click;
-            // 
-            // BtnQuayLai
-            // 
-            BtnQuayLai.Anchor = AnchorStyles.Bottom;
-            BtnQuayLai.BackColor = Color.SteelBlue;
-            BtnQuayLai.ForeColor = SystemColors.ControlLightLight;
-            BtnQuayLai.Location = new Point(1008, 63);
-            BtnQuayLai.Name = "BtnQuayLai";
-            BtnQuayLai.Size = new Size(94, 29);
-            BtnQuayLai.TabIndex = 6;
-            BtnQuayLai.Text = "Quay Lại";
-            BtnQuayLai.UseVisualStyleBackColor = false;
-            BtnQuayLai.Click += BtnQuayLai_Click;
             // 
             // BtnTimKiem
             // 
             BtnTimKiem.Anchor = AnchorStyles.Bottom;
             BtnTimKiem.BackColor = Color.SteelBlue;
             BtnTimKiem.ForeColor = SystemColors.ControlLightLight;
-            BtnTimKiem.Location = new Point(885, 63);
+            BtnTimKiem.Location = new Point(779, 29);
             BtnTimKiem.Name = "BtnTimKiem";
             BtnTimKiem.Size = new Size(94, 29);
             BtnTimKiem.TabIndex = 5;
@@ -233,7 +304,7 @@
             BtnLuu.Anchor = AnchorStyles.Bottom;
             BtnLuu.BackColor = Color.SteelBlue;
             BtnLuu.ForeColor = SystemColors.ControlLightLight;
-            BtnLuu.Location = new Point(751, 63);
+            BtnLuu.Location = new Point(669, 29);
             BtnLuu.Name = "BtnLuu";
             BtnLuu.Size = new Size(94, 29);
             BtnLuu.TabIndex = 4;
@@ -246,7 +317,7 @@
             BtnBo.Anchor = AnchorStyles.Bottom;
             BtnBo.BackColor = Color.SteelBlue;
             BtnBo.ForeColor = SystemColors.ControlLightLight;
-            BtnBo.Location = new Point(617, 63);
+            BtnBo.Location = new Point(559, 29);
             BtnBo.Name = "BtnBo";
             BtnBo.Size = new Size(94, 29);
             BtnBo.TabIndex = 3;
@@ -259,7 +330,7 @@
             BtnXoa.Anchor = AnchorStyles.Bottom;
             BtnXoa.BackColor = Color.SteelBlue;
             BtnXoa.ForeColor = SystemColors.ControlLightLight;
-            BtnXoa.Location = new Point(349, 63);
+            BtnXoa.Location = new Point(339, 29);
             BtnXoa.Name = "BtnXoa";
             BtnXoa.Size = new Size(94, 29);
             BtnXoa.TabIndex = 1;
@@ -272,7 +343,7 @@
             BtnSua.Anchor = AnchorStyles.Bottom;
             BtnSua.BackColor = Color.SteelBlue;
             BtnSua.ForeColor = SystemColors.ControlLightLight;
-            BtnSua.Location = new Point(483, 63);
+            BtnSua.Location = new Point(449, 29);
             BtnSua.Name = "BtnSua";
             BtnSua.Size = new Size(94, 29);
             BtnSua.TabIndex = 2;
@@ -286,7 +357,7 @@
             BtnThem.BackColor = Color.SteelBlue;
             BtnThem.ForeColor = SystemColors.ControlLightLight;
             BtnThem.ImageAlign = ContentAlignment.MiddleLeft;
-            BtnThem.Location = new Point(215, 63);
+            BtnThem.Location = new Point(229, 29);
             BtnThem.Name = "BtnThem";
             BtnThem.Size = new Size(94, 29);
             BtnThem.TabIndex = 0;
@@ -294,21 +365,20 @@
             BtnThem.UseVisualStyleBackColor = false;
             BtnThem.Click += BtnThem_Click;
             // 
-            // frmLoaiPhong
+            // frmDV
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
-            BackColor = Color.Linen;
-            ClientSize = new Size(1164, 450);
+            ClientSize = new Size(1074, 450);
             Controls.Add(panel1);
-            Controls.Add(dgvLoaiPhong);
+            Controls.Add(dgvDV);
             Controls.Add(panel2);
-            Name = "frmLoaiPhong";
-            Text = "frmLoaiPhong";
-            Load += frmLoaiPhong_Load;
+            Name = "frmDV";
+            Text = "frmDV";
+            Load += frmDV_Load;
             panel2.ResumeLayout(false);
             panel2.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)dgvLoaiPhong).EndInit();
+            ((System.ComponentModel.ISupportInitialize)dgvDV).EndInit();
             panel1.ResumeLayout(false);
             ResumeLayout(false);
         }
@@ -316,24 +386,30 @@
         #endregion
 
         private Panel panel2;
-        private TextBox txtChatLuong;
-        private Label label6;
-        private TextBox txtDonGia;
+        private TextBox txtTrangThai;
         private Label label2;
-        private TextBox txtSoLuongPhong;
-        private TextBox txtMaLoaiPhong;
+        private TextBox txtTenDichVu;
+        private TextBox txtMaDichVu;
         private Label label3;
         private Label lable;
         private Label label1;
-        private DataGridView dgvLoaiPhong;
+        private TextBox txtDonGia;
+        private Label label4;
+        private DataGridView dgvDV;
         private Panel panel1;
+        private Button BtnQuayLai;
+        private Button BtnHienThi;
         private Button BtnTimKiem;
         private Button BtnLuu;
         private Button BtnBo;
         private Button BtnXoa;
         private Button BtnSua;
         private Button BtnThem;
-        private Button BtnQuayLai;
-        private Button BtnHienThi;
+        private Label label7;
+        private TextBox txtDonViTinh;
+        private Label label5;
+        private TextBox txtSoLuong;
+        private Label label6;
+        private ComboBox cboMaNhanVien;
     }
 }
