@@ -47,6 +47,7 @@
             lable = new Label();
             label1 = new Label();
             panel2 = new Panel();
+            btnReturn = new Button();
             ((System.ComponentModel.ISupportInitialize)dgvKH).BeginInit();
             panel1.SuspendLayout();
             panel2.SuspendLayout();
@@ -83,7 +84,7 @@
             BtnXoa.Anchor = AnchorStyles.Bottom;
             BtnXoa.BackColor = Color.SteelBlue;
             BtnXoa.ForeColor = SystemColors.ControlLightLight;
-            BtnXoa.Location = new Point(338, 58);
+            BtnXoa.Location = new Point(267, 58);
             BtnXoa.Name = "BtnXoa";
             BtnXoa.Size = new Size(94, 29);
             BtnXoa.TabIndex = 1;
@@ -96,7 +97,7 @@
             BtnSua.Anchor = AnchorStyles.Bottom;
             BtnSua.BackColor = Color.SteelBlue;
             BtnSua.ForeColor = SystemColors.ControlLightLight;
-            BtnSua.Location = new Point(472, 58);
+            BtnSua.Location = new Point(401, 58);
             BtnSua.Name = "BtnSua";
             BtnSua.Size = new Size(94, 29);
             BtnSua.TabIndex = 2;
@@ -110,7 +111,7 @@
             BtnThem.BackColor = Color.SteelBlue;
             BtnThem.ForeColor = SystemColors.ControlLightLight;
             BtnThem.ImageAlign = ContentAlignment.MiddleLeft;
-            BtnThem.Location = new Point(204, 58);
+            BtnThem.Location = new Point(133, 58);
             BtnThem.Name = "BtnThem";
             BtnThem.Size = new Size(94, 29);
             BtnThem.TabIndex = 0;
@@ -133,7 +134,7 @@
             BtnTimKiem.Anchor = AnchorStyles.Bottom;
             BtnTimKiem.BackColor = Color.SteelBlue;
             BtnTimKiem.ForeColor = SystemColors.ControlLightLight;
-            BtnTimKiem.Location = new Point(874, 58);
+            BtnTimKiem.Location = new Point(803, 58);
             BtnTimKiem.Name = "BtnTimKiem";
             BtnTimKiem.Size = new Size(94, 29);
             BtnTimKiem.TabIndex = 5;
@@ -146,7 +147,7 @@
             BtnLuu.Anchor = AnchorStyles.Bottom;
             BtnLuu.BackColor = Color.SteelBlue;
             BtnLuu.ForeColor = SystemColors.ControlLightLight;
-            BtnLuu.Location = new Point(740, 58);
+            BtnLuu.Location = new Point(669, 58);
             BtnLuu.Name = "BtnLuu";
             BtnLuu.Size = new Size(94, 29);
             BtnLuu.TabIndex = 4;
@@ -157,6 +158,7 @@
             // panel1
             // 
             panel1.BackColor = Color.Linen;
+            panel1.Controls.Add(btnReturn);
             panel1.Controls.Add(BtnTimKiem);
             panel1.Controls.Add(BtnLuu);
             panel1.Controls.Add(BtnBo);
@@ -174,7 +176,7 @@
             BtnBo.Anchor = AnchorStyles.Bottom;
             BtnBo.BackColor = Color.SteelBlue;
             BtnBo.ForeColor = SystemColors.ControlLightLight;
-            BtnBo.Location = new Point(606, 58);
+            BtnBo.Location = new Point(535, 58);
             BtnBo.Name = "BtnBo";
             BtnBo.Size = new Size(94, 29);
             BtnBo.TabIndex = 3;
@@ -274,6 +276,19 @@
             panel2.TabIndex = 3;
             panel2.Paint += panel2_Paint;
             // 
+            // btnReturn
+            // 
+            btnReturn.Anchor = AnchorStyles.Bottom;
+            btnReturn.BackColor = Color.SteelBlue;
+            btnReturn.ForeColor = SystemColors.ControlLightLight;
+            btnReturn.Location = new Point(930, 58);
+            btnReturn.Name = "btnReturn";
+            btnReturn.Size = new Size(94, 29);
+            btnReturn.TabIndex = 7;
+            btnReturn.Text = "Quay Lại";
+            btnReturn.UseVisualStyleBackColor = false;
+            btnReturn.Click += btnReturn_Click;
+            // 
             // frmKhachHang
             // 
             ClientSize = new Size(1164, 450);
@@ -310,5 +325,6 @@
         private Label lable;
         private Label label1;
         private Panel panel2;
+        private Button btnReturn;
     }
 }

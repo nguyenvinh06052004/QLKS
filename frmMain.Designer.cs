@@ -47,10 +47,11 @@ namespace qlksss
             mnuPhieuDatPhong = new ToolStripMenuItem();
             mnuPhieuDichVu = new ToolStripMenuItem();
             mnuChiTiet = new ToolStripMenuItem();
-            mnuHuongDan = new ToolStripMenuItem();
-            panel1 = new Panel();
             chiTiếtPhòngToolStripMenuItem = new ToolStripMenuItem();
             chiTiếtDịchVụToolStripMenuItem = new ToolStripMenuItem();
+            mnuHuongDan = new ToolStripMenuItem();
+            báoCáoToolStripMenuItem = new ToolStripMenuItem();
+            panel1 = new Panel();
             menuStrip1.SuspendLayout();
             panel1.SuspendLayout();
             SuspendLayout();
@@ -60,10 +61,10 @@ namespace qlksss
             menuStrip1.Anchor = AnchorStyles.Top;
             menuStrip1.Dock = DockStyle.None;
             menuStrip1.ImageScalingSize = new Size(20, 20);
-            menuStrip1.Items.AddRange(new ToolStripItem[] { mnuFile, mnuDanhMuc, mnuHoaDon, mnuPhieu, mnuChiTiet, mnuHuongDan });
-            menuStrip1.Location = new Point(148, 9);
+            menuStrip1.Items.AddRange(new ToolStripItem[] { mnuFile, mnuDanhMuc, mnuHoaDon, mnuPhieu, mnuChiTiet, mnuHuongDan, báoCáoToolStripMenuItem });
+            menuStrip1.Location = new Point(74, 9);
             menuStrip1.Name = "menuStrip1";
-            menuStrip1.Size = new Size(625, 28);
+            menuStrip1.Size = new Size(552, 28);
             menuStrip1.TabIndex = 0;
             menuStrip1.Text = "menuStrip1";
             // 
@@ -91,33 +92,33 @@ namespace qlksss
             // mnuNhanVien
             // 
             mnuNhanVien.Name = "mnuNhanVien";
-            mnuNhanVien.Size = new Size(224, 26);
+            mnuNhanVien.Size = new Size(169, 26);
             mnuNhanVien.Text = "Nhân viên";
             mnuNhanVien.Click += mnuNhanVien_Click;
             // 
             // mnuKhachHang
             // 
             mnuKhachHang.Name = "mnuKhachHang";
-            mnuKhachHang.Size = new Size(224, 26);
+            mnuKhachHang.Size = new Size(169, 26);
             mnuKhachHang.Text = "Khách hàng";
             mnuKhachHang.Click += mnuKhachHang_Click;
             // 
             // mnuDichVu
             // 
             mnuDichVu.Name = "mnuDichVu";
-            mnuDichVu.Size = new Size(224, 26);
+            mnuDichVu.Size = new Size(169, 26);
             mnuDichVu.Text = "Dịch vụ";
             // 
             // mnuLoaiPhong
             // 
             mnuLoaiPhong.Name = "mnuLoaiPhong";
-            mnuLoaiPhong.Size = new Size(224, 26);
+            mnuLoaiPhong.Size = new Size(169, 26);
             mnuLoaiPhong.Text = "Loại phòng";
             // 
             // mnuPhong
             // 
             mnuPhong.Name = "mnuPhong";
-            mnuPhong.Size = new Size(224, 26);
+            mnuPhong.Size = new Size(169, 26);
             mnuPhong.Text = "Phòng";
             // 
             // mnuHoaDon
@@ -130,13 +131,13 @@ namespace qlksss
             // mnuHoaDonTong
             // 
             mnuHoaDonTong.Name = "mnuHoaDonTong";
-            mnuHoaDonTong.Size = new Size(224, 26);
+            mnuHoaDonTong.Size = new Size(199, 26);
             mnuHoaDonTong.Text = "Hóa đơn tổng";
             // 
             // mnuHoaDonChiTiet
             // 
             mnuHoaDonChiTiet.Name = "mnuHoaDonChiTiet";
-            mnuHoaDonChiTiet.Size = new Size(224, 26);
+            mnuHoaDonChiTiet.Size = new Size(199, 26);
             mnuHoaDonChiTiet.Text = "Hóa đơn chi tiết";
             // 
             // mnuPhieu
@@ -150,13 +151,13 @@ namespace qlksss
             // mnuPhieuDatPhong
             // 
             mnuPhieuDatPhong.Name = "mnuPhieuDatPhong";
-            mnuPhieuDatPhong.Size = new Size(224, 26);
+            mnuPhieuDatPhong.Size = new Size(201, 26);
             mnuPhieuDatPhong.Text = "Phiếu đặt phòng";
             // 
             // mnuPhieuDichVu
             // 
             mnuPhieuDichVu.Name = "mnuPhieuDichVu";
-            mnuPhieuDichVu.Size = new Size(224, 26);
+            mnuPhieuDichVu.Size = new Size(201, 26);
             mnuPhieuDichVu.Text = "Phiếu dịch vụ";
             // 
             // mnuChiTiet
@@ -166,11 +167,29 @@ namespace qlksss
             mnuChiTiet.Size = new Size(70, 24);
             mnuChiTiet.Text = "Chi tiết";
             // 
+            // chiTiếtPhòngToolStripMenuItem
+            // 
+            chiTiếtPhòngToolStripMenuItem.Name = "chiTiếtPhòngToolStripMenuItem";
+            chiTiếtPhòngToolStripMenuItem.Size = new Size(190, 26);
+            chiTiếtPhòngToolStripMenuItem.Text = "Chi tiết phòng";
+            // 
+            // chiTiếtDịchVụToolStripMenuItem
+            // 
+            chiTiếtDịchVụToolStripMenuItem.Name = "chiTiếtDịchVụToolStripMenuItem";
+            chiTiếtDịchVụToolStripMenuItem.Size = new Size(190, 26);
+            chiTiếtDịchVụToolStripMenuItem.Text = "Chi tiết dịch vụ";
+            // 
             // mnuHuongDan
             // 
             mnuHuongDan.Name = "mnuHuongDan";
             mnuHuongDan.Size = new Size(98, 24);
             mnuHuongDan.Text = "Hướng dẫn";
+            // 
+            // báoCáoToolStripMenuItem
+            // 
+            báoCáoToolStripMenuItem.Name = "báoCáoToolStripMenuItem";
+            báoCáoToolStripMenuItem.Size = new Size(77, 24);
+            báoCáoToolStripMenuItem.Text = "Báo cáo";
             // 
             // panel1
             // 
@@ -180,18 +199,6 @@ namespace qlksss
             panel1.Name = "panel1";
             panel1.Size = new Size(800, 125);
             panel1.TabIndex = 2;
-            // 
-            // chiTiếtPhòngToolStripMenuItem
-            // 
-            chiTiếtPhòngToolStripMenuItem.Name = "chiTiếtPhòngToolStripMenuItem";
-            chiTiếtPhòngToolStripMenuItem.Size = new Size(224, 26);
-            chiTiếtPhòngToolStripMenuItem.Text = "Chi tiết phòng";
-            // 
-            // chiTiếtDịchVụToolStripMenuItem
-            // 
-            chiTiếtDịchVụToolStripMenuItem.Name = "chiTiếtDịchVụToolStripMenuItem";
-            chiTiếtDịchVụToolStripMenuItem.Size = new Size(224, 26);
-            chiTiếtDịchVụToolStripMenuItem.Text = "Chi tiết dịch vụ";
             // 
             // frmMain
             // 
@@ -204,6 +211,7 @@ namespace qlksss
             IsMdiContainer = true;
             MainMenuStrip = menuStrip1;
             Name = "frmMain";
+            StartPosition = FormStartPosition.CenterScreen;
             Text = "Chương trình quản lý khách sạn";
             Load += frmMain_Load;
             menuStrip1.ResumeLayout(false);
@@ -235,5 +243,6 @@ namespace qlksss
         private Panel panel1;
         private ToolStripMenuItem chiTiếtPhòngToolStripMenuItem;
         private ToolStripMenuItem chiTiếtDịchVụToolStripMenuItem;
+        private ToolStripMenuItem báoCáoToolStripMenuItem;
     }
 }

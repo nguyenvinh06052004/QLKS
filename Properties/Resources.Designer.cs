@@ -109,5 +109,15 @@ namespace qlksss.Properties {
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Luxury_Hotel_India_GIF_by_Suryagarh_Collection {
+            get {
+                object obj = ResourceManager.GetObject("Luxury Hotel India GIF by Suryagarh Collection", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
     }
 }

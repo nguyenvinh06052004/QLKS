@@ -44,5 +44,7 @@ namespace qlksss
             this.Hide();
             frmKhachHang.ShowDialog();
         }
+
+       
     }
 }

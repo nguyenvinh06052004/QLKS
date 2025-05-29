@@ -2,8 +2,20 @@
   "version": 3,
   "targets": {
     "net6.0-windows7.0": {
-      "DevExpress.Win.Design/24.2.7": {
-        "type": "package"
+      "Guna.UI2.WinForms/2.0.4.7": {
+        "type": "package",
+        "dependencies": {
+          "System.Management": "6.0.0"
+        },
+        "compile": {
+          "lib/net6.0-windows7.0/Guna.UI2.dll": {}
+        },
+        "runtime": {
+          "lib/net6.0-windows7.0/Guna.UI2.dll": {}
+        },
+        "frameworkReferences": [
+          "Microsoft.WindowsDesktop.App.WindowsForms"
+        ]
       },
       "Microsoft.ReportingServices.ReportViewerControl.WebForms/150.1652.0": {
         "type": "package",
@@ -395,6 +407,22 @@
           }
         }
       },
+      "System.CodeDom/6.0.0": {
+        "type": "package",
+        "compile": {
+          "lib/net6.0/System.CodeDom.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/net6.0/System.CodeDom.dll": {
+            "related": ".xml"
+          }
+        },
+        "build": {
+          "buildTransitive/netcoreapp3.1/_._": {}
+        }
+      },
       "System.Data.SqlClient/4.9.0": {
         "type": "package",
         "dependencies": {
@@ -423,19 +451,55 @@
             "rid": "win"
           }
         }
+      },
+      "System.Management/6.0.0": {
+        "type": "package",
+        "dependencies": {
+          "System.CodeDom": "6.0.0"
+        },
+        "compile": {
+          "lib/net6.0/System.Management.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/net6.0/System.Management.dll": {
+            "related": ".xml"
+          }
+        },
+        "build": {
+          "buildTransitive/netcoreapp3.1/_._": {}
+        },
+        "runtimeTargets": {
+          "runtimes/win/lib/net6.0/System.Management.dll": {
+            "assetType": "runtime",
+            "rid": "win"
+          }
+        }
       }
     }
   },
   "libraries": {
-    "DevExpress.Win.Design/24.2.7": {
-      "sha512": "CSokl2MiSAgE1Z/5ywqhp+HEb4iZDJp8/3hmxhWS4q5g1gvR7zTOW8V8XWbylQr7snERMrgozU9g4PxdisZidA==",
+    "Guna.UI2.WinForms/2.0.4.7": {
+      "sha512": "8BdBYsfnntuICbFMHIZsd5morwURN8Ucsvq7wJeyLV1Z1ze6CAIxVKEirufgjGIiXfF0M0sCr9EVFloZSazWew==",
       "type": "package",
-      "path": "devexpress.win.design/24.2.7",
+      "path": "guna.ui2.winforms/2.0.4.7",
       "files": [
         ".nupkg.metadata",
         ".signature.p7s",
-        "devexpress.win.design.24.2.7.nupkg.sha512",
-        "devexpress.win.design.nuspec"
+        "LICENSE.txt",
+        "README.md",
+        "guna.ui2.winforms.2.0.4.7.nupkg.sha512",
+        "guna.ui2.winforms.nuspec",
+        "icon.png",
+        "lib/net40/Guna.UI2.dll",
+        "lib/net45/Guna.UI2.dll",
+        "lib/net461/Guna.UI2.dll",
+        "lib/net472/Guna.UI2.dll",
+        "lib/net48/Guna.UI2.dll",
+        "lib/net6.0-windows7.0/Guna.UI2.dll",
+        "lib/net7.0-windows7.0/Guna.UI2.dll",
+        "lib/netcoreapp3.1/Guna.UI2.dll"
       ]
     },
     "Microsoft.ReportingServices.ReportViewerControl.WebForms/150.1652.0": {
@@ -672,6 +736,29 @@
         "version.txt"
       ]
     },
+    "System.CodeDom/6.0.0": {
+      "sha512": "CPc6tWO1LAer3IzfZufDBRL+UZQcj5uS207NHALQzP84Vp/z6wF0Aa0YZImOQY8iStY0A2zI/e3ihKNPfUm8XA==",
+      "type": "package",
+      "path": "system.codedom/6.0.0",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "Icon.png",
+        "LICENSE.TXT",
+        "THIRD-PARTY-NOTICES.TXT",
+        "buildTransitive/netcoreapp2.0/System.CodeDom.targets",
+        "buildTransitive/netcoreapp3.1/_._",
+        "lib/net461/System.CodeDom.dll",
+        "lib/net461/System.CodeDom.xml",
+        "lib/net6.0/System.CodeDom.dll",
+        "lib/net6.0/System.CodeDom.xml",
+        "lib/netstandard2.0/System.CodeDom.dll",
+        "lib/netstandard2.0/System.CodeDom.xml",
+        "system.codedom.6.0.0.nupkg.sha512",
+        "system.codedom.nuspec",
+        "useSharedDesignerContext.txt"
+      ]
+    },
     "System.Data.SqlClient/4.9.0": {
       "sha512": "j4KJO+vC62NyUtNHz854njEqXbT8OmAa5jb1nrGfYWBOcggyYUQE0w/snXeaCjdvkSKWuUD+hfvlbN8pTrJTXg==",
       "type": "package",
@@ -704,37 +791,62 @@
         "system.data.sqlclient.4.9.0.nupkg.sha512",
         "system.data.sqlclient.nuspec"
       ]
+    },
+    "System.Management/6.0.0": {
+      "sha512": "sHsESYMmPDhQuOC66h6AEOs/XowzKsbT9srMbX71TCXP58hkpn1BqBjdmKj1+DCA/WlBETX1K5WjQHwmV0Txrg==",
+      "type": "package",
+      "path": "system.management/6.0.0",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "Icon.png",
+        "LICENSE.TXT",
+        "THIRD-PARTY-NOTICES.TXT",
+        "buildTransitive/netcoreapp2.0/System.Management.targets",
+        "buildTransitive/netcoreapp3.1/_._",
+        "lib/net461/_._",
+        "lib/net6.0/System.Management.dll",
+        "lib/net6.0/System.Management.xml",
+        "lib/netcoreapp3.1/System.Management.dll",
+        "lib/netcoreapp3.1/System.Management.xml",
+        "lib/netstandard2.0/System.Management.dll",
+        "lib/netstandard2.0/System.Management.xml",
+        "runtimes/win/lib/net6.0/System.Management.dll",
+        "runtimes/win/lib/net6.0/System.Management.xml",
+        "runtimes/win/lib/netcoreapp3.1/System.Management.dll",
+        "runtimes/win/lib/netcoreapp3.1/System.Management.xml",
+        "system.management.6.0.0.nupkg.sha512",
+        "system.management.nuspec",
+        "useSharedDesignerContext.txt"
+      ]
     }
   },
   "projectFileDependencyGroups": {
     "net6.0-windows7.0": [
-      "DevExpress.Win.Design >= 24.2.7",
+      "Guna.UI2.WinForms >= 2.0.4.7",
       "Microsoft.ReportingServices.ReportViewerControl.WebForms >= 150.1652.0",
       "Microsoft.ReportingServices.ReportViewerControl.Winforms >= 150.1652.0",
       "System.Data.SqlClient >= 4.9.0"
     ]
   },
   "packageFolders": {
-    "C:\\Users\\Nguye\\.nuget\\packages\\": {},
-    "D:\\c#\\Components\\Offline Packages": {},
+    "C:\\Users\\PHUC\\.nuget\\packages\\": {},
     "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "D:\\c#\\qlksss\\qlksss\\qlksss.csproj",
+      "projectUniqueName": "F:\\1\\QLKS\\qlksss.csproj",
       "projectName": "qlksss",
-      "projectPath": "D:\\c#\\qlksss\\qlksss\\qlksss.csproj",
-      "packagesPath": "C:\\Users\\Nguye\\.nuget\\packages\\",
-      "outputPath": "D:\\c#\\qlksss\\qlksss\\obj\\",
+      "projectPath": "F:\\1\\QLKS\\qlksss.csproj",
+      "packagesPath": "C:\\Users\\PHUC\\.nuget\\packages\\",
+      "outputPath": "F:\\1\\QLKS\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
-        "D:\\c#\\Components\\Offline Packages",
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
       ],
       "configFilePaths": [
-        "C:\\Users\\Nguye\\AppData\\Roaming\\NuGet\\NuGet.Config",
-        "C:\\Program Files (x86)\\NuGet\\Config\\DevExpress 24.2.config",
+        "C:\\Users\\PHUC\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
@@ -743,7 +855,6 @@
       ],
       "sources": {
         "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
-        "D:\\c#\\Components\\System\\Components\\Packages": {},
         "https://api.nuget.org/v3/index.json": {}
       },
       "frameworks": {
@@ -762,15 +873,15 @@
         "auditLevel": "low",
         "auditMode": "direct"
       },
-      "SdkAnalysisLevel": "9.0.300"
+      "SdkAnalysisLevel": "9.0.100"
     },
     "frameworks": {
       "net6.0-windows7.0": {
         "targetAlias": "net6.0-windows",
         "dependencies": {
-          "DevExpress.Win.Design": {
+          "Guna.UI2.WinForms": {
             "target": "Package",
-            "version": "[24.2.7, )"
+            "version": "[2.0.4.7, )"
           },
           "Microsoft.ReportingServices.ReportViewerControl.WebForms": {
             "target": "Package",
@@ -822,7 +933,7 @@
             "privateAssets": "none"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.300-preview.0.25177.5\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.101\\RuntimeIdentifierGraph.json"
       }
     }
   },

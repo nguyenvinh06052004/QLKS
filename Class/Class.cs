@@ -10,7 +10,7 @@ namespace qlksss.Class
         public static void Connect()
         {
             if (con.State == ConnectionState.Open) { con.Close(); }
-            con.ConnectionString = @"Data Source = INVVV\SQLEXPRESS; Initial Catalog = QLKS; Integrated Security = True; Encrypt = True; TrustServerCertificate = True";
+            con.ConnectionString = "Data Source = DESKTOP-392TCLG\\SQLEXPRESS01; Initial Catalog = QuanLyKS; Integrated Security = True; Encrypt = True; TrustServerCertificate = True";
 
 
             if (con.State != ConnectionState.Open)

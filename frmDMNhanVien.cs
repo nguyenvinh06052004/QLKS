@@ -620,6 +620,13 @@ namespace qlksss
             if (e.KeyCode == Keys.Enter)
                 SendKeys.Send("{TAB}");
         }
-    }
 
+        private void btnReturn_Click(object sender, EventArgs e)
+        {
+            frmMain m = new frmMain();
+            m.Show();
+            this.Close();
+        }
+
+    }
 }
