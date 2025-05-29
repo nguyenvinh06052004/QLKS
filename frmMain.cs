@@ -45,6 +45,25 @@ namespace qlksss
             frmKhachHang.ShowDialog();
         }
 
-       
+        private void mnuLoaiPhong_Click(object sender, EventArgs e)
+        {
+            frmLoaiPhong frmLoaiPhong = new frmLoaiPhong();
+            this.Hide();
+            frmLoaiPhong.ShowDialog();
+        }
+
+        private void mnuPhong_Click(object sender, EventArgs e)
+        {
+            frmPhong frmPhong = new frmPhong();
+            this.Hide();
+            frmPhong.ShowDialog();
+        }
+
+        private void mnuDichVu_Click(object sender, EventArgs e)
+        {
+            frmDV frmDV = new frmDV();
+            this.Hide();
+            frmDV.ShowDialog();
+        }
     }
 }
