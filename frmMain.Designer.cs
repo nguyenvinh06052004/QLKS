@@ -77,7 +77,7 @@ namespace qlksss
             // mnuThoat
             // 
             mnuThoat.Name = "mnuThoat";
-            mnuThoat.Size = new Size(224, 26);
+            mnuThoat.Size = new Size(130, 26);
             mnuThoat.Text = "Thoát";
             // 
             // mnuDanhMuc
@@ -153,6 +153,7 @@ namespace qlksss
             mnuPhieuDatPhong.Name = "mnuPhieuDatPhong";
             mnuPhieuDatPhong.Size = new Size(224, 26);
             mnuPhieuDatPhong.Text = "Phiếu đặt phòng";
+            mnuPhieuDatPhong.Click += mnuPhieuDatPhong_Click;
             // 
             // mnuPhieuDichVu
             // 
@@ -170,13 +171,13 @@ namespace qlksss
             // chiTiếtPhòngToolStripMenuItem
             // 
             chiTiếtPhòngToolStripMenuItem.Name = "chiTiếtPhòngToolStripMenuItem";
-            chiTiếtPhòngToolStripMenuItem.Size = new Size(224, 26);
+            chiTiếtPhòngToolStripMenuItem.Size = new Size(190, 26);
             chiTiếtPhòngToolStripMenuItem.Text = "Chi tiết phòng";
             // 
             // chiTiếtDịchVụToolStripMenuItem
             // 
             chiTiếtDịchVụToolStripMenuItem.Name = "chiTiếtDịchVụToolStripMenuItem";
-            chiTiếtDịchVụToolStripMenuItem.Size = new Size(224, 26);
+            chiTiếtDịchVụToolStripMenuItem.Size = new Size(190, 26);
             chiTiếtDịchVụToolStripMenuItem.Text = "Chi tiết dịch vụ";
             // 
             // mnuHuongDan

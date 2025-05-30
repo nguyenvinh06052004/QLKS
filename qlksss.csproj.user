@@ -16,6 +16,9 @@
     <Compile Update="frmMain.cs">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Update="frmPhieuDat.cs">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Update="frmPhong.cs">
       <SubType>Form</SubType>
     </Compile>

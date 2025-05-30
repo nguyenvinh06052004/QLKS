@@ -51,5 +51,10 @@ namespace qlksss
             this.Hide();
             frmPhong.ShowDialog();
         }
+
+        private void mnuPhieuDatPhong_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
