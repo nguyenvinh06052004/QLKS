@@ -90,5 +90,10 @@ namespace qlksss
         {
             lblError.Visible = false;
         }
+
+        private void frmRegister_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            Application.Exit(); // Đóng ứng dụng khi form đăng ký đóng
+        }
     }
 }

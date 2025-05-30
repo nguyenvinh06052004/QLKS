@@ -375,6 +375,7 @@
             Controls.Add(panel2);
             Name = "frmDV";
             Text = "frmDV";
+            FormClosing += frmDV_FormClosing;
             Load += frmDV_Load;
             panel2.ResumeLayout(false);
             panel2.PerformLayout();

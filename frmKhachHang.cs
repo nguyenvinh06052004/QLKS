@@ -891,5 +891,10 @@ namespace qlksss
             this.Close();
 
         }
+
+        private void frmKhachHang_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            Application.Exit(); // Đóng toàn bộ ứng dụng khi form Khách Hàng đóng
+        }
     }
 }

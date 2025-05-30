@@ -533,6 +533,11 @@ namespace qlksss
             frmMain frmMain = new frmMain();
             frmMain.ShowDialog();
         }
+
+        private void frmPhong_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            Application.Exit(); // Đóng ứng dụng khi form Phong đóng
+        }
     }
 
 

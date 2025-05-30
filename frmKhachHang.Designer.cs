@@ -38,6 +38,7 @@
             BtnTimKiem = new Button();
             BtnLuu = new Button();
             panel1 = new Panel();
+            btnReturn = new Button();
             BtnBo = new Button();
             txtSDT = new TextBox();
             label2 = new Label();
@@ -47,7 +48,6 @@
             lable = new Label();
             label1 = new Label();
             panel2 = new Panel();
-            btnReturn = new Button();
             ((System.ComponentModel.ISupportInitialize)dgvKH).BeginInit();
             panel1.SuspendLayout();
             panel2.SuspendLayout();
@@ -171,6 +171,19 @@
             panel1.Size = new Size(1164, 125);
             panel1.TabIndex = 5;
             // 
+            // btnReturn
+            // 
+            btnReturn.Anchor = AnchorStyles.Bottom;
+            btnReturn.BackColor = Color.SteelBlue;
+            btnReturn.ForeColor = SystemColors.ControlLightLight;
+            btnReturn.Location = new Point(930, 58);
+            btnReturn.Name = "btnReturn";
+            btnReturn.Size = new Size(94, 29);
+            btnReturn.TabIndex = 7;
+            btnReturn.Text = "Quay Lại";
+            btnReturn.UseVisualStyleBackColor = false;
+            btnReturn.Click += btnReturn_Click;
+            // 
             // BtnBo
             // 
             BtnBo.Anchor = AnchorStyles.Bottom;
@@ -276,19 +289,6 @@
             panel2.TabIndex = 3;
             panel2.Paint += panel2_Paint;
             // 
-            // btnReturn
-            // 
-            btnReturn.Anchor = AnchorStyles.Bottom;
-            btnReturn.BackColor = Color.SteelBlue;
-            btnReturn.ForeColor = SystemColors.ControlLightLight;
-            btnReturn.Location = new Point(930, 58);
-            btnReturn.Name = "btnReturn";
-            btnReturn.Size = new Size(94, 29);
-            btnReturn.TabIndex = 7;
-            btnReturn.Text = "Quay Lại";
-            btnReturn.UseVisualStyleBackColor = false;
-            btnReturn.Click += btnReturn_Click;
-            // 
             // frmKhachHang
             // 
             ClientSize = new Size(1164, 450);
@@ -297,6 +297,7 @@
             Controls.Add(panel2);
             Name = "frmKhachHang";
             Text = "frmKhachHang";
+            FormClosing += frmKhachHang_FormClosing;
             Load += frmKhachHang_Load;
             ((System.ComponentModel.ISupportInitialize)dgvKH).EndInit();
             panel1.ResumeLayout(false);

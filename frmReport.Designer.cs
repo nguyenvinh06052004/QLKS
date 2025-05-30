@@ -34,7 +34,7 @@
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(980, 450);
+            ClientSize = new Size(1287, 862);
             Name = "frmReport";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "frmReport";

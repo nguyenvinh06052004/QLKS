@@ -301,6 +301,7 @@
             Controls.Add(panel1);
             Name = "frmPhong";
             Text = "frmPhong";
+            FormClosing += frmPhong_FormClosing;
             Load += frmPhong_Load;
             panel2.ResumeLayout(false);
             panel2.PerformLayout();

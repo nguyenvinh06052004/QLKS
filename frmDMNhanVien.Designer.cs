@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             panel1 = new Panel();
+            btnReturn = new Button();
             BtnTimKiem = new Button();
             BtnLuu = new Button();
             BtnBo = new Button();
@@ -48,7 +49,6 @@
             lable = new Label();
             label1 = new Label();
             dgvNhanVien = new DataGridView();
-            btnReturn = new Button();
             panel1.SuspendLayout();
             panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)dgvNhanVien).BeginInit();
@@ -70,6 +70,19 @@
             panel1.Size = new Size(945, 125);
             panel1.TabIndex = 2;
             panel1.Paint += panel1_Paint;
+            // 
+            // btnReturn
+            // 
+            btnReturn.Anchor = AnchorStyles.Bottom;
+            btnReturn.BackColor = Color.SteelBlue;
+            btnReturn.ForeColor = SystemColors.ControlLightLight;
+            btnReturn.Location = new Point(802, 41);
+            btnReturn.Name = "btnReturn";
+            btnReturn.Size = new Size(94, 29);
+            btnReturn.TabIndex = 6;
+            btnReturn.Text = "Quay Lại";
+            btnReturn.UseVisualStyleBackColor = false;
+            btnReturn.Click += btnReturn_Click;
             // 
             // BtnTimKiem
             // 
@@ -300,19 +313,6 @@
             dgvNhanVien.CellContentClick += dgvNhanVien_CellContentClick;
             dgvNhanVien.SelectionChanged += dgvNhanVien_SelectionChanged;
             // 
-            // btnReturn
-            // 
-            btnReturn.Anchor = AnchorStyles.Bottom;
-            btnReturn.BackColor = Color.SteelBlue;
-            btnReturn.ForeColor = SystemColors.ControlLightLight;
-            btnReturn.Location = new Point(802, 41);
-            btnReturn.Name = "btnReturn";
-            btnReturn.Size = new Size(94, 29);
-            btnReturn.TabIndex = 6;
-            btnReturn.Text = "Quay Lại";
-            btnReturn.UseVisualStyleBackColor = false;
-            btnReturn.Click += btnReturn_Click;
-            // 
             // frmDMNhanVien
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
@@ -325,6 +325,7 @@
             Controls.Add(panel1);
             Name = "frmDMNhanVien";
             Text = "Danh mục nhân viên";
+            FormClosing += frmDMNhanVien_FormClosing;
             Load += frmDMNhanVien_Load;
             panel1.ResumeLayout(false);
             panel2.ResumeLayout(false);

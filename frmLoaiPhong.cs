@@ -492,5 +492,10 @@ namespace qlksss
         {
             LoadDataGridView(); // Hiển thị lại toàn bộ dữ liệu loại phòng
         }
+
+        private void frmLoaiPhong_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            Application.Exit(); // Đóng toàn bộ ứng dụng khi form loại phòng đóng   
+        }
     }
 }

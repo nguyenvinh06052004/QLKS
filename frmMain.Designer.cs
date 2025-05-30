@@ -64,7 +64,7 @@ namespace qlksss
             menuStrip1.Items.AddRange(new ToolStripItem[] { mnuFile, mnuDanhMuc, mnuHoaDon, mnuPhieu, mnuChiTiet, mnuHuongDan, báoCáoToolStripMenuItem });
             menuStrip1.Location = new Point(74, 9);
             menuStrip1.Name = "menuStrip1";
-            menuStrip1.Size = new Size(702, 28);
+            menuStrip1.Size = new Size(552, 28);
             menuStrip1.TabIndex = 0;
             menuStrip1.Text = "menuStrip1";
             // 
@@ -92,35 +92,35 @@ namespace qlksss
             // mnuNhanVien
             // 
             mnuNhanVien.Name = "mnuNhanVien";
-            mnuNhanVien.Size = new Size(224, 26);
+            mnuNhanVien.Size = new Size(169, 26);
             mnuNhanVien.Text = "Nhân viên";
             mnuNhanVien.Click += mnuNhanVien_Click;
             // 
             // mnuKhachHang
             // 
             mnuKhachHang.Name = "mnuKhachHang";
-            mnuKhachHang.Size = new Size(224, 26);
+            mnuKhachHang.Size = new Size(169, 26);
             mnuKhachHang.Text = "Khách hàng";
             mnuKhachHang.Click += mnuKhachHang_Click;
             // 
             // mnuDichVu
             // 
             mnuDichVu.Name = "mnuDichVu";
-            mnuDichVu.Size = new Size(224, 26);
+            mnuDichVu.Size = new Size(169, 26);
             mnuDichVu.Text = "Dịch vụ";
             mnuDichVu.Click += mnuDichVu_Click;
             // 
             // mnuLoaiPhong
             // 
             mnuLoaiPhong.Name = "mnuLoaiPhong";
-            mnuLoaiPhong.Size = new Size(224, 26);
+            mnuLoaiPhong.Size = new Size(169, 26);
             mnuLoaiPhong.Text = "Loại phòng";
             mnuLoaiPhong.Click += mnuLoaiPhong_Click;
             // 
             // mnuPhong
             // 
             mnuPhong.Name = "mnuPhong";
-            mnuPhong.Size = new Size(224, 26);
+            mnuPhong.Size = new Size(169, 26);
             mnuPhong.Text = "Phòng";
             mnuPhong.Click += mnuPhong_Click;
             // 
@@ -216,6 +216,7 @@ namespace qlksss
             Name = "frmMain";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "Chương trình quản lý khách sạn";
+            FormClosing += frmMain_FormClosing;
             Load += frmMain_Load;
             menuStrip1.ResumeLayout(false);
             menuStrip1.PerformLayout();

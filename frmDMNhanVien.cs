@@ -628,5 +628,9 @@ namespace qlksss
             this.Close();
         }
 
+        private void frmDMNhanVien_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            Application.Exit(); // Đóng ứng dụng khi form này đóng
+        }
     }
 }

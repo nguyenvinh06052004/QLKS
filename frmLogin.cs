@@ -70,5 +70,10 @@ namespace qlksss
             registerForm.ShowDialog();  // Mở form đăng ký dưới dạng dialog
 
         }
+
+        private void frmLogin_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            Application.Exit(); // Đóng ứng dụng khi form đăng nhập đóng
+        }
     }
 }

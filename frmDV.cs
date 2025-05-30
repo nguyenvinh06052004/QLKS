@@ -347,7 +347,7 @@ namespace qlksss
                         BtnLuu.ForeColor = Color.White;
                         return;
                     }
-                    sql = "INSERT INTO Dich_vu(Ma_DV, Ten_DV, Trangthai_DV, Don_gia, Donvi_tinh, Soluong, Ma_NV) VALUES ('" + txtMaDichVu.Text.Trim() + "',N'" + txtTenDichVu.Text.Trim() + "',N'" + txtTrangThai.Text.Trim() + "','" + txtDonGia.Text.Trim() + "',N'" + txtDonViTinh.Text.Trim() +"','" + txtSoLuong.Text.Trim() + "','" + cboMaNhanVien.SelectedValue.ToString() + "')";
+                    sql = "INSERT INTO Dich_vu(Ma_DV, Ten_DV, Trangthai_DV, Don_gia, Donvi_tinh, Soluong, Ma_NV) VALUES ('" + txtMaDichVu.Text.Trim() + "',N'" + txtTenDichVu.Text.Trim() + "',N'" + txtTrangThai.Text.Trim() + "','" + txtDonGia.Text.Trim() + "',N'" + txtDonViTinh.Text.Trim() + "','" + txtSoLuong.Text.Trim() + "','" + cboMaNhanVien.SelectedValue.ToString() + "')";
                     Class.Function.RunSQL(sql);
                     madv_lp = txtMaDichVu.Text.Trim(); // Lưu mã nhân viên tạm thời
                     LoadDataGridView();
@@ -362,7 +362,7 @@ namespace qlksss
                 }
                 if (isChanged == true)
                 {
-                    sql = "UPDATE Dich_vu SET Ten_DV = N'" + txtTenDichVu.Text.Trim() + "', Trangthai_DV = N'" + txtTrangThai.Text.Trim() + "', Don_gia = '" + txtDonGia.Text.Trim() +"', Donvi_tinh = '" + txtDonViTinh.Text.Trim() + "', Soluong = '" + txtSoLuong.Text.Trim() + "', Ma_NV = N'" + cboMaNhanVien.SelectedValue.ToString()+ "' WHERE Ma_DV = '" + txtMaDichVu.Text.Trim() + "'";
+                    sql = "UPDATE Dich_vu SET Ten_DV = N'" + txtTenDichVu.Text.Trim() + "', Trangthai_DV = N'" + txtTrangThai.Text.Trim() + "', Don_gia = '" + txtDonGia.Text.Trim() + "', Donvi_tinh = '" + txtDonViTinh.Text.Trim() + "', Soluong = '" + txtSoLuong.Text.Trim() + "', Ma_NV = N'" + cboMaNhanVien.SelectedValue.ToString() + "' WHERE Ma_DV = '" + txtMaDichVu.Text.Trim() + "'";
 
                     Class.Function.RunSQL(sql);
                     madv_lp = txtMaDichVu.Text.Trim(); // Lưu mã nhân viên tạm thời
@@ -436,7 +436,7 @@ namespace qlksss
                     else
                         where += " AND Trangthai_DV LIKE '%" + txtTrangThai.Text.Trim() + "%'";
                 }
-                if(txtTenDichVu.Text.Trim() != "")
+                if (txtTenDichVu.Text.Trim() != "")
                 {
                     if (where == "WHERE ")
                         where += "Ten_DV LIKE '%" + txtTenDichVu.Text.Trim() + "%'";
@@ -580,7 +580,7 @@ namespace qlksss
 
         private void dgvDV_SelectionChanged(object sender, EventArgs e)
         {
-            if(tblDV.Rows.Count == 0)
+            if (tblDV.Rows.Count == 0)
             {
                 MessageBox.Show("Không có dữ liệu", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 return;
@@ -595,6 +595,11 @@ namespace qlksss
                 txtSoLuong.Text = dgvDV.CurrentRow.Cells["Soluong"].Value.ToString();
                 cboMaNhanVien.Text = dgvDV.CurrentRow.Cells["Ma_NV"].Value.ToString();
             }
+        }
+
+        private void frmDV_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            Application.Exit();
         }
     }
 }
