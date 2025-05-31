@@ -139,11 +139,8 @@
             // 
             label1.Anchor = AnchorStyles.Top;
             label1.AutoSize = true;
-<<<<<<< HEAD
-            label1.Location = new Point(442, 9);
-=======
+
             label1.Location = new Point(451, 9);
->>>>>>> 7064f85f2fc30531b9f4e2f2f1c32b93d96784fe
             label1.Name = "label1";
             label1.Size = new Size(147, 20);
             label1.TabIndex = 0;
@@ -157,19 +154,12 @@
             dgvP.BackgroundColor = SystemColors.GradientInactiveCaption;
             dgvP.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             dgvP.Dock = DockStyle.Fill;
-<<<<<<< HEAD
-            dgvP.Location = new Point(0, 0);
-            dgvP.Name = "dgvP";
-            dgvP.RowHeadersWidth = 51;
-            dgvP.RowTemplate.Height = 29;
-            dgvP.Size = new Size(1072, 325);
-=======
+
             dgvP.Location = new Point(0, 95);
             dgvP.Name = "dgvP";
             dgvP.RowHeadersWidth = 51;
             dgvP.RowTemplate.Height = 29;
             dgvP.Size = new Size(1072, 230);
->>>>>>> 7064f85f2fc30531b9f4e2f2f1c32b93d96784fe
             dgvP.TabIndex = 10;
             dgvP.CellContentClick += dgvP_CellContentClick;
             dgvP.SelectionChanged += dgvP_SelectionChanged;

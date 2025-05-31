@@ -204,3 +204,10 @@ F:\1\QLKS\bin\Debug\net6.0-windows\runtimes\win\lib\net6.0\System.Management.dll
 F:\1\QLKS\obj\Debug\net6.0-windows\qlksss.frmLogin.resources
 F:\1\QLKS\obj\Debug\net6.0-windows\qlksss.frmRegister.resources
 >>>>>>> 7064f85f2fc30531b9f4e2f2f1c32b93d96784fe
+D:\c#\qlksss\qlksss\obj\Debug\net6.0-windows\qlksss.frmLogin.resources
+D:\c#\qlksss\qlksss\obj\Debug\net6.0-windows\qlksss.frmPhieuDat.resources
+D:\c#\qlksss\qlksss\obj\Debug\net6.0-windows\qlksss.frmRegister.resources
+D:\c#\qlksss\qlksss\obj\Debug\net6.0-windows\qlksss.frmReport.resources
+D:\c#\qlksss\qlksss\bin\Debug\net6.0-windows\Guna.UI2.dll
+D:\c#\qlksss\qlksss\bin\Debug\net6.0-windows\System.Management.dll
+D:\c#\qlksss\qlksss\bin\Debug\net6.0-windows\runtimes\win\lib\net6.0\System.Management.dll
