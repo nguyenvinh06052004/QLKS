@@ -1,17 +1,17 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <root>
-  <!-- 
-    Microsoft ResX Schema 
-    
+  <!--
+    Microsoft ResX Schema
+
     Version 2.0
-    
-    The primary goals of this format is to allow a simple XML format 
-    that is mostly human readable. The generation and parsing of the 
-    various data types are done through the TypeConverter classes 
+
+    The primary goals of this format is to allow a simple XML format
+    that is mostly human readable. The generation and parsing of the
+    various data types are done through the TypeConverter classes
     associated with the data types.
-    
+
     Example:
-    
+
     ... ado.net/XML headers & schema ...
     <resheader name="resmimetype">text/microsoft-resx</resheader>
     <resheader name="version">2.0</resheader>
@@ -26,36 +26,36 @@
         <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
         <comment>This is a comment</comment>
     </data>
-                
-    There are any number of "resheader" rows that contain simple 
+
+    There are any number of "resheader" rows that contain simple
     name/value pairs.
-    
-    Each data row contains a name, and value. The row also contains a 
-    type or mimetype. Type corresponds to a .NET class that support 
-    text/value conversion through the TypeConverter architecture. 
-    Classes that don't support this are serialized and stored with the 
+
+    Each data row contains a name, and value. The row also contains a
+    type or mimetype. Type corresponds to a .NET class that support
+    text/value conversion through the TypeConverter architecture.
+    Classes that don't support this are serialized and stored with the
     mimetype set.
-    
-    The mimetype is used for serialized objects, and tells the 
-    ResXResourceReader how to depersist the object. This is currently not 
+
+    The mimetype is used for serialized objects, and tells the
+    ResXResourceReader how to depersist the object. This is currently not
     extensible. For a given mimetype the value must be set accordingly:
-    
-    Note - application/x-microsoft.net.object.binary.base64 is the format 
-    that the ResXResourceWriter will generate, however the reader can 
+
+    Note - application/x-microsoft.net.object.binary.base64 is the format
+    that the ResXResourceWriter will generate, however the reader can
     read any of the formats listed below.
-    
+
     mimetype: application/x-microsoft.net.object.binary.base64
-    value   : The object must be serialized with 
+    value   : The object must be serialized with
             : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
             : and then encoded with base64 encoding.
-    
+
     mimetype: application/x-microsoft.net.object.soap.base64
-    value   : The object must be serialized with 
+    value   : The object must be serialized with
             : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
             : and then encoded with base64 encoding.
 
     mimetype: application/x-microsoft.net.object.bytearray.base64
-    value   : The object must be serialized into a byte array 
+    value   : The object must be serialized into a byte array
             : using a System.ComponentModel.TypeConverter
             : and then encoded with base64 encoding.
     -->
@@ -117,23 +117,28 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
-  <data name="add_target" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\add_target.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
+  <data name="txtUsername.IconLeft" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAABkAAAAZCAYAAADE6YVjAAAABGdBTUEAALGPC/xhBQAAAXJJREFUSEvN
+        lUsrRVEYhp+JEQaiKH4CmRmRzJD8BgOXnHKZmoqZTFzK5Q9gLANKmcglpiiRywRh7tpXH+0+39l7rXPO
+        wFNvu/Z633fts/Y6a0M25cAYsAPcAs963QZGdLwoeoB74CtFd0C3DYaSAz6cUk/iG7YFWXQA705Zmt6A
+        dluUjzLg3CkJ0ZnmM+l1wjGS95jJqhOM0bIt9NhzgjHatYUeJ04wRse20GPLCcZo0xZ6TDvBGE3aQo9m
+        4FP/YJ1AVYC61C+5JluYjw19Ktn3tXbQUAdcqH/NDqYhQTmTJHgJtFqD0gZcqe8m4IH+ID/7OrHWsusW
+        gAlgEThNjMlEjbYglBpgJeUck/tLQLUNFkIDMATMA+vAHDAI1Fvjv0O25ShwoOvfYg2KvIcpYF+/kpIL
+        Qpbl1Vn/Bz2X5LMr10fH8wL020LLrBMsRDO2+IcBx1yM+uwElcCTYyxGspwVyUnGHVMpJJvhlyPHUAod
+        Svk3Los2T7CVWvQAAAAASUVORK5CYII=
+</value>
   </data>
-  <data name="exit" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\exit.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="23_11" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\23_11.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="báocaos" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\báocaos.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="home" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\home.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="Luxury Hotel India GIF by Suryagarh Collection" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Luxury Hotel India GIF by Suryagarh Collection.gif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="txtPassword.IconLeft" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAABkAAAAZCAYAAADE6YVjAAAABGdBTUEAALGPC/xhBQAAAVZJREFUSEvd
+        ls0qRXEUxX++HsCVkY8xNx6AQhRvYaLc8gyEmUzlCZAZb8CAmSIpQ8mECUpGvrVrnzot+1znYyK/Wp3u
+        f629173de7oH8jEM7AB3wCNwC2wBQxosywLwBnwBr15iV3v9AszqQFFmgA8vWQY6/bwGrPr5OzAlc4U4
+        9Xc8p4Yz7/6JGnnp8wVXQIuajp1fe65XzTyM+/CeGsK+58bUyMO0D++qIZhvOcsX5n+U1IG11C+n0UTm
+        W87yg7oooh3YBD59sKhsbsP3ZLISDJbRki5O6ACeg4Eyesr6NHYzabiKerTA6A+CqgNgETgMPJXt+8Fv
+        JWdAq2fbgPMgU7nE/k/SJPdHlkqV3AMDnrXrQ5CpXGJa96xd1VP97ZJtz9r3o54qLOkOgpFugrNIXVqQ
+        cBmEy+hCF6eZ9AcHHSoim5/QxcoocOyPO7qgmSx/BIzowm8wQTSJSCK64gAAAABJRU5ErkJggg==
+</value>
   </data>
 </root>

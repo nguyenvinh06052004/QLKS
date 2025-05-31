@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             panel1 = new Panel();
+            btnReturn = new Button();
             BtnTimKiem = new Button();
             BtnLuu = new Button();
             BtnBo = new Button();
@@ -56,6 +57,7 @@
             // panel1
             // 
             panel1.BackColor = Color.Linen;
+            panel1.Controls.Add(btnReturn);
             panel1.Controls.Add(BtnTimKiem);
             panel1.Controls.Add(BtnLuu);
             panel1.Controls.Add(BtnBo);
@@ -69,12 +71,25 @@
             panel1.TabIndex = 2;
             panel1.Paint += panel1_Paint;
             // 
+            // btnReturn
+            // 
+            btnReturn.Anchor = AnchorStyles.Bottom;
+            btnReturn.BackColor = Color.SteelBlue;
+            btnReturn.ForeColor = SystemColors.ControlLightLight;
+            btnReturn.Location = new Point(802, 41);
+            btnReturn.Name = "btnReturn";
+            btnReturn.Size = new Size(94, 29);
+            btnReturn.TabIndex = 6;
+            btnReturn.Text = "Quay Lại";
+            btnReturn.UseVisualStyleBackColor = false;
+            btnReturn.Click += btnReturn_Click;
+            // 
             // BtnTimKiem
             // 
             BtnTimKiem.Anchor = AnchorStyles.Bottom;
             BtnTimKiem.BackColor = Color.SteelBlue;
             BtnTimKiem.ForeColor = SystemColors.ControlLightLight;
-            BtnTimKiem.Location = new Point(764, 41);
+            BtnTimKiem.Location = new Point(685, 41);
             BtnTimKiem.Name = "BtnTimKiem";
             BtnTimKiem.Size = new Size(94, 29);
             BtnTimKiem.TabIndex = 5;
@@ -87,7 +102,7 @@
             BtnLuu.Anchor = AnchorStyles.Bottom;
             BtnLuu.BackColor = Color.SteelBlue;
             BtnLuu.ForeColor = SystemColors.ControlLightLight;
-            BtnLuu.Location = new Point(630, 41);
+            BtnLuu.Location = new Point(551, 41);
             BtnLuu.Name = "BtnLuu";
             BtnLuu.Size = new Size(94, 29);
             BtnLuu.TabIndex = 4;
@@ -100,7 +115,7 @@
             BtnBo.Anchor = AnchorStyles.Bottom;
             BtnBo.BackColor = Color.SteelBlue;
             BtnBo.ForeColor = SystemColors.ControlLightLight;
-            BtnBo.Location = new Point(496, 41);
+            BtnBo.Location = new Point(417, 41);
             BtnBo.Name = "BtnBo";
             BtnBo.Size = new Size(94, 29);
             BtnBo.TabIndex = 3;
@@ -113,7 +128,7 @@
             BtnXoa.Anchor = AnchorStyles.Bottom;
             BtnXoa.BackColor = Color.SteelBlue;
             BtnXoa.ForeColor = SystemColors.ControlLightLight;
-            BtnXoa.Location = new Point(228, 41);
+            BtnXoa.Location = new Point(149, 41);
             BtnXoa.Name = "BtnXoa";
             BtnXoa.Size = new Size(94, 29);
             BtnXoa.TabIndex = 1;
@@ -126,7 +141,7 @@
             BtnSua.Anchor = AnchorStyles.Bottom;
             BtnSua.BackColor = Color.SteelBlue;
             BtnSua.ForeColor = SystemColors.ControlLightLight;
-            BtnSua.Location = new Point(362, 41);
+            BtnSua.Location = new Point(283, 41);
             BtnSua.Name = "BtnSua";
             BtnSua.Size = new Size(94, 29);
             BtnSua.TabIndex = 2;
@@ -140,7 +155,7 @@
             BtnThem.BackColor = Color.SteelBlue;
             BtnThem.ForeColor = SystemColors.ControlLightLight;
             BtnThem.ImageAlign = ContentAlignment.MiddleLeft;
-            BtnThem.Location = new Point(94, 41);
+            BtnThem.Location = new Point(15, 41);
             BtnThem.Name = "BtnThem";
             BtnThem.Size = new Size(94, 29);
             BtnThem.TabIndex = 0;
@@ -310,6 +325,7 @@
             Controls.Add(panel1);
             Name = "frmDMNhanVien";
             Text = "Danh mục nhân viên";
+            FormClosing += frmDMNhanVien_FormClosing;
             Load += frmDMNhanVien_Load;
             panel1.ResumeLayout(false);
             panel2.ResumeLayout(false);
@@ -340,5 +356,6 @@
         private Label label2;
         private Label label4;
         private DataGridView dgvNhanVien;
+        private Button btnReturn;
     }
 }

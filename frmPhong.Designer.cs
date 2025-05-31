@@ -46,6 +46,8 @@
             BtnSua = new Button();
             BtnThem = new Button();
             panel1 = new Panel();
+
+            BtnQuayLai = new Button();
             contextMenuStrip1 = new ContextMenuStrip(components);
             panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)dgvP).BeginInit();
@@ -137,7 +139,11 @@
             // 
             label1.Anchor = AnchorStyles.Top;
             label1.AutoSize = true;
+<<<<<<< HEAD
             label1.Location = new Point(442, 9);
+=======
+            label1.Location = new Point(451, 9);
+>>>>>>> 7064f85f2fc30531b9f4e2f2f1c32b93d96784fe
             label1.Name = "label1";
             label1.Size = new Size(147, 20);
             label1.TabIndex = 0;
@@ -151,11 +157,19 @@
             dgvP.BackgroundColor = SystemColors.GradientInactiveCaption;
             dgvP.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             dgvP.Dock = DockStyle.Fill;
+<<<<<<< HEAD
             dgvP.Location = new Point(0, 0);
             dgvP.Name = "dgvP";
             dgvP.RowHeadersWidth = 51;
             dgvP.RowTemplate.Height = 29;
             dgvP.Size = new Size(1072, 325);
+=======
+            dgvP.Location = new Point(0, 95);
+            dgvP.Name = "dgvP";
+            dgvP.RowHeadersWidth = 51;
+            dgvP.RowTemplate.Height = 29;
+            dgvP.Size = new Size(1072, 230);
+>>>>>>> 7064f85f2fc30531b9f4e2f2f1c32b93d96784fe
             dgvP.TabIndex = 10;
             dgvP.CellContentClick += dgvP_CellContentClick;
             dgvP.SelectionChanged += dgvP_SelectionChanged;
@@ -166,7 +180,9 @@
             btnHienThi.BackColor = Color.SteelBlue;
             btnHienThi.ForeColor = SystemColors.ControlLightLight;
             btnHienThi.ImageAlign = ContentAlignment.MiddleLeft;
+
             btnHienThi.Location = new Point(132, 45);
+
             btnHienThi.Name = "btnHienThi";
             btnHienThi.Size = new Size(94, 29);
             btnHienThi.TabIndex = 6;
@@ -179,7 +195,8 @@
             BtnTimKiem.Anchor = AnchorStyles.Bottom;
             BtnTimKiem.BackColor = Color.SteelBlue;
             BtnTimKiem.ForeColor = SystemColors.ControlLightLight;
-            BtnTimKiem.Location = new Point(800, 45);
+
+            BtnTimKiem.Location = new Point(781, 45);
             BtnTimKiem.Name = "BtnTimKiem";
             BtnTimKiem.Size = new Size(94, 29);
             BtnTimKiem.TabIndex = 5;
@@ -192,7 +209,8 @@
             BtnLuu.Anchor = AnchorStyles.Bottom;
             BtnLuu.BackColor = Color.SteelBlue;
             BtnLuu.ForeColor = SystemColors.ControlLightLight;
-            BtnLuu.Location = new Point(690, 45);
+
+            BtnLuu.Location = new Point(671, 45);
             BtnLuu.Name = "BtnLuu";
             BtnLuu.Size = new Size(94, 29);
             BtnLuu.TabIndex = 4;
@@ -205,7 +223,7 @@
             BtnBo.Anchor = AnchorStyles.Bottom;
             BtnBo.BackColor = Color.SteelBlue;
             BtnBo.ForeColor = SystemColors.ControlLightLight;
-            BtnBo.Location = new Point(580, 45);
+            BtnBo.Location = new Point(561, 45);
             BtnBo.Name = "BtnBo";
             BtnBo.Size = new Size(94, 29);
             BtnBo.TabIndex = 3;
@@ -218,7 +236,7 @@
             BtnXoa.Anchor = AnchorStyles.Bottom;
             BtnXoa.BackColor = Color.SteelBlue;
             BtnXoa.ForeColor = SystemColors.ControlLightLight;
-            BtnXoa.Location = new Point(360, 45);
+            BtnXoa.Location = new Point(341, 45);
             BtnXoa.Name = "BtnXoa";
             BtnXoa.Size = new Size(94, 29);
             BtnXoa.TabIndex = 1;
@@ -231,7 +249,7 @@
             BtnSua.Anchor = AnchorStyles.Bottom;
             BtnSua.BackColor = Color.SteelBlue;
             BtnSua.ForeColor = SystemColors.ControlLightLight;
-            BtnSua.Location = new Point(470, 45);
+            BtnSua.Location = new Point(451, 45);
             BtnSua.Name = "BtnSua";
             BtnSua.Size = new Size(94, 29);
             BtnSua.TabIndex = 2;
@@ -245,7 +263,7 @@
             BtnThem.BackColor = Color.SteelBlue;
             BtnThem.ForeColor = SystemColors.ControlLightLight;
             BtnThem.ImageAlign = ContentAlignment.MiddleLeft;
-            BtnThem.Location = new Point(250, 45);
+            BtnThem.Location = new Point(231, 45);
             BtnThem.Name = "BtnThem";
             BtnThem.Size = new Size(94, 29);
             BtnThem.TabIndex = 0;
@@ -256,6 +274,7 @@
             // panel1
             // 
             panel1.BackColor = Color.Linen;
+            panel1.Controls.Add(BtnQuayLai);
             panel1.Controls.Add(btnHienThi);
             panel1.Controls.Add(BtnTimKiem);
             panel1.Controls.Add(BtnLuu);
@@ -270,6 +289,19 @@
             panel1.TabIndex = 11;
             panel1.Paint += panel1_Paint;
             // 
+            // BtnQuayLai
+            // 
+            BtnQuayLai.Anchor = AnchorStyles.Bottom;
+            BtnQuayLai.BackColor = Color.SteelBlue;
+            BtnQuayLai.ForeColor = SystemColors.ControlLightLight;
+            BtnQuayLai.Location = new Point(895, 45);
+            BtnQuayLai.Name = "BtnQuayLai";
+            BtnQuayLai.Size = new Size(94, 29);
+            BtnQuayLai.TabIndex = 7;
+            BtnQuayLai.Text = "Quay Lại";
+            BtnQuayLai.UseVisualStyleBackColor = false;
+            BtnQuayLai.Click += BtnQuayLai_Click;
+            // 
             // contextMenuStrip1
             // 
             contextMenuStrip1.ImageScalingSize = new Size(20, 20);
@@ -281,12 +313,13 @@
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(1072, 450);
-            Controls.Add(dgvP);    // thêm trước để nó nằm dưới cùng
-            Controls.Add(panel2);  // nằm trên (top)
-            Controls.Add(panel1);  // nằm dưới (bottom)
 
+            Controls.Add(dgvP);
+            Controls.Add(panel2);
+            Controls.Add(panel1);
             Name = "frmPhong";
             Text = "frmPhong";
+            FormClosing += frmPhong_FormClosing;
             Load += frmPhong_Load;
             panel2.ResumeLayout(false);
             panel2.PerformLayout();
@@ -314,5 +347,6 @@
         private ComboBox cboMaLP;
         private TextBox txtMaPhong;
         private ContextMenuStrip contextMenuStrip1;
+        private Button BtnQuayLai;
     }
 }

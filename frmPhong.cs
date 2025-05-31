@@ -330,6 +330,7 @@ namespace qlksss
         private void btnHienThi_Click(object sender, EventArgs e)
         {
 
+            LoadDataGridView();
         }
         bool isDeleteClicked = false;
         private void BtnXoa_Click(object sender, EventArgs e)
@@ -381,7 +382,6 @@ namespace qlksss
                     BtnXoa.BackColor = Color.SteelBlue;
                     BtnXoa.ForeColor = Color.White;
                 }
-
             }
         }
 
@@ -526,6 +526,18 @@ namespace qlksss
         private void panel1_Paint(object sender, PaintEventArgs e)
         {
 
+        }
+
+        private void BtnQuayLai_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            frmMain frmMain = new frmMain();
+            frmMain.ShowDialog();
+        }
+
+        private void frmPhong_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            Application.Exit(); // Đóng ứng dụng khi form Phong đóng
         }
     }
 
