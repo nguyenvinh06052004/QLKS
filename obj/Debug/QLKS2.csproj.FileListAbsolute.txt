@@ -62,5 +62,6 @@ F:\C#\QLKS2\bin\Debug\pt\Microsoft.ReportViewer.WinForms.resources.dll
 F:\C#\QLKS2\bin\Debug\ru\Microsoft.ReportViewer.WinForms.resources.dll
 F:\C#\QLKS2\bin\Debug\zh-CHS\Microsoft.ReportViewer.WinForms.resources.dll
 F:\C#\QLKS2\bin\Debug\zh-CHT\Microsoft.ReportViewer.WinForms.resources.dll
-F:\C#\QLKS2\obj\Debug\QLKS2.frmLogin.resources
 F:\C#\QLKS2\obj\Debug\QLKS2.csproj.Up2Date
+F:\C#\QLKS2\obj\Debug\qlksss.frmLogin.resources
+F:\C#\QLKS2\obj\Debug\QLKS2.frmRegister.resources
