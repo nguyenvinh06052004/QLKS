@@ -38,7 +38,6 @@
             lable = new Label();
             label1 = new Label();
             dgvP = new DataGridView();
-            btnHienThi = new Button();
             BtnTimKiem = new Button();
             BtnLuu = new Button();
             BtnBo = new Button();
@@ -46,7 +45,6 @@
             BtnSua = new Button();
             BtnThem = new Button();
             panel1 = new Panel();
-
             BtnQuayLai = new Button();
             contextMenuStrip1 = new ContextMenuStrip(components);
             panel2.SuspendLayout();
@@ -139,7 +137,6 @@
             // 
             label1.Anchor = AnchorStyles.Top;
             label1.AutoSize = true;
-
             label1.Location = new Point(451, 9);
             label1.Name = "label1";
             label1.Size = new Size(147, 20);
@@ -154,7 +151,6 @@
             dgvP.BackgroundColor = SystemColors.GradientInactiveCaption;
             dgvP.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             dgvP.Dock = DockStyle.Fill;
-
             dgvP.Location = new Point(0, 95);
             dgvP.Name = "dgvP";
             dgvP.RowHeadersWidth = 51;
@@ -164,29 +160,12 @@
             dgvP.CellContentClick += dgvP_CellContentClick;
             dgvP.SelectionChanged += dgvP_SelectionChanged;
             // 
-            // btnHienThi
-            // 
-            btnHienThi.Anchor = AnchorStyles.Bottom;
-            btnHienThi.BackColor = Color.SteelBlue;
-            btnHienThi.ForeColor = SystemColors.ControlLightLight;
-            btnHienThi.ImageAlign = ContentAlignment.MiddleLeft;
-
-            btnHienThi.Location = new Point(132, 45);
-
-            btnHienThi.Name = "btnHienThi";
-            btnHienThi.Size = new Size(94, 29);
-            btnHienThi.TabIndex = 6;
-            btnHienThi.Text = "Hiển Thị DS";
-            btnHienThi.UseVisualStyleBackColor = false;
-            btnHienThi.Click += btnHienThi_Click;
-            // 
             // BtnTimKiem
             // 
             BtnTimKiem.Anchor = AnchorStyles.Bottom;
             BtnTimKiem.BackColor = Color.SteelBlue;
             BtnTimKiem.ForeColor = SystemColors.ControlLightLight;
-
-            BtnTimKiem.Location = new Point(781, 45);
+            BtnTimKiem.Location = new Point(684, 42);
             BtnTimKiem.Name = "BtnTimKiem";
             BtnTimKiem.Size = new Size(94, 29);
             BtnTimKiem.TabIndex = 5;
@@ -199,8 +178,7 @@
             BtnLuu.Anchor = AnchorStyles.Bottom;
             BtnLuu.BackColor = Color.SteelBlue;
             BtnLuu.ForeColor = SystemColors.ControlLightLight;
-
-            BtnLuu.Location = new Point(671, 45);
+            BtnLuu.Location = new Point(574, 42);
             BtnLuu.Name = "BtnLuu";
             BtnLuu.Size = new Size(94, 29);
             BtnLuu.TabIndex = 4;
@@ -213,7 +191,7 @@
             BtnBo.Anchor = AnchorStyles.Bottom;
             BtnBo.BackColor = Color.SteelBlue;
             BtnBo.ForeColor = SystemColors.ControlLightLight;
-            BtnBo.Location = new Point(561, 45);
+            BtnBo.Location = new Point(464, 42);
             BtnBo.Name = "BtnBo";
             BtnBo.Size = new Size(94, 29);
             BtnBo.TabIndex = 3;
@@ -226,7 +204,7 @@
             BtnXoa.Anchor = AnchorStyles.Bottom;
             BtnXoa.BackColor = Color.SteelBlue;
             BtnXoa.ForeColor = SystemColors.ControlLightLight;
-            BtnXoa.Location = new Point(341, 45);
+            BtnXoa.Location = new Point(244, 42);
             BtnXoa.Name = "BtnXoa";
             BtnXoa.Size = new Size(94, 29);
             BtnXoa.TabIndex = 1;
@@ -239,7 +217,7 @@
             BtnSua.Anchor = AnchorStyles.Bottom;
             BtnSua.BackColor = Color.SteelBlue;
             BtnSua.ForeColor = SystemColors.ControlLightLight;
-            BtnSua.Location = new Point(451, 45);
+            BtnSua.Location = new Point(354, 42);
             BtnSua.Name = "BtnSua";
             BtnSua.Size = new Size(94, 29);
             BtnSua.TabIndex = 2;
@@ -253,7 +231,7 @@
             BtnThem.BackColor = Color.SteelBlue;
             BtnThem.ForeColor = SystemColors.ControlLightLight;
             BtnThem.ImageAlign = ContentAlignment.MiddleLeft;
-            BtnThem.Location = new Point(231, 45);
+            BtnThem.Location = new Point(134, 42);
             BtnThem.Name = "BtnThem";
             BtnThem.Size = new Size(94, 29);
             BtnThem.TabIndex = 0;
@@ -265,7 +243,6 @@
             // 
             panel1.BackColor = Color.Linen;
             panel1.Controls.Add(BtnQuayLai);
-            panel1.Controls.Add(btnHienThi);
             panel1.Controls.Add(BtnTimKiem);
             panel1.Controls.Add(BtnLuu);
             panel1.Controls.Add(BtnBo);
@@ -284,7 +261,7 @@
             BtnQuayLai.Anchor = AnchorStyles.Bottom;
             BtnQuayLai.BackColor = Color.SteelBlue;
             BtnQuayLai.ForeColor = SystemColors.ControlLightLight;
-            BtnQuayLai.Location = new Point(895, 45);
+            BtnQuayLai.Location = new Point(798, 42);
             BtnQuayLai.Name = "BtnQuayLai";
             BtnQuayLai.Size = new Size(94, 29);
             BtnQuayLai.TabIndex = 7;
@@ -303,7 +280,6 @@
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(1072, 450);
-
             Controls.Add(dgvP);
             Controls.Add(panel2);
             Controls.Add(panel1);
@@ -326,7 +302,6 @@
         private Label lable;
         private Label label1;
         private DataGridView dgvP;
-        private Button btnHienThi;
         private Button BtnTimKiem;
         private Button BtnLuu;
         private Button BtnBo;

@@ -63,6 +63,8 @@ namespace qlksss
         private void frmDMNhanVien_Load(object sender, EventArgs e)
         {
             LoadDataGridView();
+            cboNVTT.Visible = false; // Ẩn ComboBox nhân viên thay thế ban đầu
+            cboNVTT.Enabled = false; // Đặt ComboBox nhân viên thay thế ở chế độ không cho phép chọn
         }
 
 
@@ -205,6 +207,8 @@ namespace qlksss
                     MessageBox.Show("Bạn phải nhập mã nhân viên", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                     txtMaNhanVien.Focus();
                     BtnLuu.Enabled = true;
+                    BtnLuu.BackColor = Color.SteelBlue;
+                    BtnLuu.ForeColor = Color.White;
                     return;
                 }
                 if (txtTenNhanVien.Text.Trim().Length == 0)
@@ -222,6 +226,8 @@ namespace qlksss
                     MessageBox.Show("Bạn phải nhập chức vụ", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                     txtChucVu.Focus();
                     BtnLuu.Enabled = true;
+                    BtnLuu.BackColor = Color.SteelBlue;
+                    BtnLuu.ForeColor = Color.White;
                     return;
                 }
                 if (txtSDT.Text.Trim().Length == 0)
@@ -246,14 +252,14 @@ namespace qlksss
 
                 if (isAddingNew == true)
                 {
-                   // sql = "SELECT Ma_NV FROM Nhan_vien WHERE Ma_NV = '" + txtMaNhanVien.Text.Trim() + "'";
-                   var thamso = new Dictionary<string, object>
+                    // sql = "SELECT Ma_NV FROM Nhan_vien WHERE Ma_NV = '" + txtMaNhanVien.Text.Trim() + "'";
+                    var thamso = new Dictionary<string, object>
                     {
                         { "@MaNV", txtMaNhanVien.Text.Trim() }
                     };
                     object rs = Class.Function.GoiHamTraVeGiaTri("SELECT dbo.CHECKNV(@MANV)", thamso);
-                   // while (Class.Function.CheckKey(sql))
-                   while (rs != null && rs.ToString() == "1") // Kiểm tra nếu mã nhân viên đã tồn tại
+                    // while (Class.Function.CheckKey(sql))
+                    while (rs != null && rs.ToString() == "1") // Kiểm tra nếu mã nhân viên đã tồn tại
                     {
                         MessageBox.Show("Mã nhân viên đã tồn tại, bạn phải nhập mã khác", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                         txtMaNhanVien.Focus();
@@ -298,7 +304,7 @@ namespace qlksss
                         { "@SDT", txtSDT.Text.Trim() },
                         { "@DC", txtDiaChi.Text.Trim() }
                    };
-                   Function.ThuTucKhongTraDL("UPDATENV", thamso);
+                    Function.ThuTucKhongTraDL("UPDATENV", thamso);
                     manv_td = txtMaNhanVien.Text.Trim(); // Lưu mã nhân viên tạm thời
                     LoadDataGridView();
 
@@ -514,21 +520,43 @@ namespace qlksss
                 }
                 else
                 {
-                    string sql;
+                    cboNVTT.Visible=true; // Hiển thị ComboBox nhân viên thay thế
+                    cboNVTT.Enabled = true;
+                    lblNVTT.Visible = true; // Đặt biến lblNVTT thành true để hiển thị label "Nhân viên thay thế"
+                    //chon nhân viên thay thế
+                    string manv = txtMaNhanVien.Text.Trim();
+                    MessageBox.Show("Bạn hãy chọn nhân viên làm thay công việc cho nhân viên bạn muốn xóa có mã sau: " + manv, "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+                    var thamso = new Dictionary<string, object>
+                    {
+                        { "@MANV", manv }
+                    };
+                    var dt = Function.ThuTucTraDL("THAYNV", thamso);
+                    if (dt == null)
+                    {
+                        MessageBox.Show("Không lấy được danh sách nhân viên để thay thế", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+
+                        return;
+                    }
+                    cboNVTT.DataSource = dt;
+                    cboNVTT.DisplayMember = "Ma_NV"; // Hiển thị tên nhân viên
+                    cboNVTT.ValueMember = "Ma_NV"; // Giá trị của nhân viên
+                    cboNVTT.Focus();
+                    cboNVTT.Text.Trim();
+                    //MessageBox.Show("Bạn đã chọn nhân viên có mã " + cboNVTT.Text.Trim() + " để làm thay công việc cho nhân viên có mã " + manv, "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    btnXacNhanXoa.Visible = true;
+                    //string sql;
                     //sql = "DELETE FROM Nhan_vien WHERE Ma_NV = '" + txtMaNhanVien.Text.Trim() + "'";
                     //Class.Function.RunSQL(sql);
-                    var thamso = new Dictionary<string, object>
-                   {
-                        { "@MANV", txtMaNhanVien.Text.Trim() }
-                   };
-                    Function.ThuTucKhongTraDL("XOANV", thamso);
-                    LoadDataGridView();
-                    Reset();
-                    MessageBox.Show("Đã xóa thành công ", "THÔNG BÁO", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                    isDeleteClicked = false;
-                    BtnXoa.Enabled = true;
-                    BtnXoa.BackColor = Color.SteelBlue;
-                    BtnXoa.ForeColor = Color.White;
+
+                    //Function.ThuTucKhongTraDL("XOANV", thamso);
+                    //LoadDataGridView();
+                    //Reset();
+                    //MessageBox.Show("Đã xóa thành công ", "THÔNG BÁO", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    //isDeleteClicked = false;
+                    //BtnXoa.Enabled = true;
+                    //BtnXoa.BackColor = Color.SteelBlue;
+                    //BtnXoa.ForeColor = Color.White;
                 }
 
             }
@@ -668,17 +696,60 @@ namespace qlksss
 
             this.Hide();
             frmMain m = new frmMain();
-           // m.Show();
+            // m.Show();
             m.ShowDialog();
             this.Close(); // Đóng form hiện tại sau khi mở frmMain
         }
 
         private void frmDMNhanVien_FormClosing(object sender, FormClosingEventArgs e)
         {
-          //  Application.Exit(); // Đóng ứng dụng khi form này đóng
-          //this.Close();
-          //  frmMain frmMain = new frmMain();
-          //  frmMain.Show();
+            //  Application.Exit(); // Đóng ứng dụng khi form này đóng
+            //this.Close();
+            //  frmMain frmMain = new frmMain();
+            //  frmMain.Show();
+        }
+
+        private void btnXacNhanXoa_Click(object sender, EventArgs e)
+        {
+            btnXacNhanXoa.BackColor = Color.Gold;
+            btnXacNhanXoa.ForeColor = Color.Red;
+            string manv = txtMaNhanVien.Text.Trim();
+
+            if (cboNVTT.SelectedIndex == -1)
+            {
+                MessageBox.Show("Vui lòng chọn nhân viên thay thế trước khi xóa!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+
+            string manvThayThe = cboNVTT.SelectedValue.ToString();
+
+            MessageBox.Show("Bạn đã chọn nhân viên có mã " + manvThayThe + " để làm thay công việc cho nhân viên có mã " + manv, "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            //goi thu tuc insert thong tin nv xoa va thay the vao table
+            Function.ThuTucKhongTraDL("THEMTT", new Dictionary<string, object>
+            {
+                { "@MANVXOA", manv },
+                { "@MANVTT", manvThayThe }
+            });
+
+            var thamso = new Dictionary<string, object>
+                    {
+                        { "@MANV", manv }
+                    };
+            Function.ThuTucKhongTraDL("XOANV", thamso);
+            LoadDataGridView();
+            Reset();
+            MessageBox.Show("Đã xóa thành công ", "THÔNG BÁO", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            isDeleteClicked = false;
+            BtnXoa.Enabled = true;
+            BtnXoa.BackColor = Color.SteelBlue;
+            BtnXoa.ForeColor = Color.White;
+            cboNVTT.Enabled = false; // Đặt ComboBox nhân viên thay thế ở chế độ không cho phép chọn
+            btnXacNhanXoa.BackColor= Color.SteelBlue;
+            btnXacNhanXoa.ForeColor = Color.White;
+            btnXacNhanXoa.Visible = false; // Ẩn nút xác nhận xóa sau khi xóa thành công
+            cboNVTT.Visible=false; // Ẩn ComboBox nhân viên thay thế sau khi xóa thành công
+            lblNVTT.Visible = false; // Ẩn nhãn nhân viên thay thế sau khi xóa thành công
+           
         }
     }
 }

@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             panel1 = new Panel();
+            btnXacNhanXoa = new Button();
             btnReturn = new Button();
             BtnTimKiem = new Button();
             BtnLuu = new Button();
@@ -37,6 +38,8 @@
             BtnSua = new Button();
             BtnThem = new Button();
             panel2 = new Panel();
+            lblNVTT = new Label();
+            cboNVTT = new ComboBox();
             txtDiaChi = new TextBox();
             label6 = new Label();
             txtSDT = new TextBox();
@@ -57,6 +60,7 @@
             // panel1
             // 
             panel1.BackColor = Color.Linen;
+            panel1.Controls.Add(btnXacNhanXoa);
             panel1.Controls.Add(btnReturn);
             panel1.Controls.Add(BtnTimKiem);
             panel1.Controls.Add(BtnLuu);
@@ -70,6 +74,19 @@
             panel1.Size = new Size(945, 125);
             panel1.TabIndex = 2;
             panel1.Paint += panel1_Paint;
+            // 
+            // btnXacNhanXoa
+            // 
+            btnXacNhanXoa.BackColor = Color.SteelBlue;
+            btnXacNhanXoa.ForeColor = SystemColors.ControlLightLight;
+            btnXacNhanXoa.Location = new Point(407, 76);
+            btnXacNhanXoa.Name = "btnXacNhanXoa";
+            btnXacNhanXoa.Size = new Size(129, 29);
+            btnXacNhanXoa.TabIndex = 7;
+            btnXacNhanXoa.Text = "Xác nhận xóa";
+            btnXacNhanXoa.UseVisualStyleBackColor = false;
+            btnXacNhanXoa.Visible = false;
+            btnXacNhanXoa.Click += btnXacNhanXoa_Click;
             // 
             // btnReturn
             // 
@@ -167,6 +184,8 @@
             // 
             panel2.AutoSizeMode = AutoSizeMode.GrowAndShrink;
             panel2.BackColor = Color.Linen;
+            panel2.Controls.Add(lblNVTT);
+            panel2.Controls.Add(cboNVTT);
             panel2.Controls.Add(txtDiaChi);
             panel2.Controls.Add(label6);
             panel2.Controls.Add(txtSDT);
@@ -184,6 +203,24 @@
             panel2.Size = new Size(945, 125);
             panel2.TabIndex = 0;
             panel2.Paint += panel2_Paint;
+            // 
+            // lblNVTT
+            // 
+            lblNVTT.AutoSize = true;
+            lblNVTT.Location = new Point(590, 99);
+            lblNVTT.Name = "lblNVTT";
+            lblNVTT.Size = new Size(86, 20);
+            lblNVTT.TabIndex = 11;
+            lblNVTT.Text = "NV thay thế";
+            lblNVTT.Visible = false;
+            // 
+            // cboNVTT
+            // 
+            cboNVTT.FormattingEnabled = true;
+            cboNVTT.Location = new Point(682, 92);
+            cboNVTT.Name = "cboNVTT";
+            cboNVTT.Size = new Size(121, 28);
+            cboNVTT.TabIndex = 10;
             // 
             // txtDiaChi
             // 
@@ -357,5 +394,8 @@
         private Label label4;
         private DataGridView dgvNhanVien;
         private Button btnReturn;
+        private Label lblNVTT;
+        private ComboBox cboNVTT;
+        private Button btnXacNhanXoa;
     }
 }

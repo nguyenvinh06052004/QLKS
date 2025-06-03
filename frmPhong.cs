@@ -92,7 +92,6 @@ namespace qlksss
         {
             string sql;
             sql = "SELECT * FROM Loai_phong";
-            //txtMaPhong.Enabled = false;
             LoadDataGridView();
             Class.Function.FillCombo(sql, cboMaLP, "Ma_loaiphong", "Chat_luong");
             cboMaLP.SelectedIndex = -1;
@@ -106,9 +105,10 @@ namespace qlksss
         }
         private void LoadDataGridView()
         {
-            string sql;
-            sql = "SELECT * FROM Phong";
-            tblP = Class.Function.GetDataToTable(sql);
+            //string sql;
+            //sql = "SELECT * FROM Phong";
+            //tblP = Class.Function.GetDataToTable(sql);
+            tblP = Class.Function.GoiHamTraVeBang("LAYDSP");
             dgvP.DataSource = tblP;
             dgvP.Columns[0].HeaderText = "Mã phòng";
             dgvP.Columns[1].HeaderText = "Trạng thái";
@@ -153,6 +153,7 @@ namespace qlksss
             txtMaPhong.Text = dgvP.CurrentRow.Cells["Ma_phong"].Value.ToString();
             txtTT.Text = dgvP.CurrentRow.Cells["Trang_thai"].Value.ToString();
             MaLP = dgvP.CurrentRow.Cells["Ma_loaiphong"].Value.ToString();
+
             sql = "SELECT Chat_luong FROM Loai_phong  WHERE Ma_loaiphong = N'" + MaLP + "'";
             cboMaLP.Text = Class.Function.GetFieldValues(sql);
 
