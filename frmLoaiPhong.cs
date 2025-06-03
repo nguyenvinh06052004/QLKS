@@ -38,7 +38,7 @@ namespace qlksss
             txtMaLoaiPhong.Text = dgvLoaiPhong.CurrentRow.Cells["Ma_loaiphong"].Value.ToString(); //Lấy giá trị ô hiện tại
             txtSoLuongPhong.Text = dgvLoaiPhong.CurrentRow.Cells["Soluong_phong"].Value.ToString();
             txtChatLuong.Text = dgvLoaiPhong.CurrentRow.Cells["Chat_luong"].Value.ToString();
-            txtDonGia.Text = dgvLoaiPhong.CurrentRow.Cells["Don_gia"].Value.ToString();
+            txtDonGia.Text = dgvLoaiPhong.CurrentRow.Cells["Gia_tien"].Value.ToString();
         }
 
         private void LoadDataGridView()
@@ -350,7 +350,7 @@ namespace qlksss
                         BtnLuu.ForeColor = Color.White;
                         return;
                     }
-                    sql = "INSERT INTO Loai_phong(Ma_loaiphong, Soluong_phong, Chat_luong, Don_gia) VALUES ('" + txtMaLoaiPhong.Text.Trim() + "',N'" + txtSoLuongPhong.Text.Trim() + "','" + txtChatLuong.Text.Trim() + "',N'" + txtDonGia.Text.Trim() + "')";
+                    sql = "INSERT INTO Loai_phong(Ma_loaiphong, Soluong_phong, Chat_luong, Gia_tien) VALUES ('" + txtMaLoaiPhong.Text.Trim() + "',N'" + txtSoLuongPhong.Text.Trim() + "','" + txtChatLuong.Text.Trim() + "',N'" + txtDonGia.Text.Trim() + "')";
                     Class.Function.RunSQL(sql);
                     malp_td = txtMaLoaiPhong.Text.Trim(); // Lưu mã nhân viên tạm thời
                     LoadDataGridView();
@@ -365,7 +365,7 @@ namespace qlksss
                 }
                 if (isChanged == true)
                 {
-                    sql = "UPDATE Loai_phong SET Soluong_phong = N'" + txtSoLuongPhong.Text.Trim() + "', Don_gia = '" + txtDonGia.Text.Trim() + "', Chat_luong = N'" + txtChatLuong.Text.Trim() + "' WHERE Ma_loaiphong = '" + txtMaLoaiPhong.Text.Trim() + "'";
+                    sql = "UPDATE Loai_phong SET Soluong_phong = N'" + txtSoLuongPhong.Text.Trim() + "', Gia_tien = '" + txtDonGia.Text.Trim() + "', Chat_luong = N'" + txtChatLuong.Text.Trim() + "' WHERE Ma_loaiphong = '" + txtMaLoaiPhong.Text.Trim() + "'";
 
                     Class.Function.RunSQL(sql);
                     malp_td = txtMaLoaiPhong.Text.Trim(); // Lưu mã nhân viên tạm thời
@@ -444,9 +444,9 @@ namespace qlksss
                 if (txtDonGia.Text.Trim() != "")
                 {
                     if (where == "WHERE ")
-                        where += " Don_gia = '" + txtDonGia.Text.Trim() + "'";
+                        where += " Gia_tien = '" + txtDonGia.Text.Trim() + "'";
                     else
-                        where += " AND Don_gia = '" + txtDonGia.Text.Trim() + "'";
+                        where += " AND Gia_tien = '" + txtDonGia.Text.Trim() + "'";
                 }
                 if (txtChatLuong.Text.Trim() != "")
                 {

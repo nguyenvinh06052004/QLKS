@@ -95,7 +95,113 @@ namespace qlksss.Class
             reader.Close();
             return ma;
         }
-        
-        
+        public static DataTable ThuTucTraDL(string procedureName, Dictionary<string, object> parameters = null)
+        {
+            Connect();
+            using (SqlCommand cmd = new SqlCommand(procedureName, con))
+            {
+                cmd.CommandType = CommandType.StoredProcedure;
+
+                // Nếu có tham số thì thêm vào
+                if (parameters != null)
+                {
+                    foreach (var param in parameters)
+                    {
+                        cmd.Parameters.AddWithValue(param.Key, param.Value);
+                    }
+                }
+
+                SqlDataAdapter adapter = new SqlDataAdapter(cmd);
+                DataTable dt = new DataTable();
+                adapter.Fill(dt);
+                return dt;
+            }
+        }
+        public static void ThuTucKhongTraDL(string procedureName, Dictionary<string, object> parameters = null)
+        {
+            Connect();
+            using (SqlCommand cmd = new SqlCommand(procedureName, con))
+            {
+                cmd.CommandType = CommandType.StoredProcedure;
+
+                if (parameters != null)
+                {
+                    foreach (var param in parameters)
+                    {
+                        cmd.Parameters.AddWithValue(param.Key, param.Value);
+                    }
+                }
+
+                try
+                {
+                    cmd.ExecuteNonQuery();
+                }
+                catch (SqlException ex)
+                {
+                    MessageBox.Show("Lỗi thực thi thủ tục SQL: " + ex.Message);
+                }
+            }
+        }
+        public static DataTable GoiHamTraVeBang(string query, Dictionary<string, object> parameters = null)
+        {
+            Connect();
+            using (SqlCommand cmd = new SqlCommand(query, con))
+            {
+                cmd.CommandType = CommandType.Text;
+
+                if (parameters != null)
+                {
+                    foreach (var param in parameters)
+                    {
+                        cmd.Parameters.AddWithValue(param.Key, param.Value);
+                    }
+                }
+
+                SqlDataAdapter adapter = new SqlDataAdapter(cmd);
+                DataTable dt = new DataTable();
+                adapter.Fill(dt);
+                return dt;
+            }
+        }
+        public static object GoiHamTraVeGiaTri(string query, Dictionary<string, object> parameters = null)
+        {
+            Connect();
+            using (SqlCommand cmd = new SqlCommand(query, con))
+            {
+                cmd.CommandType = CommandType.Text; // Vì hàm SQL phải gọi bằng SELECT
+
+                if (parameters != null)
+                {
+                    foreach (var param in parameters)
+                    {
+                        cmd.Parameters.AddWithValue(param.Key, param.Value);
+                    }
+                }
+
+                try
+                {
+                    return cmd.ExecuteScalar(); // Trả về 1 giá trị duy nhất
+                }
+                catch (SqlException ex)
+                {
+                    MessageBox.Show("Lỗi gọi hàm SQL: " + ex.Message);
+                    return null;
+                }
+            }
+        }
+
+
+
+
+
+
+
+
+    }
+    public enum ChiTietMode
+    {
+        Them,
+        Sua,
+        Xoa
     }
 }

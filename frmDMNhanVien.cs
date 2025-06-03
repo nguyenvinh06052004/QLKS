@@ -25,8 +25,10 @@ namespace qlksss
         private void LoadDataGridView()//SELECT ́ GIAOVIEN
         {
             string sql;
-            sql = "SELECT * FROM Nhan_vien";
-            tblNV = Class.Function.GetDataToTable(sql); //Lấy dữ liệu từ bảng
+            //sql = "SELECT * FROM Nhan_vien";
+            //tblNV = Class.Function.GetDataToTable(sql); //Lấy dữ liệu từ bảng
+            tblNV = Function.ThuTucTraDL("layDSNV");
+
             dgvNhanVien.DataSource = tblNV; //Gán dữ liệu cho DataGridView
             dgvNhanVien.Columns[0].HeaderText = "Mã nhân viên"; //Tên cột
             dgvNhanVien.Columns[1].HeaderText = "Tên nhân viên"; //Tên cột
@@ -244,8 +246,14 @@ namespace qlksss
 
                 if (isAddingNew == true)
                 {
-                    sql = "SELECT Ma_NV FROM Nhan_vien WHERE Ma_NV = '" + txtMaNhanVien.Text.Trim() + "'";
-                    while (Class.Function.CheckKey(sql))
+                   // sql = "SELECT Ma_NV FROM Nhan_vien WHERE Ma_NV = '" + txtMaNhanVien.Text.Trim() + "'";
+                   var thamso = new Dictionary<string, object>
+                    {
+                        { "@MaNV", txtMaNhanVien.Text.Trim() }
+                    };
+                    object rs = Class.Function.GoiHamTraVeGiaTri("SELECT dbo.CHECKNV(@MANV)", thamso);
+                   // while (Class.Function.CheckKey(sql))
+                   while (rs != null && rs.ToString() == "1") // Kiểm tra nếu mã nhân viên đã tồn tại
                     {
                         MessageBox.Show("Mã nhân viên đã tồn tại, bạn phải nhập mã khác", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                         txtMaNhanVien.Focus();
@@ -255,8 +263,17 @@ namespace qlksss
                         BtnLuu.ForeColor = Color.White;
                         return;
                     }
-                    sql = "INSERT INTO Nhan_vien(Ma_NV, Ten_NV, Chuc_Vu, SDT_NV, DiaChi_NV) VALUES ('" + txtMaNhanVien.Text.Trim() + "',N'" + txtTenNhanVien.Text.Trim() + "',N'" + txtChucVu.Text.Trim() + "','" + txtSDT.Text.Trim() + "',N'" + txtDiaChi.Text.Trim() + "')";
-                    Class.Function.RunSQL(sql);
+                    //sql = "INSERT INTO Nhan_vien(Ma_NV, Ten_NV, Chuc_Vu, SDT_NV, DiaChi_NV) VALUES ('" + txtMaNhanVien.Text.Trim() + "',N'" + txtTenNhanVien.Text.Trim() + "',N'" + txtChucVu.Text.Trim() + "','" + txtSDT.Text.Trim() + "',N'" + txtDiaChi.Text.Trim() + "')";
+                    //Class.Function.RunSQL(sql);
+                    var thamso1 = new Dictionary<string, object>
+                    {
+                        { "@MANV", txtMaNhanVien.Text.Trim() },
+                        { "@TENNV", txtTenNhanVien.Text.Trim() },
+                        { "@CV", txtChucVu.Text.Trim() },
+                        { "@SDT", txtSDT.Text.Trim() },
+                        { "@DC", txtDiaChi.Text.Trim() }
+                    };
+                    Class.Function.ThuTucKhongTraDL("THEMNV", thamso1);
                     manv_td = txtMaNhanVien.Text.Trim(); // Lưu mã nhân viên tạm thời
                     LoadDataGridView();
                     MessageBox.Show("Đã thêm thành công ", "THÔNG BÁO", MessageBoxButtons.OK, MessageBoxIcon.Information);
@@ -270,9 +287,18 @@ namespace qlksss
                 }
                 if (isChanged == true)
                 {
-                    sql = "UPDATE Nhan_vien SET Ten_NV = N'" + txtTenNhanVien.Text.Trim() + "', Chuc_Vu = N'" + txtChucVu.Text.Trim() + "', SDT_NV = '" + txtSDT.Text.Trim() + "', DiaChi_NV = N'" + txtDiaChi.Text.Trim() + "' WHERE Ma_NV = '" + txtMaNhanVien.Text.Trim() + "'";
+                    // sql = "UPDATE Nhan_vien SET Ten_NV = N'" + txtTenNhanVien.Text.Trim() + "', Chuc_Vu = N'" + txtChucVu.Text.Trim() + "', SDT_NV = '" + txtSDT.Text.Trim() + "', DiaChi_NV = N'" + txtDiaChi.Text.Trim() + "' WHERE Ma_NV = '" + txtMaNhanVien.Text.Trim() + "'";
 
-                    Class.Function.RunSQL(sql);
+                    //  Class.Function.RunSQL(sql);
+                    var thamso = new Dictionary<string, object>
+                   {
+                        { "@MANV2", txtMaNhanVien.Text.Trim() },
+                        { "@TENNV", txtTenNhanVien.Text.Trim() },
+                        { "@CV", txtChucVu.Text.Trim() },
+                        { "@SDT", txtSDT.Text.Trim() },
+                        { "@DC", txtDiaChi.Text.Trim() }
+                   };
+                   Function.ThuTucKhongTraDL("UPDATENV", thamso);
                     manv_td = txtMaNhanVien.Text.Trim(); // Lưu mã nhân viên tạm thời
                     LoadDataGridView();
 
@@ -489,8 +515,13 @@ namespace qlksss
                 else
                 {
                     string sql;
-                    sql = "DELETE FROM Nhan_vien WHERE Ma_NV = '" + txtMaNhanVien.Text.Trim() + "'";
-                    Class.Function.RunSQL(sql);
+                    //sql = "DELETE FROM Nhan_vien WHERE Ma_NV = '" + txtMaNhanVien.Text.Trim() + "'";
+                    //Class.Function.RunSQL(sql);
+                    var thamso = new Dictionary<string, object>
+                   {
+                        { "@MANV", txtMaNhanVien.Text.Trim() }
+                   };
+                    Function.ThuTucKhongTraDL("XOANV", thamso);
                     LoadDataGridView();
                     Reset();
                     MessageBox.Show("Đã xóa thành công ", "THÔNG BÁO", MessageBoxButtons.OK, MessageBoxIcon.Information);
@@ -508,10 +539,11 @@ namespace qlksss
             BtnTimKiem.Enabled = false;
             BtnTimKiem.BackColor = Color.Gold;
             BtnTimKiem.ForeColor = Color.Red;
+            //Reset();
             txtMaNhanVien.Focus();
             if (txtMaNhanVien.Text.Trim() != "" || txtTenNhanVien.Text.Trim() != "" || txtSDT.Text.Trim() != "" || txtDiaChi.Text.Trim() != "" || txtChucVu.Text.Trim() != "")
             {
-
+                /*
                 string sql;
                 string where = "WHERE ";
                 string sl = "SELECT * ";
@@ -555,6 +587,16 @@ namespace qlksss
                 sql = sl + " FROM Nhan_vien " + where;
 
                 DataTable dt = Class.Function.GetDataToTable(sql);
+                */
+                var thamso = new Dictionary<string, object>
+                {
+                    { "@MANV", txtMaNhanVien.Text.Trim() },
+                    { "@TENNV", txtTenNhanVien.Text.Trim() },
+                    { "@CV", txtChucVu.Text.Trim() },
+                    { "@SDT", txtSDT.Text.Trim() },
+                    { "@DC", txtDiaChi.Text.Trim() }
+                };
+                DataTable dt = Function.GoiHamTraVeBang("SELECT * FROM dbo.TIMKIEMNV(@MANV, @TENNV, @CV, @SDT,@DC)", thamso);
                 dgvNhanVien.DataSource = dt;
 
                 if (dt.Rows.Count > 0)
@@ -623,14 +665,20 @@ namespace qlksss
 
         private void btnReturn_Click(object sender, EventArgs e)
         {
+
+            this.Hide();
             frmMain m = new frmMain();
-            m.Show();
-            this.Close();
+           // m.Show();
+            m.ShowDialog();
+            this.Close(); // Đóng form hiện tại sau khi mở frmMain
         }
 
         private void frmDMNhanVien_FormClosing(object sender, FormClosingEventArgs e)
         {
-            Application.Exit(); // Đóng ứng dụng khi form này đóng
+          //  Application.Exit(); // Đóng ứng dụng khi form này đóng
+          //this.Close();
+          //  frmMain frmMain = new frmMain();
+          //  frmMain.Show();
         }
     }
 }

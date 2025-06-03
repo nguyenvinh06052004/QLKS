@@ -1,0 +1,766 @@
+[1mdiff --git a/.gitignore b/.gitignore[m
+[1mnew file mode 100644[m
+[1mindex 0000000..903d173[m
+[1m--- /dev/null[m
+[1m+++ b/.gitignore[m
+[36m@@ -0,0 +1,2 @@[m
+[32m+[m[32m.vs/[m
+[32m+[m[32m.vs/[m
+[1mdiff --git a/AccountManager.cs b/AccountManager.cs[m
+[1mnew file mode 100644[m
+[1mindex 0000000..c878775[m
+[1m--- /dev/null[m
+[1m+++ b/AccountManager.cs[m
+[36m@@ -0,0 +1,16 @@[m
+[32m+[m[32m﻿using System;[m
+[32m+[m[32musing System.Collections.Generic;[m
+[32m+[m[32musing System.Linq;[m
+[32m+[m[32musing System.Text;[m
+[32m+[m[32musing System.Threading.Tasks;[m
+[32m+[m
+[32m+[m[32mnamespace qlksss[m
+[32m+[m[32m{[m
+[32m+[m[32m    internal class AccountManager[m
+[32m+[m[32m    {[m
+[32m+[m[32m        public static string RegisteredUsername { get; set; }[m
+[32m+[m[32m        public static string RegisteredPassword { get; set; }[m
+[32m+[m[32m        public static string RegisteredRole { get; set; }[m
+[32m+[m
+[32m+[m[32m    }[m
+[32m+[m[32m}[m
+[1mdiff --git a/Class/Class.cs b/Class/Class.cs[m
+[1mindex ec7fb72..bd76be7 100644[m
+[1m--- a/Class/Class.cs[m
+[1m+++ b/Class/Class.cs[m
+[36m@@ -68,11 +68,12 @@[m [mnamespace qlksss.Class[m
+             {[m
+                 MessageBox.Show("Lỗi thực thi câu lệnh SQL: " + ex.Message);[m
+             }[m
+[31m-           [m
+[32m+[m
+             cmd.Dispose();[m
+[31m-           [m
+[32m+[m
+         }[m
+[31m-        public static void FillCombo( string sql, ComboBox cbo, string ma, string ten )[m
+[32m+[m
+[32m+[m[32m        public static void FillCombo(string sql, ComboBox cbo, string ma, string ten)[m
+         {[m
+             SqlDataAdapter dap = new SqlDataAdapter(sql, con);[m
+             DataTable dt = new DataTable();[m
+[36m@@ -94,5 +95,7 @@[m [mnamespace qlksss.Class[m
+             reader.Close();[m
+             return ma;[m
+         }[m
+[32m+[m[41m        [m
+[32m+[m[41m        [m
+     }[m
+ }[m
+[1mdiff --git a/Program.cs b/Program.cs[m
+[1mindex d47b9e6..5f3ee2e 100644[m
+[1m--- a/Program.cs[m
+[1m+++ b/Program.cs[m
+[36m@@ -11,7 +11,7 @@[m [mnamespace qlksss[m
+             // To customize application configuration such as set high DPI settings or default font,[m
+             // see https://aka.ms/applicationconfiguration.[m
+             ApplicationConfiguration.Initialize();[m
+[31m-            Application.Run(new frmMain());[m
+[32m+[m[32m            Application.Run(new frmLogin());[m
+             //Application.Run(new fr)[m
+         }[m
+     }[m
+[1mdiff --git a/Properties/Resources.Designer.cs b/Properties/Resources.Designer.cs[m
+[1mindex 9ececc8..c908d48 100644[m
+[1m--- a/Properties/Resources.Designer.cs[m
+[1m+++ b/Properties/Resources.Designer.cs[m
+[36m@@ -109,5 +109,15 @@[m [mnamespace qlksss.Properties {[m
+                 return ((System.Drawing.Bitmap)(obj));[m
+             }[m
+         }[m
+[32m+[m[41m        [m
+[32m+[m[32m        /// <summary>[m
+[32m+[m[32m        ///   Looks up a localized resource of type System.Drawing.Bitmap.[m
+[32m+[m[32m        /// </summary>[m
+[32m+[m[32m        internal static System.Drawing.Bitmap Luxury_Hotel_India_GIF_by_Suryagarh_Collection {[m
+[32m+[m[32m            get {[m
+[32m+[m[32m                object obj = ResourceManager.GetObject("Luxury Hotel India GIF by Suryagarh Collection", resourceCulture);[m
+[32m+[m[32m                return ((System.Drawing.Bitmap)(obj));[m
+[32m+[m[32m            }[m
+[32m+[m[32m        }[m
+     }[m
+ }[m
+[1mdiff --git a/Properties/Resources.resx b/Properties/Resources.resx[m
+[1mindex bc79445..1ba8ec8 100644[m
+[1m--- a/Properties/Resources.resx[m
+[1m+++ b/Properties/Resources.resx[m
+[36m@@ -121,16 +121,19 @@[m
+   <data name="add_target" type="System.Resources.ResXFileRef, System.Windows.Forms">[m
+     <value>..\Resources\add_target.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>[m
+   </data>[m
+[31m-  <data name="home" type="System.Resources.ResXFileRef, System.Windows.Forms">[m
+[31m-    <value>..\Resources\home.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>[m
+[31m-  </data>[m
+   <data name="exit" type="System.Resources.ResXFileRef, System.Windows.Forms">[m
+     <value>..\Resources\exit.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>[m
+   </data>[m
+[32m+[m[32m  <data name="23_11" type="System.Resources.ResXFileRef, System.Windows.Forms">[m
+[32m+[m[32m    <value>..\Resources\23_11.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>[m
+[32m+[m[32m  </data>[m
+   <data name="báocaos" type="System.Resources.ResXFileRef, System.Windows.Forms">[m
+     <value>..\Resources\báocaos.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>[m
+   </data>[m
+[31m-  <data name="23_11" type="System.Resources.ResXFileRef, System.Windows.Forms">[m
+[31m-    <value>..\Resources\23_11.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>[m
+[32m+[m[32m  <data name="home" type="System.Resources.ResXFileRef, System.Windows.Forms">[m
+[32m+[m[32m    <value>..\Resources\home.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>[m
+[32m+[m[32m  </data>[m
+[32m+[m[32m  <data name="Luxury Hotel India GIF by Suryagarh Collection" type="System.Resources.ResXFileRef, System.Windows.Forms">[m
+[32m+[m[32m    <value>..\Resources\Luxury Hotel India GIF by Suryagarh Collection.gif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>[m
+   </data>[m
+ </root>[m
+\ No newline at end of file[m
+[1mdiff --git a/Resources/Luxury Hotel India GIF by Suryagarh Collection.gif b/Resources/Luxury Hotel India GIF by Suryagarh Collection.gif[m
+[1mnew file mode 100644[m
+[1mindex 0000000..be734b7[m
+Binary files /dev/null and b/Resources/Luxury Hotel India GIF by Suryagarh Collection.gif differ
+[1mdiff --git a/bin/Debug/net6.0-windows/Guna.UI2.dll b/bin/Debug/net6.0-windows/Guna.UI2.dll[m
+[1mnew file mode 100644[m
+[1mindex 0000000..6f33b59[m
+Binary files /dev/null and b/bin/Debug/net6.0-windows/Guna.UI2.dll differ
+[1mdiff --git a/bin/Debug/net6.0-windows/System.Management.dll b/bin/Debug/net6.0-windows/System.Management.dll[m
+[1mnew file mode 100644[m
+[1mindex 0000000..fae6cf1[m
+Binary files /dev/null and b/bin/Debug/net6.0-windows/System.Management.dll differ
+[1mdiff --git a/bin/Debug/net6.0-windows/qlksss.deps.json b/bin/Debug/net6.0-windows/qlksss.deps.json[m
+[1mindex 179e4d5..7230609 100644[m
+[1m--- a/bin/Debug/net6.0-windows/qlksss.deps.json[m
+[1m+++ b/bin/Debug/net6.0-windows/qlksss.deps.json[m
+[36m@@ -8,7 +8,7 @@[m
+     ".NETCoreApp,Version=v6.0": {[m
+       "qlksss/1.0.0": {[m
+         "dependencies": {[m
+[31m-          "DevExpress.Win.Design": "24.2.7",[m
+[32m+[m[32m          "Guna.UI2.WinForms": "2.0.4.7",[m
+           "Microsoft.ReportingServices.ReportViewerControl.WebForms": "150.1652.0",[m
+           "Microsoft.ReportingServices.ReportViewerControl.Winforms": "150.1652.0",[m
+           "System.Data.SqlClient": "4.9.0"[m
+[36m@@ -17,7 +17,17 @@[m
+           "qlksss.dll": {}[m
+         }[m
+       },[m
+[31m-      "DevExpress.Win.Design/24.2.7": {},[m
+[32m+[m[32m      "Guna.UI2.WinForms/2.0.4.7": {[m
+[32m+[m[32m        "dependencies": {[m
+[32m+[m[32m          "System.Management": "6.0.0"[m
+[32m+[m[32m        },[m
+[32m+[m[32m        "runtime": {[m
+[32m+[m[32m          "lib/net6.0-windows7.0/Guna.UI2.dll": {[m
+[32m+[m[32m            "assemblyVersion": "2.0.4.7",[m
+[32m+[m[32m            "fileVersion": "2.0.4.7"[m
+[32m+[m[32m          }[m
+[32m+[m[32m        }[m
+[32m+[m[32m      },[m
+       "Microsoft.ReportingServices.ReportViewerControl.WebForms/150.1652.0": {[m
+         "dependencies": {[m
+           "Microsoft.SqlServer.Types": "14.0.314.76"[m
+[36m@@ -284,6 +294,7 @@[m
+           }[m
+         }[m
+       },[m
+[32m+[m[32m      "System.CodeDom/6.0.0": {},[m
+       "System.Data.SqlClient/4.9.0": {[m
+         "dependencies": {[m
+           "runtime.native.System.Data.SqlClient.sni": "4.4.0"[m
+[36m@@ -308,6 +319,25 @@[m
+             "fileVersion": "4.900.24.56208"[m
+           }[m
+         }[m
+[32m+[m[32m      },[m
+[32m+[m[32m      "System.Management/6.0.0": {[m
+[32m+[m[32m        "dependencies": {[m
+[32m+[m[32m          "System.CodeDom": "6.0.0"[m
+[32m+[m[32m        },[m
+[32m+[m[32m        "runtime": {[m
+[32m+[m[32m          "lib/net6.0/System.Management.dll": {[m
+[32m+[m[32m            "assemblyVersion": "4.0.0.0",[m
+[32m+[m[32m            "fileVersion": "6.0.21.52210"[m
+[32m+[m[32m          }[m
+[32m+[m[32m        },[m
+[32m+[m[32m        "runtimeTargets": {[m
+[32m+[m[32m          "runtimes/win/lib/net6.0/System.Management.dll": {[m
+[32m+[m[32m            "rid": "win",[m
+[32m+[m[32m            "assetType": "runtime",[m
+[32m+[m[32m            "assemblyVersion": "4.0.0.0",[m
+[32m+[m[32m            "fileVersion": "6.0.21.52210"[m
+[32m+[m[32m          }[m
+[32m+[m[32m        }[m
+       }[m
+     }[m
+   },[m
+[36m@@ -317,12 +347,12 @@[m
+       "serviceable": false,[m
+       "sha512": ""[m
+     },[m
+[31m-    "DevExpress.Win.Design/24.2.7": {[m
+[32m+[m[32m    "Guna.UI2.WinForms/2.0.4.7": {[m
+       "type": "package",[m
+       "serviceable": true,[m
+[31m-      "sha512": "sha512-CSokl2MiSAgE1Z/5ywqhp+HEb4iZDJp8/3hmxhWS4q5g1gvR7zTOW8V8XWbylQr7snERMrgozU9g4PxdisZidA==",[m
+[31m-      "path": "devexpress.win.design/24.2.7",[m
+[31m-      "hashPath": "devexpress.win.design.24.2.7.nupkg.sha512"[m
+[32m+[m[32m      "sha512": "sha512-8BdBYsfnntuICbFMHIZsd5morwURN8Ucsvq7wJeyLV1Z1ze6CAIxVKEirufgjGIiXfF0M0sCr9EVFloZSazWew==",[m
+[32m+[m[32m      "path": "guna.ui2.winforms/2.0.4.7",[m
+[32m+[m[32m      "hashPath": "guna.ui2.winforms.2.0.4.7.nupkg.sha512"[m
+     },[m
+     "Microsoft.ReportingServices.ReportViewerControl.WebForms/150.1652.0": {[m
+       "type": "package",[m
+[36m@@ -373,12 +403,26 @@[m
+       "path": "runtime.win-x86.runtime.native.system.data.sqlclient.sni/4.4.0",[m
+       "hashPath": "runtime.win-x86.runtime.native.system.data.sqlclient.sni.4.4.0.nupkg.sha512"[m
+     },[m
+[32m+[m[32m    "System.CodeDom/6.0.0": {[m
+[32m+[m[32m      "type": "package",[m
+[32m+[m[32m      "serviceable": true,[m
+[32m+[m[32m      "sha512": "sha512-CPc6tWO1LAer3IzfZufDBRL+UZQcj5uS207NHALQzP84Vp/z6wF0Aa0YZImOQY8iStY0A2zI/e3ihKNPfUm8XA==",[m
+[32m+[m[32m      "path": "system.codedom/6.0.0",[m
+[32m+[m[32m      "hashPath": "system.codedom.6.0.0.nupkg.sha512"[m
+[32m+[m[32m    },[m
+     "System.Data.SqlClient/4.9.0": {[m
+       "type": "package",[m
+       "serviceable": true,[m
+       "sha512": "sha512-j4KJO+vC62NyUtNHz854njEqXbT8OmAa5jb1nrGfYWBOcggyYUQE0w/snXeaCjdvkSKWuUD+hfvlbN8pTrJTXg==",[m
+       "path": "system.data.sqlclient/4.9.0",[m
+       "hashPath": "system.data.sqlclient.4.9.0.nupkg.sha512"[m
+[32m+[m[32m    },[m
+[32m+[m[32m    "System.Management/6.0.0": {[m
+[32m+[m[32m      "type": "package",[m
+[32m+[m[32m      "serviceable": true,[m
+[32m+[m[32m      "sha512": "sha512-sHsESYMmPDhQuOC66h6AEOs/XowzKsbT9srMbX71TCXP58hkpn1BqBjdmKj1+DCA/WlBETX1K5WjQHwmV0Txrg==",[m
+[32m+[m[32m      "path": "system.management/6.0.0",[m
+[32m+[m[32m      "hashPath": "system.management.6.0.0.nupkg.sha512"[m
+     }[m
+   }[m
+ }[m
+\ No newline at end of file[m
+[1mdiff --git a/bin/Debug/net6.0-windows/qlksss.dll b/bin/Debug/net6.0-windows/qlksss.dll[m
+[1mindex 6c0f15c..cc9cacb 100644[m
+Binary files a/bin/Debug/net6.0-windows/qlksss.dll and b/bin/Debug/net6.0-windows/qlksss.dll differ
+[1mdiff --git a/bin/Debug/net6.0-windows/qlksss.exe b/bin/Debug/net6.0-windows/qlksss.exe[m
+[1mindex 2887ffa..ede38c7 100644[m
+Binary files a/bin/Debug/net6.0-windows/qlksss.exe and b/bin/Debug/net6.0-windows/qlksss.exe differ
+[1mdiff --git a/bin/Debug/net6.0-windows/qlksss.pdb b/bin/Debug/net6.0-windows/qlksss.pdb[m
+[1mindex d38a101..014f936 100644[m
+Binary files a/bin/Debug/net6.0-windows/qlksss.pdb and b/bin/Debug/net6.0-windows/qlksss.pdb differ
+[1mdiff --git a/bin/Debug/net6.0-windows/runtimes/win/lib/net6.0/System.Management.dll b/bin/Debug/net6.0-windows/runtimes/win/lib/net6.0/System.Management.dll[m
+[1mnew file mode 100644[m
+[1mindex 0000000..3e409fa[m
+Binary files /dev/null and b/bin/Debug/net6.0-windows/runtimes/win/lib/net6.0/System.Management.dll differ
+[1mdiff --git a/frmDMNhanVien.Designer.cs b/frmDMNhanVien.Designer.cs[m
+[1mindex 21880cc..8180e01 100644[m
+[1m--- a/frmDMNhanVien.Designer.cs[m
+[1m+++ b/frmDMNhanVien.Designer.cs[m
+[36m@@ -29,6 +29,7 @@[m
+         private void InitializeComponent()[m
+         {[m
+             panel1 = new Panel();[m
+[32m+[m[32m            btnReturn = new Button();[m
+             BtnTimKiem = new Button();[m
+             BtnLuu = new Button();[m
+             BtnBo = new Button();[m
+[36m@@ -56,6 +57,7 @@[m
+             // panel1[m
+             // [m
+             panel1.BackColor = Color.Linen;[m
+[32m+[m[32m            panel1.Controls.Add(btnReturn);[m
+             panel1.Controls.Add(BtnTimKiem);[m
+             panel1.Controls.Add(BtnLuu);[m
+             panel1.Controls.Add(BtnBo);[m
+[36m@@ -69,12 +71,25 @@[m
+             panel1.TabIndex = 2;[m
+             panel1.Paint += panel1_Paint;[m
+             // [m
+[32m+[m[32m            // btnReturn[m
+[32m+[m[32m            //[m[41m [m
+[32m+[m[32m            btnReturn.Anchor = AnchorStyles.Bottom;[m
+[32m+[m[32m            btnReturn.BackColor = Color.SteelBlue;[m
+[32m+[m[32m            btnReturn.ForeColor = SystemColors.ControlLightLight;[m
+[32m+[m[32m            btnReturn.Location = new Point(802, 41);[m
+[32m+[m[32m            btnReturn.Name = "btnReturn";[m
+[32m+[m[32m            btnReturn.Size = new Size(94, 29);[m
+[32m+[m[32m            btnReturn.TabIndex = 6;[m
+[32m+[m[32m            btnReturn.Text = "Quay Lại";[m
+[32m+[m[32m            btnReturn.UseVisualStyleBackColor = false;[m
+[32m+[m[32m            btnReturn.Click += btnReturn_Click;[m
+[32m+[m[32m            //[m[41m [m
+             // BtnTimKiem[m
+             // [m
+             BtnTimKiem.Anchor = AnchorStyles.Bottom;[m
+             BtnTimKiem.BackColor = Color.SteelBlue;[m
+             BtnTimKiem.ForeColor = SystemColors.ControlLightLight;[m
+[31m-            BtnTimKiem.Location = new Point(764, 41);[m
+[32m+[m[32m            BtnTimKiem.Location = new Point(685, 41);[m
+             BtnTimKiem.Name = "BtnTimKiem";[m
+             BtnTimKiem.Size = new Size(94, 29);[m
+             BtnTimKiem.TabIndex = 5;[m
+[36m@@ -87,7 +102,7 @@[m
+             BtnLuu.Anchor = AnchorStyles.Bottom;[m
+             BtnLuu.BackColor = Color.SteelBlue;[m
+             BtnLuu.ForeColor = SystemColors.ControlLightLight;[m
+[31m-            BtnLuu.Location = new Point(630, 41);[m
+[32m+[m[32m            BtnLuu.Location = new Point(551, 41);[m
+             BtnLuu.Name = "BtnLuu";[m
+             BtnLuu.Size = new Size(94, 29);[m
+             BtnLuu.TabIndex = 4;[m
+[36m@@ -100,7 +115,7 @@[m
+             BtnBo.Anchor = AnchorStyles.Bottom;[m
+             BtnBo.BackColor = Color.SteelBlue;[m
+             BtnBo.ForeColor = SystemColors.ControlLightLight;[m
+[31m-            BtnBo.Location = new Point(496, 41);[m
+[32m+[m[32m            BtnBo.Location = new Point(417, 41);[m
+             BtnBo.Name = "BtnBo";[m
+             BtnBo.Size = new Size(94, 29);[m
+             BtnBo.TabIndex = 3;[m
+[36m@@ -113,7 +128,7 @@[m
+             BtnXoa.Anchor = AnchorStyles.Bottom;[m
+             BtnXoa.BackColor = Color.SteelBlue;[m
+             BtnXoa.ForeColor = SystemColors.ControlLightLight;[m
+[31m-            BtnXoa.Location = new Point(228, 41);[m
+[32m+[m[32m            BtnXoa.Location = new Point(149, 41);[m
+             BtnXoa.Name = "BtnXoa";[m
+             BtnXoa.Size = new Size(94, 29);[m
+             BtnXoa.TabIndex = 1;[m
+[36m@@ -126,7 +141,7 @@[m
+             BtnSua.Anchor = AnchorStyles.Bottom;[m
+             BtnSua.BackColor = Color.SteelBlue;[m
+             BtnSua.ForeColor = SystemColors.ControlLightLight;[m
+[31m-            BtnSua.Location = new Point(362, 41);[m
+[32m+[m[32m            BtnSua.Location = new Point(283, 41);[m
+             BtnSua.Name = "BtnSua";[m
+             BtnSua.Size = new Size(94, 29);[m
+             BtnSua.TabIndex = 2;[m
+[36m@@ -140,7 +155,7 @@[m
+             BtnThem.BackColor = Color.SteelBlue;[m
+             BtnThem.ForeColor = SystemColors.ControlLightLight;[m
+             BtnThem.ImageAlign = ContentAlignment.MiddleLeft;[m
+[31m-            BtnThem.Location = new Point(94, 41);[m
+[32m+[m[32m            BtnThem.Location = new Point(15, 41);[m
+             BtnThem.Name = "BtnThem";[m
+             BtnThem.Size = new Size(94, 29);[m
+             BtnThem.TabIndex = 0;[m
+[36m@@ -310,6 +325,7 @@[m
+             Controls.Add(panel1);[m
+             Name = "frmDMNhanVien";[m
+             Text = "Danh mục nhân viên";[m
+[32m+[m[32m            FormClosing += frmDMNhanVien_FormClosing;[m
+             Load += frmDMNhanVien_Load;[m
+             panel1.ResumeLayout(false);[m
+             panel2.ResumeLayout(false);[m
+[36m@@ -340,5 +356,6 @@[m
+         private Label label2;[m
+         private Label label4;[m
+         private DataGridView dgvNhanVien;[m
+[32m+[m[32m        private Button btnReturn;[m
+     }[m
+ }[m
+\ No newline at end of file[m
+[1mdiff --git a/frmDMNhanVien.cs b/frmDMNhanVien.cs[m
+[1mindex d9a7610..1557a59 100644[m
+[1m--- a/frmDMNhanVien.cs[m
+[1m+++ b/frmDMNhanVien.cs[m
+[36m@@ -620,6 +620,17 @@[m [mnamespace qlksss[m
+             if (e.KeyCode == Keys.Enter)[m
+                 SendKeys.Send("{TAB}");[m
+         }[m
+[31m-    }[m
+ [m
+[32m+[m[32m        private void btnReturn_Click(object sender, EventArgs e)[m
+[32m+[m[32m        {[m
+[32m+[m[32m            frmMain m = new frmMain();[m
+[32m+[m[32m            m.Show();[m
+[32m+[m[32m            this.Close();[m
+[32m+[m[32m        }[m
+[32m+[m
+[32m+[m[32m        private void frmDMNhanVien_FormClosing(object sender, FormClosingEventArgs e)[m
+[32m+[m[32m        {[m
+[32m+[m[32m            Application.Exit(); // Đóng ứng dụng khi form này đóng[m
+[32m+[m[32m        }[m
+[32m+[m[32m    }[m
+ }[m
+[1mdiff --git a/frmDV.Designer.cs b/frmDV.Designer.cs[m
+[1mindex e83626b..c956b03 100644[m
+[1m--- a/frmDV.Designer.cs[m
+[1m+++ b/frmDV.Designer.cs[m
+[36m@@ -1,4 +1,429 @@[m
+[31m-﻿namespace qlksss[m
+[32m+[m[32m﻿//namespace qlksss[m
+[32m+[m[32m//{[m
+[32m+[m[32m//    partial class frmDV[m
+[32m+[m[32m//    {[m
+[32m+[m[32m//        /// <summary>[m
+[32m+[m[32m//        /// Required designer variable.[m
+[32m+[m[32m//        /// </summary>[m
+[32m+[m[32m//        private System.ComponentModel.IContainer components = null;[m
+[32m+[m
+[32m+[m[32m//        /// <summary>[m
+[32m+[m[32m//        /// Clean up any resources being used.[m
+[32m+[m[32m//        /// </summary>[m
+[32m+[m[32m//        /// <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>[m
+[32m+[m[32m//        protected override void Dispose(bool disposing)[m
+[32m+[m[32m//        {[m
+[32m+[m[32m//            if (disposing && (components != null))[m
+[32m+[m[32m//            {[m
+[32m+[m[32m//                components.Dispose();[m
+[32m+[m[32m//            }[m
+[32m+[m[32m//            base.Dispose(disposing);[m
+[32m+[m[32m//        }[m
+[32m+[m
+[32m+[m[32m//        #region Windows Form Designer generated code[m
+[32m+[m
+[32m+[m[32m//        /// <summary>[m
+[32m+[m[32m//        /// Required method for Designer support - do not modify[m
+[32m+[m[32m//        /// the contents of this method with the code editor.[m
+[32m+[m[32m//        /// </summary>[m
+[32m+[m[32m//        private void InitializeComponent()[m
+[32m+[m[32m//        {[m
+[32m+[m[32m//            this.components = new System.ComponentModel.Container();[m
+[32m+[m[32m//            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;[m
+[32m+[m[32m//            this.ClientSize = new System.Drawing.Size(800, 450);[m
+[32m+[m[32m//            this.Text = "frmDV";[m
+[32m+[m
+[32m+[m[32m//            #endregion[m
+[32m+[m
+[32m+[m[32m//            panel2 = new Panel();[m
+[32m+[m[32m//            cboMaNhanVien = new ComboBox();[m
+[32m+[m[32m//            label7 = new Label();[m
+[32m+[m[32m//            txtDonViTinh = new TextBox();[m
+[32m+[m[32m//            label5 = new Label();[m
+[32m+[m[32m//            txtSoLuong = new TextBox();[m
+[32m+[m[32m//            label6 = new Label();[m
+[32m+[m[32m//            txtDonGia = new TextBox();[m
+[32m+[m[32m//            label4 = new Label();[m
+[32m+[m[32m//            txtTrangThai = new TextBox();[m
+[32m+[m[32m//            label2 = new Label();[m
+[32m+[m[32m//            txtTenDichVu = new TextBox();[m
+[32m+[m[32m//            txtMaDichVu = new TextBox();[m
+[32m+[m[32m//            label3 = new Label();[m
+[32m+[m[32m//            lable = new Label();[m
+[32m+[m[32m//            label1 = new Label();[m
+[32m+[m[32m//            dgvDV = new DataGridView();[m
+[32m+[m[32m//            panel1 = new Panel();[m
+[32m+[m[32m//            BtnQuayLai = new Button();[m
+[32m+[m[32m//            BtnHienThi = new Button();[m
+[32m+[m[32m//            BtnTimKiem = new Button();[m
+[32m+[m[32m//            BtnLuu = new Button();[m
+[32m+[m[32m//            BtnBo = new Button();[m
+[32m+[m[32m//            BtnXoa = new Button();[m
+[32m+[m[32m//            BtnSua = new Button();[m
+[32m+[m[32m//            BtnThem = new Button();[m
+[32m+[m[32m//            panel2.SuspendLayout();[m
+[32m+[m[32m//            ((System.ComponentModel.ISupportInitialize)dgvDV).BeginInit();[m
+[32m+[m[32m//            panel1.SuspendLayout();[m
+[32m+[m[32m//            SuspendLayout();[m
+[32m+[m[32m//            //[m[41m [m
+[32m+[m[32m//            // panel2[m
+[32m+[m[32m//            //[m[41m [m
+[32m+[m[32m//            panel2.AutoSizeMode = AutoSizeMode.GrowAndShrink;[m
+[32m+[m[32m//            panel2.BackColor = Color.Linen;[m
+[32m+[m[32m//            panel2.Controls.Add(cboMaNhanVien);[m
+[32m+[m[32m//            panel2.Controls.Add(label7);[m
+[32m+[m[32m//            panel2.Controls.Add(txtDonViTinh);[m
+[32m+[m[32m//            panel2.Controls.Add(label5);[m
+[32m+[m[32m//            panel2.Controls.Add(txtSoLuong);[m
+[32m+[m[32m//            panel2.Controls.Add(label6);[m
+[32m+[m[32m//            panel2.Controls.Add(txtDonGia);[m
+[32m+[m[32m//            panel2.Controls.Add(label4);[m
+[32m+[m[32m//            panel2.Controls.Add(txtTrangThai);[m
+[32m+[m[32m//            panel2.Controls.Add(label2);[m
+[32m+[m[32m//            panel2.Controls.Add(txtTenDichVu);[m
+[32m+[m[32m//            panel2.Controls.Add(txtMaDichVu);[m
+[32m+[m[32m//            panel2.Controls.Add(label3);[m
+[32m+[m[32m//            panel2.Controls.Add(lable);[m
+[32m+[m[32m//            panel2.Controls.Add(label1);[m
+[32m+[m[32m//            panel2.Location = new Point(1, 0);[m
+[32m+[m[32m//            panel2.Name = "panel2";[m
+[32m+[m[32m//            panel2.Size = new Size(1071, 125);[m
+[32m+[m[32m//            panel2.TabIndex = 5;[m
+[32m+[m[32m//            //[m[41m [m
+[32m+[m[32m//            // cboMaNhanVien[m
+[32m+[m[32m//            //[m[41m [m
+[32m+[m[32m//            cboMaNhanVien.Anchor = AnchorStyles.Top;[m
+[32m+[m[32m//            cboMaNhanVien.BackColor = SystemColors.GradientInactiveCaption;[m
+[32m+[m[32m//            cboMaNhanVien.FormattingEnabled = true;[m
+[32m+[m[32m//            cboMaNhanVien.Location = new Point(910, 46);[m
+[32m+[m[32m//            cboMaNhanVien.Name = "cboMaNhanVien";[m
+[32m+[m[32m//            cboMaNhanVien.Size = new Size(125, 28);[m
+[32m+[m[32m//            cboMaNhanVien.TabIndex = 17;[m
+[32m+[m[32m//            //[m[41m [m
+[32m+[m[32m//            // label7[m
+[32m+[m[32m//            //[m[41m [m
+[32m+[m[32m//            label7.Anchor = AnchorStyles.Top;[m
+[32m+[m[32m//            label7.AutoSize = true;[m
+[32m+[m[32m//            label7.Location = new Point(807, 54);[m
+[32m+[m[32m//            label7.Name = "label7";[m
+[32m+[m[32m//            label7.Size = new Size(97, 20);[m
+[32m+[m[32m//            label7.TabIndex = 16;[m
+[32m+[m[32m//            label7.Text = "Mã nhân viên";[m
+[32m+[m[32m//            //[m[41m [m
+[32m+[m[32m//            // txtDonViTinh[m
+[32m+[m[32m//            //[m[41m [m
+[32m+[m[32m//            txtDonViTinh.Anchor = AnchorStyles.Top;[m
+[32m+[m[32m//            txtDonViTinh.BackColor = SystemColors.GradientInactiveCaption;[m
+[32m+[m[32m//            txtDonViTinh.Location = new Point(655, 91);[m
+[32m+[m[32m//            txtDonViTinh.Name = "txtDonViTinh";[m
+[32m+[m[32m//            txtDonViTinh.Size = new Size(125, 27);[m
+[32m+[m[32m//            txtDonViTinh.TabIndex = 14;[m
+[32m+[m[32m//            //[m[41m [m
+[32m+[m[32m//            // label5[m
+[32m+[m[32m//            //[m[41m [m
+[32m+[m[32m//            label5.Anchor = AnchorStyles.Top;[m
+[32m+[m[32m//            label5.AutoSize = true;[m
+[32m+[m[32m//            label5.Location = new Point(568, 98);[m
+[32m+[m[32m//            label5.Name = "label5";[m
+[32m+[m[32m//            label5.Size = new Size(81, 20);[m
+[32m+[m[32m//            label5.TabIndex = 15;[m
+[32m+[m[32m//            label5.Text = "Đơn vị tính";[m
+[32m+[m[32m//            //[m[41m [m
+[32m+[m[32m//            // txtSoLuong[m
+[32m+[m[32m//            //[m[41m [m
+[32m+[m[32m//            txtSoLuong.Anchor = AnchorStyles.Top;[m
+[32m+[m[32m//            txtSoLuong.BackColor = SystemColors.GradientInactiveCaption;[m
+[32m+[m[32m//            txtSoLuong.Location = new Point(655, 47);[m
+[32m+[m[32m//            txtSoLuong.Name = "txtSoLuong";[m
+[32m+[m[32m//            txtSoLuong.Size = new Size(125, 27);[m
+[32m+[m[32m//            txtSoLuong.TabIndex = 12;[m
+[32m+[m[32m//            //[m[41m [m
+[32m+[m[32m//            // label6[m
+[32m+[m[32m//            //[m[41m [m
+[32m+[m[32m//            label6.Anchor = AnchorStyles.Top;[m
+[32m+[m[32m//            label6.AutoSize = true;[m
+[32m+[m[32m//            label6.Location = new Point(583, 54);[m
+[32m+[m[32m//            label6.Name = "label6";[m
+[32m+[m[32m//            label6.Size = new Size(69, 20);[m
+[32m+[m[32m//            label6.TabIndex = 13;[m
+[32m+[m[32m//            label6.Text = "Số lượng";[m
+[32m+[m[32m//            //[m[41m [m
+[32m+[m[32m//            // txtDonGia[m
+[32m+[m[32m//            //[m[41m [m
+[32m+[m[32m//            txtDonGia.Anchor = AnchorStyles.Top;[m
+[32m+[m[32m//            txtDonGia.BackColor = SystemColors.GradientInactiveCaption;[m
+[32m+[m[32m//            txtDonGia.Location = new Point(383, 91);[m
+[32m+[m[32m//            txtDonGia.Name = "txtDonGia";[m
+[32m+[m[32m//            txtDonGia.Size = new Size(125, 27);[m
+[32m+[m[32m//            txtDonGia.TabIndex = 10;[m
+[32m+[m[32m//            //[m[41m [m
+[32m+[m[32m//            // label4[m
+[32m+[m[32m//            //[m[41m [m
+[32m+[m[32m//            label4.Anchor = AnchorStyles.Top;[m
+[32m+[m[32m//            label4.AutoSize = true;[m
+[32m+[m[32m//            label4.Location = new Point(315, 98);[m
+[32m+[m[32m//            label4.Name = "label4";[m
+[32m+[m[32m//            label4.Size = new Size(62, 20);[m
+[32m+[m[32m//            label4.TabIndex = 11;[m
+[32m+[m[32m//            label4.Text = "Đơn giá";[m
+[32m+[m[32m//            //[m[41m [m
+[32m+[m[32m//            // txtTrangThai[m
+[32m+[m[32m//            //[m[41m [m
+[32m+[m[32m//            txtTrangThai.Anchor = AnchorStyles.Top;[m
+[32m+[m[32m//            txtTrangThai.BackColor = SystemColors.GradientInactiveCaption;[m
+[32m+[m[32m//            txtTrangThai.Location = new Point(383, 47);[m
+[32m+[m[32m//            txtTrangThai.Name = "txtTrangThai";[m
+[32m+[m[32m//            txtTrangThai.Size = new Size(125, 27);[m
+[32m+[m[32m//            txtTrangThai.TabIndex = 3;[m
+[32m+[m[32m//            //[m[41m [m
+[32m+[m[32m//            // label2[m
+[32m+[m[32m//            //[m[41m [m
+[32m+[m[32m//            label2.Anchor = AnchorStyles.Top;[m
+[32m+[m[32m//            label2.AutoSize = true;[m
+[32m+[m[32m//            label2.Location = new Point(302, 54);[m
+[32m+[m[32m//            label2.Name = "label2";[m
+[32m+[m[32m//            label2.Size = new Size(75, 20);[m
+[32m+[m[32m//            label2.TabIndex = 6;[m
+[32m+[m[32m//            label2.Text = "Trạng thái";[m
+[32m+[m[32m//            //[m[41m [m
+[32m+[m[32m//            // txtTenDichVu[m
+[32m+[m[32m//            //[m[41m [m
+[32m+[m[32m//            txtTenDichVu.Anchor = AnchorStyles.Top;[m
+[32m+[m[32m//            txtTenDichVu.BackColor = SystemColors.GradientInactiveCaption;[m
+[32m+[m[32m//            txtTenDichVu.Location = new Point(128, 91);[m
+[32m+[m[32m//            txtTenDichVu.Name = "txtTenDichVu";[m
+[32m+[m[32m//            txtTenDichVu.Size = new Size(125, 27);[m
+[32m+[m[32m//            txtTenDichVu.TabIndex = 1;[m
+[32m+[m[32m//            //[m[41m [m
+[32m+[m[32m//            // txtMaDichVu[m
+[32m+[m[32m//            //[m[41m [m
+[32m+[m[32m//            txtMaDichVu.Anchor = AnchorStyles.Top;[m
+[32m+[m[32m//            txtMaDichVu.BackColor = SystemColors.GradientInactiveCaption;[m
+[32m+[m[32m//            txtMaDichVu.Location = new Point(128, 47);[m
+[32m+[m[32m//            txtMaDichVu.Name = "txtMaDichVu";[m
+[32m+[m[32m//            txtMaDichVu.Size = new Size(125, 27);[m
+[32m+[m[32m//            txtMaDichVu.TabIndex = 0;[m
+[32m+[m[32m//            //[m[41m [m
+[32m+[m[32m//            // label3[m
+[32m+[m[32m//            //[m[41m [m
+[32m+[m[32m//            label3.Anchor = AnchorStyles.Top;[m
+[32m+[m[32m//            label3.AutoSize = true;[m
+[32m+[m[32m//            label3.Location = new Point(39, 98);[m
+[32m+[m[32m//            label3.Name = "label3";[m
+[32m+[m[32m//            label3.Size = new Size(83, 20);[m
+[32m+[m[32m//            label3.TabIndex = 2;[m
+[32m+[m[32m//            label3.Text = "Tên dịch vụ";[m
+[32m+[m[32m//            //[m[41m [m
+[32m+[m[32m//            // lable[m
+[32m+[m[32m//            //[m[41m [m
+[32m+[m[32m//            lable.Anchor = AnchorStyles.Top;[m
+[32m+[m[32m//            lable.AutoSize = true;[m
+[32m+[m[32m//            lable.Location = new Point(41, 54);[m
+[32m+[m[32m//            lable.Name = "lable";[m
+[32m+[m[32m//            lable.Size = new Size(81, 20);[m
+[32m+[m[32m//            lable.TabIndex = 1;[m
+[32m+[m[32m//            lable.Text = "Mã dịch vụ";[m
+[32m+[m[32m//            //[m[41m [m
+[32m+[m[32m//            // label1[m
+[32m+[m[32m//            //[m[41m [m
+[32m+[m[32m//            label1.Anchor = AnchorStyles.Top;[m
+[32m+[m[32m//            label1.AutoSize = true;[m
+[32m+[m[32m//            label1.Location = new Point(448, 9);[m
+[32m+[m[32m//            label1.Name = "label1";[m
+[32m+[m[32m//            label1.Size = new Size(150, 20);[m
+[32m+[m[32m//            label1.TabIndex = 0;[m
+[32m+[m[32m//            label1.Text = "DANH MỤC DỊCH VỤ";[m
+[32m+[m[32m//            label1.TextAlign = ContentAlignment.TopCenter;[m
+[32m+[m[32m//            //[m[41m [m
+[32m+[m[32m//            // dgvDV[m
+[32m+[m[32m//            //[m[41m [m
+[32m+[m[32m//            dgvDV.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;[m
+[32m+[m[32m//            dgvDV.AutoSizeRowsMode = DataGridViewAutoSizeRowsMode.AllCells;[m
+[32m+[m[32m//            dgvDV.BackgroundColor = SystemColors.GradientInactiveCaption;[m
+[32m+[m[32m//            dgvDV.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;[m
+[32m+[m[32m//            dgvDV.Location = new Point(0, 124);[m
+[32m+[m[32m//            dgvDV.Name = "dgvDV";[m
+[32m+[m[32m//            dgvDV.RowHeadersWidth = 51;[m
+[32m+[m[32m//            dgvDV.RowTemplate.Height = 29;[m
+[32m+[m[32m//            dgvDV.Size = new Size(1072, 230);[m
+[32m+[m[32m//            dgvDV.TabIndex = 6;[m
+[32m+[m[32m//            dgvDV.SelectionChanged += dgvDV_SelectionChanged;[m
+[32m+[m[32m//            //[m[41m [m
+[32m+[m[32m//            // panel1[m
+[32m+[m[32m//            //[m[41m [m
+[32m+[m[32m//            panel1.BackColor = Color.Linen;[m
+[32m+[m[32m//            panel1.Controls.Add(BtnQuayLai);[m
+[32m+[m[32m//            panel1.Controls.Add(BtnHienThi);[m
+[32m+[m[32m//            panel1.Controls.Add(BtnTimKiem);[m
+[32m+[m[32m//            panel1.Controls.Add(BtnLuu);[m
+[32m+[m[32m//            panel1.Controls.Add(BtnBo);[m
+[32m+[m[32m//            panel1.Controls.Add(BtnXoa);[m
+[32m+[m[32m//            panel1.Controls.Add(BtnSua);[m
+[32m+[m[32m//            panel1.Controls.Add(BtnThem);[m
+[32m+[m[32m//            panel1.Dock = DockStyle.Bottom;[m
+[32m+[m[32m//            panel1.Location = new Point(0, 353);[m
+[32m+[m[32m//            panel1.Name = "panel1";[m
+[32m+[m[32m//            panel1.Size = new Size(1074, 97);[m
+[32m+[m[32m//            panel1.TabIndex = 12;[m
+[32m+[m[32m//            //[m[41m [m
+[32m+[m[32m//            // BtnQuayLai[m
+[32m+[m[32m//            //[m[41m [m
+[32m+[m[32m//            BtnQuayLai.Anchor = AnchorStyles.Bottom;[m
+[32m+[m[32m//            BtnQuayLai.BackColor = Color.SteelBlue;[m
+[32m+[m[32m//            BtnQuayLai.ForeColor = SystemColors.ControlLightLight;[m
+[32m+[m[32m//            BtnQuayLai.Location = new Point(893, 29);[m
+[32m+[m[32m//            BtnQuayLai.Name = "BtnQuayLai";[m
+[32m+[m[32m//            BtnQuayLai.Size = new Size(94, 29);[m
+[32m+[m[32m//            BtnQuayLai.TabIndex = 7;[m
+[32m+[m[32m//            BtnQuayLai.Text = "Quay Lại";[m
+[32m+[m[32m//            BtnQuayLai.UseVisualStyleBackColor = false;[m
+[32m+[m[32m//            BtnQuayLai.Click += BtnQuayLai_Click;[m
+[32m+[m[32m//            //[m[41m [m
+[32m+[m[32m//            // BtnHienThi[m
+[32m+[m[32m//            //[m[41m [m
+[32m+[m[32m//            BtnHienThi.Anchor = AnchorStyles.Bottom;[m
+[32m+[m[32m//            BtnHienThi.BackColor = Color.SteelBlue;[m
+[32m+[m[32m//            BtnHienThi.ForeColor = SystemColors.ControlLightLight;[m
+[32m+[m[32m//            BtnHienThi.ImageAlign = ContentAlignment.MiddleLeft;[m
+[32m+[m[32m//            BtnHienThi.Location = new Point(111, 29);[m
+[32m+[m[32m//            BtnHienThi.Name = "BtnHienThi";[m
+[32m+[m[32m//            BtnHienThi.Size = new Size(94, 29);[m
+[32m+[m[32m//            BtnHienThi.TabIndex = 6;[m
+[32m+[m[32m//            BtnHienThi.Text = "Hiển Thị DS";[m
+[32m+[m[32m//            BtnHienThi.UseVisualStyleBackColor = false;[m
+[32m+[m[32m//            BtnHienThi.Click += BtnHienThi_Click;[m
+[32m+[m[32m//            //[m[41m [m
+[32m+[m[32m//            // BtnTimKiem[m
+[32m+[m[32m//            //[m[41m [m
+[32m+[m[32m//            BtnTimKiem.Anchor = AnchorStyles.Bottom;[m
+[32m+[m[32m//            BtnTimKiem.BackColor = Color.SteelBlue;[m
+[32m+[m[32m//            BtnTimKiem.ForeColor = SystemColors.ControlLightLight;[m
+[32m+[m[32m//            BtnTimKiem.Location = new Point(779, 29);[m
+[32m+[m[32m//            BtnTimKiem.Name = "BtnTimKiem";[m
+[32m+[m[32m//            BtnTimKiem.Size = new Size(94, 29);[m
+[32m+[m[32m//            BtnTimKiem.TabIndex = 5;[m
+[32m+[m[32m//            BtnTimKiem.Text = "Tìm Kiếm";[m
+[32m+[m[32m//            BtnTimKiem.UseVisualStyleBackColor = false;[m
+[32m+[m[32m//            BtnTimKiem.Click += BtnTimKiem_Click;[m
+[32m+[m[32m//            //[m[41m [m
+[32m+[m[32m//            // BtnLuu[m
+[32m+[m[32m//            //[m[41m [m
+[32m+[m[32m//            BtnLuu.Anchor = AnchorStyles.Bottom;[m
+[32m+[m[32m//            BtnLuu.BackColor = Color.SteelBlue;[m
+[32m+[m[32m//            BtnLuu.ForeColor = SystemColors.ControlLightLight;[m
+[32m+[m[32m//            BtnLuu.Location = new Point(669, 29);[m
+[32m+[m[32m//            BtnLuu.Name = "BtnLuu";[m
+[32m+[m[32m//            BtnLuu.Size = new Size(94, 29);[m
+[32m+[m[32m//            BtnLuu.TabIndex = 4;[m
+[32m+[m[32m//            BtnLuu.Text = "Lưu";[m
+[32m+[m[32m//            BtnLuu.UseVisualStyleBackColor = false;[m
+[32m+[m[32m//            BtnLuu.Click += BtnLuu_Click;[m
+[32m+[m[32m//            //[m[41m [m
+[32m+[m[32m//            // BtnBo[m
+[32m+[m[32m//            //[m[41m [m
+[32m+[m[32m//            BtnBo.Anchor = AnchorStyles.Bottom;[m
+[32m+[m[32m//            BtnBo.BackColor = Color.SteelBlue;[m
+[32m+[m[32m//            BtnBo.ForeColor = SystemColors.ControlLightLight;[m
+[32m+[m[32m//            BtnBo.Location = new Point(559, 29);[m
+[32m+[m[32m//            BtnBo.Name = "BtnBo";[m
+[32m+[m[32m//            BtnBo.Size = new Size(94, 29);[m
+[32m+[m[32m//            BtnBo.TabIndex = 3;[m
+[32m+[m[32m//            BtnBo.Text = "Bỏ";[m
+[32m+[m[32m//            BtnBo.UseVisualStyleBackColor = false;[m
+[32m+[m[32m//            BtnBo.Click += BtnBo_Click;[m
+[32m+[m[32m//            //[m[41m [m
+[32m+[m[32m//            // BtnXoa[m
+[32m+[m[32m//            //[m[41m [m
+[32m+[m[32m//            BtnXoa.Anchor = AnchorStyles.Bottom;[m
+[32m+[m[32m//            BtnXoa.BackColor = Color.SteelBlue;[m
+[32m+[m[32m//            BtnXoa.ForeColor = SystemColors.ControlLightLight;[m
+[32m+[m[32m//            BtnXoa.Location = new Point(339, 29);[m
+[32m+[m[32m//            BtnXoa.Name = "BtnXoa";[m
+[32m+[m[32m//            BtnXoa.Size = new Size(94, 29);[m
+[32m+[m[32m//            BtnXoa.TabIndex = 1;[m
+[32m+[m[32m//            BtnXoa.Text = "Xóa";[m
+[32m+[m[32m//            BtnXoa.UseVisualStyleBackColor = false;[m
+[32m+[m[32m//            BtnXoa.Click += BtnXoa_Click;[m
+[32m+[m[32m//            //[m[41m [m
+[32m+[m[32m//            // BtnSua[m
+[32m+[m[32m//            //[m[41m [m
+[32m+[m[32m//            BtnSua.Anchor = AnchorStyles.Bottom;[m
+[32m+[m[32m//            BtnSua.BackColor = Color.SteelBlue;[m
+[32m+[m[32m//            BtnSua.ForeColor = SystemColors.ControlLightLight;[m
+[32m+[m[32m//            BtnSua.Location = new Point(449, 29);[m
+[32m+[m[32m//            BtnSua.Name = "BtnSua";[m
+[32m+[m[32m//            BtnSua.Size = new Size(94, 29);[m
+[32m+[m[32m//            BtnSua.TabIndex = 2;[m
+[32m+[m[32m//            BtnSua.Text = "Sửa";[m
+[32m+[m[32m//            BtnSua.UseVisualStyleBackColor = false;[m
+[32m+[m[32m//            BtnSua.Click += BtnSua_Click;[m
+[32m+[m[32m//            //[m[41m [m
+[32m+[m[32m//            // BtnThem[m
+[32m+[m[32m//            //[m[41m [m
+[32m+[m[32m//            BtnThem.Anchor = AnchorStyles.Bottom;[m
+[32m+[m[32m//            BtnThem.BackColor = Color.SteelBlue;[m
+[32m+[m[32m//            BtnThem.ForeColor = SystemColors.ControlLightLight;[m
+[32m+[m[32m//            BtnThem.ImageAlign = ContentAlignment.MiddleLeft;[m
+[32m+[m[32m//            BtnThem.Location = new Point(229, 29);[m
+[32m+[m[32m//            BtnThem.Name = "BtnThem";[m
+[32m+[m[32m//            BtnThem.Size = new Size(94, 29);[m
+[32m+[m[32m//            BtnThem.TabIndex = 0;[m
+[32m+[m[32m//            BtnThem.Text = "Thêm";[m
+[32m+[m

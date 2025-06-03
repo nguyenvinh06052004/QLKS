@@ -55,6 +55,7 @@ namespace qlksss
             dgvKH.Columns[1].HeaderText = "Tên khách hàng"; //Tên cột
             dgvKH.Columns[2].HeaderText = "Số điện thoại "; //Tên cột
             dgvKH.Columns[3].HeaderText = "Địa chỉ"; //Tên cột
+
             dgvKH.AllowUserToAddRows = false; // cho phép thêm dòng mới
             dgvKH.AllowUserToDeleteRows = false;
             dgvKH.ReadOnly = true;
@@ -886,15 +887,16 @@ namespace qlksss
 
         private void btnReturn_Click(object sender, EventArgs e)
         {
+            this.Hide(); // Ẩn form Khách Hàng hiện tại
             frmMain p = new frmMain();
-            p.Show();
-            this.Close();
+            p.ShowDialog();
+            //this.Close();
 
         }
 
         private void frmKhachHang_FormClosing(object sender, FormClosingEventArgs e)
         {
-            Application.Exit(); // Đóng toàn bộ ứng dụng khi form Khách Hàng đóng
+            this.Close();
         }
     }
 }
