@@ -3,7 +3,19 @@
   "WorkspaceRootPath": "F:\\C#\\QLKS2\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{0E40F514-DB0F-4865-910A-A1EF07D148D9}|QLKS2.csproj|F:\\C#\\QLKS2\\frmmain.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "AbsoluteMoniker": "D:0:0:{0E40F514-DB0F-4865-910A-A1EF07D148D9}|QLKS2.csproj|F:\\C#\\QLKS2\\class\\class.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{0E40F514-DB0F-4865-910A-A1EF07D148D9}|QLKS2.csproj|solutionrelative:class\\class.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{0E40F514-DB0F-4865-910A-A1EF07D148D9}|QLKS2.csproj|f:\\c#\\qlks2\\frmkhachhang.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{0E40F514-DB0F-4865-910A-A1EF07D148D9}|QLKS2.csproj|solutionrelative:frmkhachhang.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{0E40F514-DB0F-4865-910A-A1EF07D148D9}|QLKS2.csproj|F:\\C#\\QLKS2\\frmkhachhang.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{0E40F514-DB0F-4865-910A-A1EF07D148D9}|QLKS2.csproj|solutionrelative:frmkhachhang.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{0E40F514-DB0F-4865-910A-A1EF07D148D9}|QLKS2.csproj|f:\\c#\\qlks2\\frmmain.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
       "RelativeMoniker": "D:0:0:{0E40F514-DB0F-4865-910A-A1EF07D148D9}|QLKS2.csproj|solutionrelative:frmmain.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
     },
     {
@@ -17,14 +29,6 @@
     {
       "AbsoluteMoniker": "D:0:0:{0E40F514-DB0F-4865-910A-A1EF07D148D9}|QLKS2.csproj|F:\\C#\\QLKS2\\justdesign.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
       "RelativeMoniker": "D:0:0:{0E40F514-DB0F-4865-910A-A1EF07D148D9}|QLKS2.csproj|solutionrelative:justdesign.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{0E40F514-DB0F-4865-910A-A1EF07D148D9}|QLKS2.csproj|f:\\c#\\qlks2\\frmkhachhang.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
-      "RelativeMoniker": "D:0:0:{0E40F514-DB0F-4865-910A-A1EF07D148D9}|QLKS2.csproj|solutionrelative:frmkhachhang.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{0E40F514-DB0F-4865-910A-A1EF07D148D9}|QLKS2.csproj|F:\\C#\\QLKS2\\class\\class.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{0E40F514-DB0F-4865-910A-A1EF07D148D9}|QLKS2.csproj|solutionrelative:class\\class.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -34,20 +38,34 @@
       "DocumentGroups": [
         {
           "DockedHeight": 200,
-          "SelectedChildIndex": 5,
+          "SelectedChildIndex": 0,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 5,
+              "DocumentIndex": 0,
               "Title": "Class.cs",
               "DocumentMoniker": "F:\\C#\\QLKS2\\Class\\Class.cs",
               "RelativeDocumentMoniker": "Class\\Class.cs",
               "ToolTip": "F:\\C#\\QLKS2\\Class\\Class.cs",
               "RelativeToolTip": "Class\\Class.cs",
-              "ViewState": "AgIAAHwAAAAAAAAAAAAxwJAAAAAAAAAAAAAAAA==",
+              "ViewState": "AgIAAFQAAAAAAAAAAAAUwJAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-06-04T02:15:52.149Z",
-              "IsPinned": true
+              "IsPinned": true,
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "frmKhachHang.cs",
+              "DocumentMoniker": "F:\\C#\\QLKS2\\frmKhachHang.cs",
+              "RelativeDocumentMoniker": "frmKhachHang.cs",
+              "ToolTip": "F:\\C#\\QLKS2\\frmKhachHang.cs",
+              "RelativeToolTip": "frmKhachHang.cs",
+              "ViewState": "AgIAADMAAAAAAAAAAAAvwDkAAAAMAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-06-05T16:07:14.718Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Bookmark",
@@ -63,19 +81,18 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 4,
               "Title": "Report2.rdlc [Design]",
               "DocumentMoniker": "F:\\C#\\QLKS2\\Report2.rdlc",
               "RelativeDocumentMoniker": "Report2.rdlc",
               "ToolTip": "F:\\C#\\QLKS2\\Report2.rdlc [Design]",
               "RelativeToolTip": "Report2.rdlc [Design]",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001755|",
-              "WhenOpened": "2025-06-05T15:14:08.304Z",
-              "EditorCaption": " [Design]"
+              "WhenOpened": "2025-06-05T15:14:08.304Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 3,
               "Title": "frmMain.cs [Design]",
               "DocumentMoniker": "F:\\C#\\QLKS2\\frmMain.cs",
               "RelativeDocumentMoniker": "frmMain.cs",
@@ -87,7 +104,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
+              "DocumentIndex": 2,
               "Title": "frmKhachHang.cs [Design]",
               "DocumentMoniker": "F:\\C#\\QLKS2\\frmKhachHang.cs",
               "RelativeDocumentMoniker": "frmKhachHang.cs",
@@ -99,27 +116,25 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 5,
               "Title": "Report1.rdlc [Design]",
               "DocumentMoniker": "F:\\C#\\QLKS2\\Report1.rdlc",
               "RelativeDocumentMoniker": "Report1.rdlc",
               "ToolTip": "F:\\C#\\QLKS2\\Report1.rdlc [Design]",
               "RelativeToolTip": "Report1.rdlc [Design]",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001755|",
-              "WhenOpened": "2025-06-05T14:18:47.606Z",
-              "EditorCaption": " [Design]"
+              "WhenOpened": "2025-06-05T14:18:47.606Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 6,
               "Title": "JustDesign.cs [Design]",
               "DocumentMoniker": "F:\\C#\\QLKS2\\JustDesign.cs",
               "RelativeDocumentMoniker": "JustDesign.cs",
               "ToolTip": "F:\\C#\\QLKS2\\JustDesign.cs [Design]",
               "RelativeToolTip": "JustDesign.cs [Design]",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-06-05T08:40:59.934Z",
-              "EditorCaption": " [Design]"
+              "WhenOpened": "2025-06-05T08:40:59.934Z"
             }
           ]
         }
