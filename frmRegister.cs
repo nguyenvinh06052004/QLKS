@@ -8,6 +8,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using QLKS2.Class;
 using qlksss;
 
 namespace QLKS2
@@ -38,41 +39,28 @@ namespace QLKS2
             string username = txtUsername.Text.Trim();
             string password = txtPassword.Text.Trim();
             string confirmPassword = txtConfirmPassword.Text.Trim();
-            string role = cboRole.SelectedItem?.ToString(); // comboBox quyền
+            string role = cboRole.SelectedItem?.ToString(); // lấy giá trị quyền
 
-            // Kiểm tra quyền đã chọn chưa
-            if (cboRole.SelectedItem == null)
+            if (username == "" || password == "" || confirmPassword == "" || string.IsNullOrEmpty(role))
             {
-                lblError.Text = "Please select a role.";
-                lblError.Visible = true;
+                MessageBox.Show("Vui lòng nhập đầy đủ thông tin và chọn quyền hạn!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return;
             }
 
-            // Kiểm tra mật khẩu trùng nhau
             if (password != confirmPassword)
             {
-                lblError.Text = "Your passwords do not match.";
-                lblError.Visible = true;
+                MessageBox.Show("Mật khẩu xác nhận không đúng!", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
             }
 
-            lblError.Visible = false; // Ẩn nếu không có lỗi
-
-            // Tiếp tục xử lý đăng ký...
-            MessageBox.Show("Register successfully!", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
-
-            // Lưu tài khoản tạm vào bộ nhớ
-            AccountManager.RegisteredUsername = username;
-            AccountManager.RegisteredPassword = password;
-            AccountManager.RegisteredRole = role;
-
-            // Quay về form login
-            this.Hide();
-            frmLogin loginForm = new frmLogin(); // Tạo form đăng nhập
-            loginForm.Show(); // Hiển thị form đăng nhập
-
-            this.Close();
+            bool success = Function.RegisterAccount(username, password, role);
+            if (success)
+            {
+                MessageBox.Show("Đăng ký thành công! Bạn có thể đăng nhập ngay bây giờ.", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                this.Close(); // Đóng form đăng ký để quay lại form đăng nhập
+            }
         }
+
 
         private void guna2CheckBox1_CheckedChanged(object sender, EventArgs e)
         {
@@ -98,5 +86,9 @@ namespace QLKS2
             lblError.Visible = false;
         }
 
+        private void cboRole_SelectedIndexChanged_1(object sender, EventArgs e)
+        {
+
+        }
     }
 }

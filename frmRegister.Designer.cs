@@ -172,6 +172,7 @@
             this.cboRole.Name = "cboRole";
             this.cboRole.Size = new System.Drawing.Size(252, 36);
             this.cboRole.TabIndex = 19;
+            this.cboRole.SelectedIndexChanged += new System.EventHandler(this.cboRole_SelectedIndexChanged_1);
             // 
             // btnExit
             // 

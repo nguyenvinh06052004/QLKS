@@ -10,6 +10,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using Guna.UI2.WinForms;
 using QLKS2;
+using QLKS2.Class;
 
 namespace qlksss
 {
@@ -32,19 +33,15 @@ namespace qlksss
             string username = txtUsername.Text.Trim();
             string password = txtPassword.Text.Trim();
 
-            if (username == AccountManager.RegisteredUsername &&
-        password == AccountManager.RegisteredPassword)
+            if (Function.CheckLogin(username, password))
             {
-                // Ẩn Form đăng nhập
                 this.Hide();
-
-                // Mở Form Dashboard
                 frmMain main = new frmMain();
                 main.Show();
             }
             else
             {
-                MessageBox.Show("Invalid username or password!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("Tên đăng nhập hoặc mật khẩu không đúng!", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 
@@ -67,10 +64,12 @@ namespace qlksss
 
         private void linkLabel1_LinkClicked_1(object sender, LinkLabelLinkClickedEventArgs e)
         {
-            this.Hide();  // Ẩn form login
-
-            frmRegister registerForm = new frmRegister();
-            registerForm.ShowDialog();  // Mở form đăng ký dưới dạng dialog
+            using (frmRegister registerForm = new frmRegister())
+            {
+                this.Hide();
+                registerForm.ShowDialog(); // mở form đăng ký dạng modal
+                this.Show(); // khi đóng form đăng ký sẽ hiện lại form login
+            }
 
         }
 

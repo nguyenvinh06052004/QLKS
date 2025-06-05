@@ -78,6 +78,34 @@ namespace QLKS2
         {
             Application.Exit();
         }
+
+        private void mnuReport_Click(object sender, EventArgs e)
+        {
+            frmShowReport showReport = new frmShowReport();
+            this.Hide();
+            showReport.ShowDialog();
+        }
+
+        private void loạiPhòngToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            frmLoaiPhong lp = new frmLoaiPhong();
+            this.Hide();
+            lp.ShowDialog();
+        }
+
+        private void phòngToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            frmPhong p = new frmPhong();
+            this.Hide(); 
+            p.ShowDialog();
+        }
+
+        private void kháchHàngToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            frmKhachHang kh = new frmKhachHang();
+            this.Hide();
+            kh.ShowDialog();
+        }
     }
 }
 
