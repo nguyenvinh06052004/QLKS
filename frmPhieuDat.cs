@@ -14,14 +14,19 @@ namespace qlksss
     {
         DataTable tbDP = new DataTable(); // Tạo DataTable để lưu dữ liệu phiếu đặt
         string maDP = ""; // Biến để lưu mã phiếu đặt
-        public frmPhieuDat()
+        private Form frm; // Biến để lưu tham chiếu đến form cha
+        public frmPhieuDat(Form fromGoi)
         {
             InitializeComponent();
+            this.frm = fromGoi; // Gán form cha vào biến
         }
 
         private void button2_Click(object sender, EventArgs e)
         {
-
+            maDP = dgvDS.CurrentRow.Cells["Ma_phieudat"].Value.ToString().Trim(); // Lấy mã phiếu đặt từ dòng hiện tại
+            frmChiTiet frmChiTiet = new frmChiTiet(this, maDP, ChiTietMode.Sua); // Tạo form chi tiết với chế độ sửa
+            this.Hide(); // Ẩn form hiện tại
+            frmChiTiet.Show(); // Hiển thị form chi tiết
         }
 
         private void dgvDS_CellContentClick(object sender, DataGridViewCellEventArgs e)
@@ -30,8 +35,9 @@ namespace qlksss
         }
         private void LoadDataGridView()
         {
-            string sql = "SELECT * FROM Phieu_datphong";
-            tbDP = Class.Function.GetDataToTable(sql);
+            // string sql = "SELECT * FROM Phieu_datphong";
+            //tbDP = Class.Function.GetDataToTable(sql);
+            tbDP = Class.Function.ThuTucTraDL("LAYDSPDP");
             dgvDS.DataSource = tbDP; // Gán DataTable vào DataGridView
             dgvDS.Columns[0].HeaderText = "Mã phiếu đặt";
             dgvDS.Columns[1].HeaderText = "Ngày dự kiến trả";
@@ -66,6 +72,7 @@ namespace qlksss
         }
         private void frmPhieuDat_Load(object sender, EventArgs e)
         {
+
             LoadDataGridView();
         }
 
@@ -73,15 +80,34 @@ namespace qlksss
         {
 
         }
-        int cs = 20;
+        //int cs = 31;
         string maphieu = "";
         private void BtnThem_Click(object sender, EventArgs e)
         {
-            maphieu = "PD" + cs.ToString();
-            frmChiTiet frmChiTiet = new frmChiTiet(maphieu, ChiTietMode.Them);
+            //maphieu = "PD" + cs.ToString();
+            maphieu = Class.Function.GoiHamTraVeGiaTri("SELECT dbo.ham_XuatMaPDP()").ToString();
+            frmChiTiet frmChiTiet = new frmChiTiet(this, maphieu, ChiTietMode.Them);
             this.Hide();
-            frmChiTiet.ShowDialog();
-            cs++;
+            frmChiTiet.Show();
+
+            //  cs++;
+        }
+
+        private void BtnQuayLai_Click(object sender, EventArgs e)
+        {
+            frm.Show();
+            this.Close();
+        }
+
+        private void BtnChiTiet_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void frmPhieuDat_Activated(object sender, EventArgs e)
+        {
+            tbDP = Class.Function.ThuTucTraDL("LAYDSPDP");
+            dgvDS.DataSource = tbDP;
         }
     }
 }

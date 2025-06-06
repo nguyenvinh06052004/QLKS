@@ -1,3 +1,5 @@
+using qlksss.Class;
+
 namespace qlksss
 {
     internal static class Program
@@ -11,8 +13,8 @@ namespace qlksss
             // To customize application configuration such as set high DPI settings or default font,
             // see https://aka.ms/applicationconfiguration.
             ApplicationConfiguration.Initialize();
-            Application.Run(new frmDMNhanVien());
-            //Application.Run(new fr)
+            //Application.Run(new frmPhieuDat());
+            Application.Run(new frmMain());
         }
     }
 }

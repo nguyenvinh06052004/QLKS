@@ -18,9 +18,11 @@ namespace qlksss
     {
         DataTable tblKH = new DataTable();
         string makh_td = "";
-        public frmKhachHang()
+        Form parentForm; // Tham chiếu đến form gọi
+        public frmKhachHang(Form caller)
         {
             InitializeComponent();
+            parentForm = caller; // Lưu tham chiếu đến form gọi
         }
 
         private void label2_Click(object sender, EventArgs e)
@@ -887,16 +889,17 @@ namespace qlksss
 
         private void btnReturn_Click(object sender, EventArgs e)
         {
-            this.Hide(); // Ẩn form Khách Hàng hiện tại
-            frmMain p = new frmMain();
-            p.ShowDialog();
-            //this.Close();
+            //this.Hide(); // Ẩn form Khách Hàng hiện tại
+            //frmMain p = new frmMain();
+           // p.ShowDialog();
+            this.Close();
+            parentForm.Show();
 
         }
 
         private void frmKhachHang_FormClosing(object sender, FormClosingEventArgs e)
         {
-            this.Close();
+            //this.Close();
         }
     }
 }

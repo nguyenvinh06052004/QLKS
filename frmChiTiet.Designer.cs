@@ -28,12 +28,17 @@
         /// </summary>
         private void InitializeComponent()
         {
+            components = new System.ComponentModel.Container();
             panel1 = new Panel();
             dgvDSPhongTrong = new DataGridView();
             label1 = new Label();
             menuStrip1 = new MenuStrip();
             mnuLuu = new ToolStripMenuItem();
             mnuBoQua = new ToolStripMenuItem();
+            mnuQuayLai = new ToolStripMenuItem();
+            thanhToánToolStripMenuItem = new ToolStripMenuItem();
+            chiTiếtToolStripMenuItem = new ToolStripMenuItem();
+            xóaToolStripMenuItem = new ToolStripMenuItem();
             guna2ContextMenuStrip1 = new Guna.UI2.WinForms.Guna2ContextMenuStrip();
             panel2 = new Panel();
             label7 = new Label();
@@ -62,6 +67,11 @@
             tableLayoutPanel1 = new TableLayoutPanel();
             dgvDSPhongDat = new DataGridView();
             dgvDSDVSD = new DataGridView();
+            mnuxoaPhongDat = new ContextMenuStrip(components);
+            xóaToolStripMenuItem1 = new ToolStripMenuItem();
+            mnuXoaSuaDVSD = new ContextMenuStrip(components);
+            xóaDVSDToolStripMenuItem = new ToolStripMenuItem();
+            sửaSLToolStripMenuItem = new ToolStripMenuItem();
             panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)dgvDSPhongTrong).BeginInit();
             menuStrip1.SuspendLayout();
@@ -71,6 +81,8 @@
             tableLayoutPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)dgvDSPhongDat).BeginInit();
             ((System.ComponentModel.ISupportInitialize)dgvDSDVSD).BeginInit();
+            mnuxoaPhongDat.SuspendLayout();
+            mnuXoaSuaDVSD.SuspendLayout();
             SuspendLayout();
             // 
             // panel1
@@ -106,10 +118,10 @@
             // menuStrip1
             // 
             menuStrip1.ImageScalingSize = new Size(20, 20);
-            menuStrip1.Items.AddRange(new ToolStripItem[] { mnuLuu, mnuBoQua });
+            menuStrip1.Items.AddRange(new ToolStripItem[] { mnuLuu, mnuBoQua, mnuQuayLai, thanhToánToolStripMenuItem, chiTiếtToolStripMenuItem, xóaToolStripMenuItem });
             menuStrip1.Location = new Point(0, 0);
             menuStrip1.Name = "menuStrip1";
-            menuStrip1.Size = new Size(1027, 28);
+            menuStrip1.Size = new Size(1443, 28);
             menuStrip1.TabIndex = 3;
             menuStrip1.Text = "menuStrip1";
             // 
@@ -118,12 +130,40 @@
             mnuLuu.Name = "mnuLuu";
             mnuLuu.Size = new Size(47, 24);
             mnuLuu.Text = "Lưu";
+            mnuLuu.Click += mnuLuu_Click;
             // 
             // mnuBoQua
             // 
             mnuBoQua.Name = "mnuBoQua";
             mnuBoQua.Size = new Size(70, 24);
             mnuBoQua.Text = "Bỏ qua";
+            mnuBoQua.Click += mnuBoQua_Click;
+            // 
+            // mnuQuayLai
+            // 
+            mnuQuayLai.Name = "mnuQuayLai";
+            mnuQuayLai.Size = new Size(77, 24);
+            mnuQuayLai.Text = "Quay lại";
+            mnuQuayLai.Click += mnuQuayLai_Click;
+            // 
+            // thanhToánToolStripMenuItem
+            // 
+            thanhToánToolStripMenuItem.Name = "thanhToánToolStripMenuItem";
+            thanhToánToolStripMenuItem.Size = new Size(97, 24);
+            thanhToánToolStripMenuItem.Text = "Thanh toán";
+            // 
+            // chiTiếtToolStripMenuItem
+            // 
+            chiTiếtToolStripMenuItem.Name = "chiTiếtToolStripMenuItem";
+            chiTiếtToolStripMenuItem.Size = new Size(160, 24);
+            chiTiếtToolStripMenuItem.Text = "Chi tiết phòng và DV";
+            chiTiếtToolStripMenuItem.Click += chiTiếtToolStripMenuItem_Click;
+            // 
+            // xóaToolStripMenuItem
+            // 
+            xóaToolStripMenuItem.Name = "xóaToolStripMenuItem";
+            xóaToolStripMenuItem.Size = new Size(49, 24);
+            xóaToolStripMenuItem.Text = "Xóa";
             // 
             // guna2ContextMenuStrip1
             // 
@@ -155,7 +195,7 @@
             panel2.Controls.Add(label3);
             panel2.Controls.Add(label2);
             panel2.Controls.Add(txtMaPhieuDat);
-            panel2.Location = new Point(198, 31);
+            panel2.Location = new Point(406, 31);
             panel2.Name = "panel2";
             panel2.Size = new Size(550, 130);
             panel2.TabIndex = 4;
@@ -200,9 +240,9 @@
             // cboMaNV
             // 
             cboMaNV.FormattingEnabled = true;
-            cboMaNV.Location = new Point(371, 9);
+            cboMaNV.Location = new Point(384, 9);
             cboMaNV.Name = "cboMaNV";
-            cboMaNV.Size = new Size(162, 28);
+            cboMaNV.Size = new Size(149, 28);
             cboMaNV.TabIndex = 6;
             // 
             // dtNgayDat
@@ -214,24 +254,25 @@
             dtNgayDat.ShowCheckBox = true;
             dtNgayDat.Size = new Size(143, 27);
             dtNgayDat.TabIndex = 8;
+            dtNgayDat.ValueChanged += dtNgayDat_ValueChanged;
             // 
             // label6
             // 
             label6.AutoSize = true;
             label6.Location = new Point(279, 61);
             label6.Name = "label6";
-            label6.Size = new Size(109, 20);
+            label6.Size = new Size(111, 20);
             label6.TabIndex = 5;
-            label6.Text = "Mã khách hàng";
+            label6.Text = "Tên khách hàng";
             // 
             // label5
             // 
             label5.AutoSize = true;
             label5.Location = new Point(279, 13);
             label5.Name = "label5";
-            label5.Size = new Size(97, 20);
+            label5.Size = new Size(99, 20);
             label5.TabIndex = 4;
-            label5.Text = "Mã nhân viên";
+            label5.Text = "Tên nhân viên";
             // 
             // label4
             // 
@@ -274,7 +315,7 @@
             label8.Dock = DockStyle.Fill;
             label8.Location = new Point(3, 0);
             label8.Name = "label8";
-            label8.Size = new Size(541, 20);
+            label8.Size = new Size(957, 20);
             label8.TabIndex = 12;
             label8.Text = "Danh sách phòng đặt";
             // 
@@ -284,7 +325,7 @@
             label9.AutoSize = true;
             label9.Location = new Point(3, 137);
             label9.Name = "label9";
-            label9.Size = new Size(541, 20);
+            label9.Size = new Size(957, 20);
             label9.TabIndex = 13;
             label9.Text = "Danh sách dịch vụ sử dụng";
             label9.Click += label9_Click;
@@ -293,7 +334,7 @@
             // 
             label10.Anchor = AnchorStyles.Top | AnchorStyles.Right;
             label10.AutoSize = true;
-            label10.Location = new Point(797, 40);
+            label10.Location = new Point(1213, 40);
             label10.Name = "label10";
             label10.Size = new Size(180, 20);
             label10.TabIndex = 14;
@@ -309,7 +350,7 @@
             panel6.Controls.Add(dgvDSDV);
             panel6.Controls.Add(txtThanhToan);
             panel6.Controls.Add(label11);
-            panel6.Location = new Point(766, 63);
+            panel6.Location = new Point(1182, 63);
             panel6.Name = "panel6";
             panel6.Size = new Size(249, 372);
             panel6.TabIndex = 8;
@@ -398,7 +439,7 @@
             tableLayoutPanel1.RowStyles.Add(new RowStyle(SizeType.Percent, 50F));
             tableLayoutPanel1.RowStyles.Add(new RowStyle());
             tableLayoutPanel1.RowStyles.Add(new RowStyle(SizeType.Percent, 50F));
-            tableLayoutPanel1.Size = new Size(547, 274);
+            tableLayoutPanel1.Size = new Size(963, 274);
             tableLayoutPanel1.TabIndex = 15;
             // 
             // dgvDSPhongDat
@@ -409,8 +450,9 @@
             dgvDSPhongDat.Name = "dgvDSPhongDat";
             dgvDSPhongDat.RowHeadersWidth = 51;
             dgvDSPhongDat.RowTemplate.Height = 29;
-            dgvDSPhongDat.Size = new Size(541, 111);
+            dgvDSPhongDat.Size = new Size(957, 111);
             dgvDSPhongDat.TabIndex = 14;
+            dgvDSPhongDat.CellMouseClick += dgvDSPhongDat_CellMouseClick;
             // 
             // dgvDSDVSD
             // 
@@ -420,14 +462,54 @@
             dgvDSDVSD.Name = "dgvDSDVSD";
             dgvDSDVSD.RowHeadersWidth = 51;
             dgvDSDVSD.RowTemplate.Height = 29;
-            dgvDSDVSD.Size = new Size(541, 111);
+            dgvDSDVSD.Size = new Size(957, 111);
             dgvDSDVSD.TabIndex = 15;
+            dgvDSDVSD.CellEndEdit += dgvDSDVSD_CellEndEdit;
+            dgvDSDVSD.CellMouseClick += dgvDSDVSD_CellMouseClick;
+            dgvDSDVSD.CellValueChanged += dgvDSDVSD_CellValueChanged;
+            dgvDSDVSD.CurrentCellDirtyStateChanged += dgvDSDVSD_CurrentCellDirtyStateChanged;
+            // 
+            // mnuxoaPhongDat
+            // 
+            mnuxoaPhongDat.ImageScalingSize = new Size(20, 20);
+            mnuxoaPhongDat.Items.AddRange(new ToolStripItem[] { xóaToolStripMenuItem1 });
+            mnuxoaPhongDat.Name = "mnuxoaPhongDat";
+            mnuxoaPhongDat.Size = new Size(178, 28);
+            // 
+            // xóaToolStripMenuItem1
+            // 
+            xóaToolStripMenuItem1.Name = "xóaToolStripMenuItem1";
+            xóaToolStripMenuItem1.Size = new Size(177, 24);
+            xóaToolStripMenuItem1.Text = "Xóa phòng đặt";
+            xóaToolStripMenuItem1.Click += xóaToolStripMenuItem1_Click;
+            // 
+            // mnuXoaSuaDVSD
+            // 
+            mnuXoaSuaDVSD.ImageScalingSize = new Size(20, 20);
+            mnuXoaSuaDVSD.Items.AddRange(new ToolStripItem[] { xóaDVSDToolStripMenuItem, sửaSLToolStripMenuItem });
+            mnuXoaSuaDVSD.Name = "mnuXoaSuaDVSD";
+            mnuXoaSuaDVSD.Size = new Size(148, 52);
+            mnuXoaSuaDVSD.Click += mnuXoaSuaDVSD_Click;
+            // 
+            // xóaDVSDToolStripMenuItem
+            // 
+            xóaDVSDToolStripMenuItem.Name = "xóaDVSDToolStripMenuItem";
+            xóaDVSDToolStripMenuItem.Size = new Size(147, 24);
+            xóaDVSDToolStripMenuItem.Text = "Xóa DVSD";
+            xóaDVSDToolStripMenuItem.Click += xóaDVSDToolStripMenuItem_Click;
+            // 
+            // sửaSLToolStripMenuItem
+            // 
+            sửaSLToolStripMenuItem.Name = "sửaSLToolStripMenuItem";
+            sửaSLToolStripMenuItem.Size = new Size(147, 24);
+            sửaSLToolStripMenuItem.Text = "Sửa SL";
+            sửaSLToolStripMenuItem.Click += sửaSLToolStripMenuItem_Click;
             // 
             // frmChiTiet
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(1027, 450);
+            ClientSize = new Size(1443, 450);
             Controls.Add(tableLayoutPanel1);
             Controls.Add(label1);
             Controls.Add(label10);
@@ -438,6 +520,7 @@
             MainMenuStrip = menuStrip1;
             Name = "frmChiTiet";
             Text = "frmChiTiet";
+            Activated += frmChiTiet_Activated;
             Load += frmChiTiet_Load;
             panel1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)dgvDSPhongTrong).EndInit();
@@ -452,6 +535,8 @@
             tableLayoutPanel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)dgvDSPhongDat).EndInit();
             ((System.ComponentModel.ISupportInitialize)dgvDSDVSD).EndInit();
+            mnuxoaPhongDat.ResumeLayout(false);
+            mnuXoaSuaDVSD.ResumeLayout(false);
             ResumeLayout(false);
             PerformLayout();
         }
@@ -492,5 +577,14 @@
         private TextBox txtTongTienDV;
         private TextBox txtTongTienPhong;
         private Label label13;
+        private ToolStripMenuItem mnuQuayLai;
+        private ToolStripMenuItem thanhToánToolStripMenuItem;
+        private ToolStripMenuItem chiTiếtToolStripMenuItem;
+        private ToolStripMenuItem xóaToolStripMenuItem;
+        private ContextMenuStrip mnuxoaPhongDat;
+        private ContextMenuStrip mnuXoaSuaDVSD;
+        private ToolStripMenuItem xóaToolStripMenuItem1;
+        private ToolStripMenuItem xóaDVSDToolStripMenuItem;
+        private ToolStripMenuItem sửaSLToolStripMenuItem;
     }
 }

@@ -91,9 +91,13 @@ namespace qlksss
         private void frmPhong_Load(object sender, EventArgs e)
         {
             string sql;
-            sql = "SELECT * FROM Loai_phong";
+            //sql = "SELECT * FROM Loai_phong";
             LoadDataGridView();
-            Class.Function.FillCombo(sql, cboMaLP, "Ma_loaiphong", "Chat_luong");
+            //Class.Function.FillCombo(sql, cboMaLP, "Ma_loaiphong", "Chat_luong");
+
+            cboMaLP.DataSource = Function.ThuTucTraDL("LAYMALP");
+            cboMaLP.DisplayMember = "Ma_loaiphong"; // Hiển thị cột Chat_luong
+            cboMaLP.ValueMember = "Ma_loaiphong"; // Giá trị của cột Ma_loaiphong
             cboMaLP.SelectedIndex = -1;
             Reset();
         }
@@ -154,7 +158,7 @@ namespace qlksss
             txtTT.Text = dgvP.CurrentRow.Cells["Trang_thai"].Value.ToString();
             MaLP = dgvP.CurrentRow.Cells["Ma_loaiphong"].Value.ToString();
 
-            sql = "SELECT Chat_luong FROM Loai_phong  WHERE Ma_loaiphong = N'" + MaLP + "'";
+            sql = "SELECT Ma_loaiphong FROM Loai_phong  WHERE Ma_loaiphong = N'" + MaLP + "'";
             cboMaLP.Text = Class.Function.GetFieldValues(sql);
 
 
@@ -210,6 +214,7 @@ namespace qlksss
             BtnLuu.BackColor = Color.Gold;
             BtnLuu.ForeColor = Color.Red;
             string sql;
+            string map = txtMaPhong.Text.Trim();
             if (txtMaPhong.Text == "" && txtTT.Text == "" && cboMaLP.Text.Trim().Length == 0)
             {
                 MessageBox.Show("Bạn chưa có phòng để lưu", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
@@ -226,6 +231,9 @@ namespace qlksss
                     MessageBox.Show("Bạn phải nhập mã phòng", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                     txtMaPhong.Focus();
                     BtnLuu.Enabled = true;
+                    BtnLuu.BackColor = Color.SteelBlue;
+                    BtnLuu.ForeColor = Color.White;
+
                     return;
                 }
                 if (txtTT.Text.Trim().Length == 0)
@@ -252,8 +260,12 @@ namespace qlksss
 
                 if (isAddingNew == true)
                 {
-                    sql = "SELECT Ma_phong FROM Phong WHERE Ma_phong = '" + txtMaPhong.Text.Trim() + "'";
-                    while (Class.Function.CheckKey(sql))
+                    //sql = "SELECT Ma_phong FROM Phong WHERE Ma_phong = '" + txtMaPhong.Text.Trim() + "'";
+                    var thamso = new Dictionary<string, object>
+                    {
+                        { "@MAP", map }
+                    };
+                    while (Class.Function.GoiHamTraVeGiaTri("SELECT dbo.CHECKP(@MAP)", thamso) == "1")
                     {
                         MessageBox.Show("Mã phòng đã tồn tại, bạn phải nhập mã khác", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                         txtMaPhong.Focus();
@@ -263,8 +275,14 @@ namespace qlksss
                         BtnLuu.ForeColor = Color.White;
                         return;
                     }
-                    sql = "INSERT INTO Phong(Ma_phong, Trang_thai, Ma_loaiphong) VALUES ('" + txtMaPhong.Text.Trim() + "',N'" + txtTT.Text.Trim() + "',N'" + cboMaLP.SelectedValue.ToString() + "')";
-                    Class.Function.RunSQL(sql);
+                    //sql = "INSERT INTO Phong(Ma_phong, Trang_thai, Ma_loaiphong) VALUES ('" + txtMaPhong.Text.Trim() + "',N'" + txtTT.Text.Trim() + "',N'" + cboMaLP.SelectedValue.ToString() + "')";
+                    //Class.Function.RunSQL(sql);
+                    Function.ThuTucKhongTraDL("INSERTP", new Dictionary<string, object>
+                    {
+                        { "@MAP", txtMaPhong.Text.Trim() },
+                        { "@TT", txtTT.Text.Trim() },
+                        { "@MALP", cboMaLP.SelectedValue.ToString() }
+                    });
                     map_td = txtMaPhong.Text.Trim(); // Lưu mã nhân viên tạm thời
                     LoadDataGridView();
                     MessageBox.Show("Đã thêm thành công ", "THÔNG BÁO", MessageBoxButtons.OK, MessageBoxIcon.Information);
@@ -278,9 +296,15 @@ namespace qlksss
                 }
                 if (isChanged == true)
                 {
-                    sql = "UPDATE Phong SET Trang_thai = N'" + txtTT.Text.Trim() + "', Ma_loaiphong = N'" + cboMaLP.SelectedValue.ToString() + "' WHERE Ma_phong = '" + txtMaPhong.Text.Trim() + "'";
+                    //sql = "UPDATE Phong SET Trang_thai = N'" + txtTT.Text.Trim() + "', Ma_loaiphong = N'" + cboMaLP.SelectedValue.ToString() + "' WHERE Ma_phong = '" + txtMaPhong.Text.Trim() + "'";
 
-                    Class.Function.RunSQL(sql);
+                    //Class.Function.RunSQL(sql);
+                    Function.ThuTucKhongTraDL("UPDATEP", new Dictionary<string, object>
+                    {
+                        { "@MP", txtMaPhong.Text.Trim() },
+                        { "@TT", txtTT.Text.Trim() },
+                        { "@MALP", cboMaLP.SelectedValue.ToString() }
+                    });
                     map_td = txtMaPhong.Text.Trim(); // Lưu mã nhân viên tạm thời
                     LoadDataGridView();
 
@@ -331,7 +355,7 @@ namespace qlksss
         private void btnHienThi_Click(object sender, EventArgs e)
         {
 
-            LoadDataGridView();
+            //LoadDataGridView();
         }
         bool isDeleteClicked = false;
         private void BtnXoa_Click(object sender, EventArgs e)
@@ -372,9 +396,29 @@ namespace qlksss
                 }
                 else
                 {
-                    string sql;
-                    sql = "DELETE FROM Phong WHERE Ma_phong = '" + txtMaPhong.Text.Trim() + "'";
-                    Class.Function.RunSQL(sql);
+                    //string sql;
+                    //sql = "DELETE FROM Phong WHERE Ma_phong = '" + txtMaPhong.Text.Trim() + "'";
+                    //Class.Function.RunSQL(sql);
+                    var thamso = new Dictionary<string, object>
+                    {
+                        { "@MAP", txtMaPhong.Text.Trim() }
+                    };
+                    object rs= Function.GoiHamTraVeGiaTri("SELECT dbo.KTR_SD(@MAP)", thamso);
+                    if( rs != null && rs.ToString() == "1")
+                    {
+                        MessageBox.Show("Không thể xóa phòng này vì nó đang được sử dụng" , "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                        BtnXoa.Enabled = true;
+                        BtnXoa.BackColor = Color.SteelBlue;
+                        BtnXoa.ForeColor = Color.White;
+                        isDeleteClicked = false;
+                        return;
+                    }
+                    else
+                    {
+                        Function.ThuTucKhongTraDL("XOAP", thamso);
+                    }
+
+
                     LoadDataGridView();
                     Reset();
                     MessageBox.Show("Đã xóa thành công ", "THÔNG BÁO", MessageBoxButtons.OK, MessageBoxIcon.Information);
@@ -429,9 +473,17 @@ namespace qlksss
             BtnTimKiem.Enabled = false;
             BtnTimKiem.BackColor = Color.Gold;
             BtnTimKiem.ForeColor = Color.Red;
-            txtMaPhong.Focus();
-            if (txtMaPhong.Text.Trim() != "" || txtTT.Text.Trim() != "" || cboMaLP.SelectedValue.ToString() != "")
+            string maLoaiPhong = "";
+            if (cboMaLP.SelectedValue != null)
             {
+                maLoaiPhong = cboMaLP.SelectedValue.ToString().Trim();
+            }
+            //string trangThai = comboBoxTrangThai.SelectedItem != null ? comboBoxTrangThai.SelectedItem.ToString().Trim() : "";
+            //MessageBox.Show("Bạn hãy nhập thông tin tìm kiếm phòng", "THÔNG BÁO", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            txtMaPhong.Focus();
+            if (txtMaPhong.Text.Trim() != "" || txtTT.Text.Trim() != "" || !string.IsNullOrEmpty(maLoaiPhong))
+            {
+                /*
                 string sql;
                 string where = "WHERE ";
                 string sl = "SELECT * ";
@@ -461,7 +513,13 @@ namespace qlksss
 
                 sql = sl + " FROM Phong " + where;
 
-                DataTable dt = Class.Function.GetDataToTable(sql);
+                */
+                DataTable dt = Function.GoiHamTraVeBang("SELECT * FROM dbo.TKP(@MAP, @TT, @MALP)", new Dictionary<string, object>
+                {
+                    { "@MAP", txtMaPhong.Text.Trim() },
+                    { "@TT", txtTT.Text.Trim() },
+                    { "@MALP", maLoaiPhong }
+                });
                 dgvP.DataSource = dt;
 
                 if (dt.Rows.Count > 0)
@@ -538,7 +596,7 @@ namespace qlksss
 
         private void frmPhong_FormClosing(object sender, FormClosingEventArgs e)
         {
-            Application.Exit(); // Đóng ứng dụng khi form Phong đóng
+            //Application.Exit(); // Đóng ứng dụng khi form Phong đóng
         }
     }
 

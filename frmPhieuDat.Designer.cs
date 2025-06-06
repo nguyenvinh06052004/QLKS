@@ -73,6 +73,7 @@
             BtnChiTiet.TabIndex = 7;
             BtnChiTiet.Text = "Chi Tiết";
             BtnChiTiet.UseVisualStyleBackColor = true;
+            BtnChiTiet.Click += BtnChiTiet_Click;
             // 
             // BtnDanhSach
             // 
@@ -93,6 +94,7 @@
             BtnQuayLai.TabIndex = 5;
             BtnQuayLai.Text = "Quay Lại";
             BtnQuayLai.UseVisualStyleBackColor = true;
+            BtnQuayLai.Click += BtnQuayLai_Click;
             // 
             // BtnBoQua
             // 
@@ -160,7 +162,7 @@
             // 
             label2.Anchor = AnchorStyles.Top;
             label2.AutoSize = true;
-            label2.Location = new Point(440, 17);
+            label2.Location = new Point(440, 19);
             label2.Name = "label2";
             label2.Size = new Size(72, 20);
             label2.TabIndex = 2;
@@ -222,6 +224,7 @@
             Name = "frmPhieuDat";
             Text = "frmPhieuDat";
             WindowState = FormWindowState.Maximized;
+            Activated += frmPhieuDat_Activated;
             Load += frmPhieuDat_Load;
             panel1.ResumeLayout(false);
             panel2.ResumeLayout(false);

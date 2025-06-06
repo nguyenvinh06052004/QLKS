@@ -77,6 +77,7 @@
             // 
             // btnXacNhanXoa
             // 
+            btnXacNhanXoa.Anchor = AnchorStyles.Bottom;
             btnXacNhanXoa.BackColor = Color.SteelBlue;
             btnXacNhanXoa.ForeColor = SystemColors.ControlLightLight;
             btnXacNhanXoa.Location = new Point(407, 76);
@@ -206,6 +207,7 @@
             // 
             // lblNVTT
             // 
+            lblNVTT.Anchor = AnchorStyles.Top;
             lblNVTT.AutoSize = true;
             lblNVTT.Location = new Point(590, 99);
             lblNVTT.Name = "lblNVTT";
@@ -216,6 +218,7 @@
             // 
             // cboNVTT
             // 
+            cboNVTT.Anchor = AnchorStyles.Top;
             cboNVTT.FormattingEnabled = true;
             cboNVTT.Location = new Point(682, 92);
             cboNVTT.Name = "cboNVTT";

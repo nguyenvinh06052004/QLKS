@@ -44,13 +44,10 @@ namespace qlksss
             mnuHoaDonTong = new ToolStripMenuItem();
             mnuHoaDonChiTiet = new ToolStripMenuItem();
             mnuPhieu = new ToolStripMenuItem();
-            mnuPhieuDatPhong = new ToolStripMenuItem();
-            mnuPhieuDichVu = new ToolStripMenuItem();
             mnuChiTiet = new ToolStripMenuItem();
             chiTiếtPhòngToolStripMenuItem = new ToolStripMenuItem();
             chiTiếtDịchVụToolStripMenuItem = new ToolStripMenuItem();
             mnuHuongDan = new ToolStripMenuItem();
-
             báoCáoToolStripMenuItem = new ToolStripMenuItem();
             panel1 = new Panel();
             menuStrip1.SuspendLayout();
@@ -65,7 +62,7 @@ namespace qlksss
             menuStrip1.Items.AddRange(new ToolStripItem[] { mnuFile, mnuDanhMuc, mnuHoaDon, mnuPhieu, mnuChiTiet, mnuHuongDan, báoCáoToolStripMenuItem });
             menuStrip1.Location = new Point(74, 9);
             menuStrip1.Name = "menuStrip1";
-            menuStrip1.Size = new Size(552, 28);
+            menuStrip1.Size = new Size(759, 28);
             menuStrip1.TabIndex = 0;
             menuStrip1.Text = "menuStrip1";
             // 
@@ -146,24 +143,10 @@ namespace qlksss
             // 
             // mnuPhieu
             // 
-            mnuPhieu.DropDownItems.AddRange(new ToolStripItem[] { mnuPhieuDatPhong, mnuPhieuDichVu });
             mnuPhieu.Name = "mnuPhieu";
-            mnuPhieu.Size = new Size(59, 24);
-            mnuPhieu.Text = "Phiếu";
+            mnuPhieu.Size = new Size(116, 24);
+            mnuPhieu.Text = "Đặt trả phòng";
             mnuPhieu.Click += mnuPhieu_Click;
-            // 
-            // mnuPhieuDatPhong
-            // 
-            mnuPhieuDatPhong.Name = "mnuPhieuDatPhong";
-            mnuPhieuDatPhong.Size = new Size(201, 26);
-            mnuPhieuDatPhong.Text = "Phiếu đặt phòng";
-            mnuPhieuDatPhong.Click += mnuPhieuDatPhong_Click;
-            // 
-            // mnuPhieuDichVu
-            // 
-            mnuPhieuDichVu.Name = "mnuPhieuDichVu";
-            mnuPhieuDichVu.Size = new Size(201, 26);
-            mnuPhieuDichVu.Text = "Phiếu dịch vụ";
             // 
             // mnuChiTiet
             // 
@@ -242,8 +225,6 @@ namespace qlksss
         private ToolStripMenuItem mnuHoaDonTong;
         private ToolStripMenuItem mnuHoaDonChiTiet;
         private ToolStripMenuItem mnuPhieu;
-        private ToolStripMenuItem mnuPhieuDatPhong;
-        private ToolStripMenuItem mnuPhieuDichVu;
         private ToolStripMenuItem mnuChiTiet;
         private ToolStripMenuItem mnuHuongDan;
         private Panel panel1;

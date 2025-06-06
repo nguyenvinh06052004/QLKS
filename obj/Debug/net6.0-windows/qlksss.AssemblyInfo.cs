@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("qlksss")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+58286255ec67f0ddccde77d7dac190359e4a880d")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+919f21c326ab6042b82ff96fe21a11e3b5be49f5")]
 [assembly: System.Reflection.AssemblyProductAttribute("qlksss")]
 [assembly: System.Reflection.AssemblyTitleAttribute("qlksss")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

@@ -98,9 +98,9 @@
             label2.AutoSize = true;
             label2.Location = new Point(354, 46);
             label2.Name = "label2";
-            label2.Size = new Size(82, 20);
+            label2.Size = new Size(106, 20);
             label2.TabIndex = 6;
-            label2.Text = "Chất lượng";
+            label2.Text = "Mã loại phòng";
             // 
             // txtTT
             // 

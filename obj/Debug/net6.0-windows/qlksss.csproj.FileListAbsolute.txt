@@ -106,3 +106,4 @@ D:\c#\qlksss\qlksss\obj\Debug\net6.0-windows\qlksss.pdb
 D:\c#\qlksss\qlksss\obj\Debug\net6.0-windows\qlksss.genruntimeconfig.cache
 D:\c#\qlksss\qlksss\obj\Debug\net6.0-windows\ref\qlksss.dll
 D:\c#\qlksss\qlksss\obj\Debug\net6.0-windows\qlksss.frmChiTiet.resources
+D:\c#\qlksss\qlksss\obj\Debug\net6.0-windows\qlksss.frmChiTietPhongDV.resources

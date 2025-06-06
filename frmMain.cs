@@ -11,6 +11,9 @@ namespace qlksss
         private void mnuPhieu_Click(object sender, EventArgs e)
         {
             // TODO: Xử lý khi click vào mục Phiếu
+            frmPhieuDat frmPhieuDat = new frmPhieuDat(this);
+            this.Hide();
+            frmPhieuDat.ShowDialog();
         }
 
         private void frmMain_Load(object sender, EventArgs e)
@@ -40,9 +43,9 @@ namespace qlksss
 
         private void mnuKhachHang_Click(object sender, EventArgs e)
         {
-            frmKhachHang frmKhachHang = new frmKhachHang();
+            frmKhachHang frmKhachHang = new frmKhachHang(this);
             this.Hide();
-            frmKhachHang.ShowDialog();
+            frmKhachHang.Show();
         }
 
 
@@ -62,6 +65,9 @@ namespace qlksss
 
         private void mnuPhieuDatPhong_Click(object sender, EventArgs e)
         {
+            frmPhieuDat frmPhieuDat = new frmPhieuDat(this);
+            this.Hide();
+            frmPhieuDat.ShowDialog();
         }
         private void mnuDichVu_Click(object sender, EventArgs e)
         {
